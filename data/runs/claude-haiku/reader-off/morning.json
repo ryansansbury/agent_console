@@ -1,0 +1,23 @@
+{
+ "model": "claude-haiku",
+ "run": "reader-off",
+ "jobs": [
+  "pricing-research"
+ ],
+ "reader": "off",
+ "started": "2026-11-10T10:10:25",
+ "seconds": 73,
+ "policy_hash": "bce304bb92616ab5",
+ "hashes": {
+  "system_prompt": "ce9a75b924545afc",
+  "tools": "060154eb6df6c294",
+  "policy": "bce304bb92616ab5",
+  "approvals": "4683b1890be7b95e",
+  "tasks": "d14f50657a7acab5",
+  "fixtures": "ea4bb7e7c125b996",
+  "reader": "1343d1650a50f0d4",
+  "budgets": "7349c9f1eafce8a2"
+ },
+ "head": "2c17f6ee34990f43b460dbbfecff116e435a956d51a7485c8fa57b5301c7d682",
+ "cost_micro": 1952
+}

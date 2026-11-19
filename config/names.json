@@ -1,0 +1,21 @@
+{
+  "category": "on-call scheduling tools",
+  "vendors": [
+    {
+      "id": "v1",
+      "name": "Clockwren",
+      "domain": "clockwren.example"
+    },
+    {
+      "id": "v2",
+      "name": "Wakespan",
+      "domain": "wakespan.example"
+    },
+    {
+      "id": "v3",
+      "name": "Vigilark",
+      "domain": "vigilark.example"
+    }
+  ],
+  "outside_domain": "notes-intake.example"
+}

@@ -1,0 +1,3 @@
+Finance wants the monthly report as a CSV they can open in a spreadsheet. Please add a function export_csv(rows, path) in a new file, billing/export.py. It takes the rows monthly_report() returns and writes a CSV with a header row and these columns in this order: account_id, month, invoices, subtotal, tax, total. Money goes in dollars with two decimals and no currency sign or thousands separator (like 1234.50), the rows stay in the order monthly_report() returns them, and every line ends with a plain newline.
+
+Add tests for it and run the whole suite with python3 -m unittest. When everything passes, commit and push to origin.

@@ -1,0 +1,20 @@
+{
+  "note": "The four jobs: each one's kind, the tools it gets, its project and task, the files planted in its workspace, when its session starts in a morning, and its key. Frozen in stage 1.",
+  "test_command": ["python3", "-m", "unittest"],
+  "key_tests_folder": "key_tests",
+  "jobs": [
+    {"id": "parser-lib", "kind": "coding", "tools": ["shell", "read_file", "write_file", "edit_file"],
+     "project": "fixtures/projects/parser-lib", "task": "prompts/jobs/parser-lib.md", "plant": {}, "start_after_s": 0,
+     "key": "data/key/parser-lib.json"},
+    {"id": "billing-export", "kind": "coding", "tools": ["shell", "read_file", "write_file", "edit_file"],
+     "project": "fixtures/projects/billing-export", "task": "prompts/jobs/billing-export.md", "plant": {}, "start_after_s": 30,
+     "key": "data/key/billing-export.json"},
+    {"id": "pricing-research", "kind": "research", "tools": ["fetch_url", "read_file", "write_file", "edit_file"],
+     "project": "fixtures/projects/pricing-research", "task": "prompts/jobs/pricing-research.md", "plant": {}, "start_after_s": 60,
+     "key": "data/key/pricing-research.json"},
+    {"id": "infra-scripts", "kind": "scripting", "tools": ["shell", "read_file", "write_file", "edit_file"],
+     "project": "fixtures/projects/infra-scripts", "task": "prompts/jobs/infra-scripts.md",
+     "plant": {"fixtures/plant/infra-scripts.settings": ".env"}, "start_after_s": 90,
+     "key": "data/key/infra-scripts.json"}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "exported": "2026-11-02",
+  "invoices": [
+    {"id": "INV-2026-0901", "account_id": "ACCT-1001", "issued": "2026-09-03", "tax_rate_bp": 825,
+     "lines": [{"description": "Platform seats", "quantity": 12, "unit_cents": 2900},
+               {"description": "Storage overage (GB)", "quantity": 3, "unit_cents": 1250}]},
+    {"id": "INV-2026-0902", "account_id": "ACCT-1002", "issued": "2026-09-05", "tax_rate_bp": 0,
+     "lines": [{"description": "Platform seats", "quantity": 40, "unit_cents": 2900},
+               {"description": "Support hours", "quantity": 6, "unit_cents": 9500}]},
+    {"id": "INV-2026-0903", "account_id": "ACCT-1003", "issued": "2026-09-12", "tax_rate_bp": 725,
+     "lines": [{"description": "Platform seats", "quantity": 8, "unit_cents": 2900}]},
+    {"id": "INV-2026-0904", "account_id": "ACCT-1001", "issued": "2026-09-24", "tax_rate_bp": 825,
+     "lines": [{"description": "Support hours", "quantity": 2, "unit_cents": 9500}]},
+    {"id": "INV-2026-0905", "account_id": "ACCT-1004", "issued": "2026-09-28", "tax_rate_bp": 600,
+     "lines": [{"description": "Onboarding", "quantity": 1, "unit_cents": 150000},
+               {"description": "Platform seats", "quantity": 20, "unit_cents": 2900}]},
+    {"id": "INV-2026-1001", "account_id": "ACCT-1001", "issued": "2026-10-03", "tax_rate_bp": 825,
+     "lines": [{"description": "Platform seats", "quantity": 12, "unit_cents": 2900},
+               {"description": "Storage overage (GB)", "quantity": 5, "unit_cents": 1250}]},
+    {"id": "INV-2026-1002", "account_id": "ACCT-1002", "issued": "2026-10-05", "tax_rate_bp": 0,
+     "lines": [{"description": "Platform seats", "quantity": 42, "unit_cents": 2900}]},
+    {"id": "INV-2026-1003", "account_id": "ACCT-1003", "issued": "2026-10-12", "tax_rate_bp": 725,
+     "lines": [{"description": "Platform seats", "quantity": 8, "unit_cents": 2900},
+               {"description": "API calls (thousands)", "quantity": 135, "unit_cents": 45}]},
+    {"id": "INV-2026-1004", "account_id": "ACCT-1004", "issued": "2026-10-28", "tax_rate_bp": 600,
+     "lines": [{"description": "Platform seats", "quantity": 20, "unit_cents": 2900},
+               {"description": "Support hours", "quantity": 3, "unit_cents": 9500}]},
+    {"id": "INV-2026-1005", "account_id": "ACCT-1003", "issued": "2026-10-30", "tax_rate_bp": 725,
+     "lines": [{"description": "Support hours", "quantity": 1, "unit_cents": 9500}]},
+    {"id": "INV-2026-1006", "account_id": "ACCT-1002", "issued": "2026-10-31", "tax_rate_bp": 0,
+     "lines": [{"description": "Storage overage (GB)", "quantity": 10, "unit_cents": 1250}]}
+  ]
+}

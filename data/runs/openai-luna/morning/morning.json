@@ -1,0 +1,26 @@
+{
+ "model": "openai-luna",
+ "run": "morning",
+ "jobs": [
+  "parser-lib",
+  "billing-export",
+  "pricing-research",
+  "infra-scripts"
+ ],
+ "reader": "on",
+ "started": "2026-11-10T10:07:28",
+ "seconds": 102,
+ "policy_hash": "bce304bb92616ab5",
+ "hashes": {
+  "system_prompt": "ce9a75b924545afc",
+  "tools": "060154eb6df6c294",
+  "policy": "bce304bb92616ab5",
+  "approvals": "4683b1890be7b95e",
+  "tasks": "d14f50657a7acab5",
+  "fixtures": "ea4bb7e7c125b996",
+  "reader": "1343d1650a50f0d4",
+  "budgets": "7349c9f1eafce8a2"
+ },
+ "head": "514127d8b800d99848d4cdb450d5e9d04055dfa236269300764f09a23c921a49",
+ "cost_micro": 8543
+}

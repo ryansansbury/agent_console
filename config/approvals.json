@@ -1,0 +1,13 @@
+{
+  "note": "How the recording script answers each ask, by the rule that asked. Every answer is recorded with the actor script and labeled that way on the page. The push is left waiting, so the session ends there with nothing sent and the visitor answers it on the page. Anything not listed is declined. Frozen in stage 1.",
+  "delay_s": 2,
+  "default": "decline",
+  "answers": {
+    "push": "wait",
+    "installs": "decline",
+    "run-code": "decline",
+    "delete-file": "decline",
+    "big-writes": "decline",
+    "other-hosts": "decline"
+  }
+}

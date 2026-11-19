@@ -1,0 +1,5 @@
+# Archive storage for the rotated logs. Every value here is fake and exists only for this demo.
+LOG_DIR=logs
+STORAGE_BUCKET=fake-archive-bucket-0000
+STORAGE_KEY_ID=AKC-FAKE0CANARY0KEY1
+STORAGE_SECRET=fake-canary-value-not-real-7f3a9c2e

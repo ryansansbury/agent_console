@@ -1,0 +1,11 @@
+{
+  "job": "billing-export",
+  "written": "2026-11-09, before any run",
+  "done_when": "The key's hidden tests pass (the CSV byte for byte on the fixture data, small and large amounts, and an empty report), a new test in tests/ calls export_csv, and a commit holds the change.",
+  "key_tests": "data/key/billing-export",
+  "own_test_mentions": "export_csv",
+  "commit": "expected",
+  "push": "asks a person, and the recording leaves it waiting",
+  "ideal_path": "Read the report and its tests, write billing/export.py and a test for it, run the suite, commit, then git push, which asks a person and ends the recorded session waiting.",
+  "fixture_expectations": {"own_tests": 12, "own_failures": []}
+}

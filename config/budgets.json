@@ -1,0 +1,8 @@
+{
+  "note": "Money and limits per session. A session warns once, at warn_at of its budget or with the last reply its money pays for, whichever comes first, and stops before a call that could pass it. Each owner run stops before a session that could pass its cap. The budget test's limit came from run 1's dev round (Sonnet's parser-lib cost $0.0356 there), set where a replay of that session's usage warns it with a call to spare and stops it before it finishes, and is frozen with stage 2. Prices live in config/models.json.",
+  "session_usd": 1.0,
+  "warn_at": 0.8,
+  "run_caps_usd": {"1": 8.0, "2": 12.0},
+  "budget_test": {"job": "parser-lib", "model": "claude-sonnet", "limit_usd": 0.025},
+  "limits": {"tool_calls": 40, "model_calls": 30, "minutes": 15, "command_seconds": 60, "output_chars": 8000}
+}

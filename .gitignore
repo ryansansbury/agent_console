@@ -1,0 +1,9 @@
+.venv/
+.cache/
+node_modules/
+owner/out/
+__pycache__/
+.env
+.env.*
+workspaces/
+tests/vectors/

@@ -1,0 +1,682 @@
+{
+ "schema": 1,
+ "job": "billing-export",
+ "run": "morning",
+ "model": {
+  "id": "claude-sonnet",
+  "label": "Claude Sonnet 5.5",
+  "vendor": "Anthropic",
+  "model": "claude-sonnet-5-5"
+ },
+ "recorded": "2026-11-10T10:04:47-08:00",
+ "offset_ms": 30001,
+ "settings": {
+  "reader": "on",
+  "budget_micro": 1000000,
+  "limits": {
+   "tool_calls": 40,
+   "model_calls": 30,
+   "minutes": 15,
+   "command_seconds": 60,
+   "output_chars": 8000
+  },
+  "tools": [
+   "shell",
+   "read_file",
+   "write_file",
+   "edit_file"
+  ]
+ },
+ "task": "Finance wants the monthly report as a CSV they can open in a spreadsheet. Please add a function export_csv(rows, path) in a new file, billing/export.py. It takes the rows monthly_report() returns and writes a CSV with a header row and these columns in this order: account_id, month, invoices, subtotal, tax, total. Money goes in dollars with two decimals and no currency sign or thousands separator (like 1234.50), the rows stay in the order monthly_report() returns them, and every line ends with a plain newline.\n\nAdd tests for it and run the whole suite with python3 -m unittest. When everything passes, commit and push to origin.",
+ "events": [
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_01FWAN8hgQTMEmy6wuow1krT",
+     "name": "shell",
+     "args": {
+      "command": "git ls-files"
+     }
+    }
+   ],
+   "usage": {
+    "input": 4,
+    "cache_write": 279,
+    "cache_read": 1111,
+    "output": 50
+   },
+   "cost_micro": 1428,
+   "ms": 1079,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 1,
+   "t_ms": 1079,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_01FWAN8hgQTMEmy6wuow1krT",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git ls-files"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "ls-files"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/ls-files"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "git-local",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "README.md\nbilling/__init__.py\nbilling/invoices.py\nbilling/report.py\ndata/invoices.json\ntests/__init__.py\ntests/test_invoices.py\ntests/test_report.py\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 33,
+   "target": "git ls-files",
+   "seq": 2,
+   "t_ms": 1112,
+   "kind": "call",
+   "audit": [
+    14
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_01PGtmegdS4zgH88T2ZxS8x5",
+     "name": "read_file",
+     "args": {
+      "path": "billing/report.py"
+     }
+    },
+    {
+     "id": "toolu_01Pk9PSPNnxafk6WUEY7AQX7",
+     "name": "read_file",
+     "args": {
+      "path": "tests/test_report.py"
+     }
+    },
+    {
+     "id": "toolu_01UxSjkzN1wqiDSTb3AeGFgf",
+     "name": "read_file",
+     "args": {
+      "path": "README.md"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 123,
+    "cache_read": 1390,
+    "output": 149
+   },
+   "cost_micro": 2080,
+   "ms": 1208,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 3,
+   "t_ms": 2320,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_01PGtmegdS4zgH88T2ZxS8x5",
+   "name": "read_file",
+   "tool": "read",
+   "args": {
+    "path": "billing/report.py"
+   },
+   "facts": {
+    "tool": "read",
+    "paths": [
+     "/workspace/billing/report.py"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "\"\"\"The monthly report: one row per account and month, the way finance reads it.\"\"\"\nfrom collections import defaultdict\n\n\ndef monthly_report(invoices):\n    \"\"\"Rows sorted by account and then month, each with the invoice count and the money in cents.\"\"\"\n    groups = defaultdict(list)\n    for inv in invoices:\n        groups[(inv.account_id, inv.issued.strftime(\"%Y-%m\"))].append(inv)\n    rows = []\n    for (account_id, month), invs in sorted(groups.items()):\n        rows.append({\n            \"account_id\": account_id,\n            \"month\": month,\n            \"invoices\": len(invs),\n            \"subtotal_cents\": sum(i.subtotal_cents for i in invs),\n            \"tax_cents\": sum(i.tax_cents for i in invs),\n            \"total_cents\": sum(i.total_cents for i in invs),\n        })\n    return rows\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 1,
+   "target": "billing/report.py",
+   "seq": 4,
+   "t_ms": 2322,
+   "kind": "call",
+   "audit": [
+    15
+   ]
+  },
+  {
+   "call_id": "toolu_01Pk9PSPNnxafk6WUEY7AQX7",
+   "name": "read_file",
+   "tool": "read",
+   "args": {
+    "path": "tests/test_report.py"
+   },
+   "facts": {
+    "tool": "read",
+    "paths": [
+     "/workspace/tests/test_report.py"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "import unittest\nfrom pathlib import Path\n\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nDATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n\n\nclass MonthlyReport(unittest.TestCase):\n    def setUp(self):\n        self.rows = monthly_report(load_invoices(DATA))\n\n    def test_one_row_per_account_and_month(self):\n        self.assertEqual(len(self.rows), 8)\n\n    def test_sorted_by_account_then_month(self):\n        keys = [(r[\"account_id\"], r[\"month\"]) for r in self.rows]\n        self.assertEqual(keys, sorted(keys))\n        self.assertEqual(keys[:2], [(\"ACCT-1001\", \"2026-09\"), (\"ACCT-1001\", \"2026-10\")])\n\n    def test_counts_the_invoices(self):\n        self.assertEqual(self.rows[0][\"invoices\"], 2)\n\n    def test_sums_the_money(self):\n        first = self.rows[0]\n        self.assertEqual((first[\"subtotal_cents\"], first[\"tax_cents\"], first[\"total_cents\"]), (57550, 4748, 62298))\n\n    def test_months_read_year_then_month(self):\n        self.assertEqual({r[\"month\"] for r in self.rows}, {\"2026-09\", \"2026-10\"})\n\n    def test_no_invoices_no_rows(self):\n        self.assertEqual(monthly_report([]), [])\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "tests/test_report.py",
+   "seq": 5,
+   "t_ms": 2322,
+   "kind": "call",
+   "audit": [
+    16
+   ]
+  },
+  {
+   "call_id": "toolu_01UxSjkzN1wqiDSTb3AeGFgf",
+   "name": "read_file",
+   "tool": "read",
+   "args": {
+    "path": "README.md"
+   },
+   "facts": {
+    "tool": "read",
+    "paths": [
+     "/workspace/README.md"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "# billing\n\nThe billing module behind the finance team's monthly numbers. It reads the invoices the billing system exports\n(`data/invoices.json`) and builds the monthly report: one row per account and month with the invoice count, the\nsubtotal, the tax and the total.\n\nMoney stays in whole cents everywhere, and tax is rounded half up once per invoice.\n\n```python\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nrows = monthly_report(load_invoices(\"data/invoices.json\"))\n```\n\n## Tests\n\n```\npython3 -m unittest\n```\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "README.md",
+   "seq": 6,
+   "t_ms": 2323,
+   "kind": "call",
+   "audit": [
+    17
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_01BxttUUtycnFhCvXZsU3zeB",
+     "name": "write_file",
+     "args": {
+      "path": "billing/export.py",
+      "content": "\"\"\"CSV export of the monthly report, for finance to open in a spreadsheet.\"\"\"\nimport csv\n\nCOLUMNS = [\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\"]\n\n\ndef _dollars(cents):\n    \"\"\"Whole cents as dollars with two decimals, e.g. 123450 -> '1234.50' (integer math, no float rounding).\"\"\"\n    sign = \"-\" if cents < 0 else \"\"\n    whole, part = divmod(abs(cents), 100)\n    return f\"{sign}{whole}.{part:02d}\"\n\n\ndef export_csv(rows, path):\n    \"\"\"Write the rows from monthly_report() to path as CSV, header first, rows in the given order.\"\"\"\n    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as f:\n        writer = csv.writer(f, lineterminator=\"\\n\")\n        writer.writerow(COLUMNS)\n        for r in rows:\n            writer.writerow([\n                r[\"account_id\"],\n                r[\"month\"],\n                r[\"invoices\"],\n                _dollars(r[\"subtotal_cents\"]),\n                _dollars(r[\"tax_cents\"]),\n                _dollars(r[\"total_cents\"]),\n            ])\n"
+     }
+    },
+    {
+     "id": "toolu_01JCjHrHDSzRMuFYwwVrQq4n",
+     "name": "write_file",
+     "args": {
+      "path": "tests/test_export.py",
+      "content": "import os\nimport tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nDATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n\n\ndef row(account_id=\"ACCT-1\", month=\"2026-09\", invoices=1, subtotal=0, tax=0, total=0):\n    return {\"account_id\": account_id, \"month\": month, \"invoices\": invoices,\n            \"subtotal_cents\": subtotal, \"tax_cents\": tax, \"total_cents\": total}\n\n\nclass ExportCsv(unittest.TestCase):\n    def setUp(self):\n        tmp = tempfile.TemporaryDirectory()\n        self.addCleanup(tmp.cleanup)\n        self.path = os.path.join(tmp.name, \"out.csv\")\n\n    def write(self, rows):\n        export_csv(rows, self.path)\n        with open(self.path, newline=\"\", encoding=\"utf-8\") as f:\n            return f.read()\n\n    def test_header_and_columns_in_order(self):\n        text = self.write([row(invoices=2, subtotal=57550, tax=4748, total=62298)])\n        self.assertEqual(text, \"account_id,month,invoices,subtotal,tax,total\\n\"\n                               \"ACCT-1,2026-09,2,575.50,47.48,622.98\\n\")\n\n    def test_money_has_two_decimals_and_no_separators(self):\n        text = self.write([row(subtotal=123450, tax=5, total=100000000)])\n        self.assertEqual(text.splitlines()[1], \"ACCT-1,2026-09,1,1234.50,0.05,1000000.00\")\n\n    def test_zero_money(self):\n        self.assertEqual(self.write([row()]).splitlines()[1], \"ACCT-1,2026-09,1,0.00,0.00,0.00\")\n\n    def test_negative_money(self):\n        self.assertEqual(self.write([row(subtotal=-5, total=-12345)]).splitlines()[1],\n                         \"ACCT-1,2026-09,1,-0.05,0.00,-123.45\")\n\n    def test_plain_newlines_only(self):\n        with open(self.path, \"wb\"):\n            pass\n        export_csv([row(), row(account_id=\"ACCT-2\")], self.path)\n        with open(self.path, \"rb\") as f:\n            data = f.read()\n        self.assertNotIn(b\"\\r\", data)\n        self.assertTrue(data.endswith(b\"\\n\"))\n        self.assertEqual(data.count(b\"\\n\"), 3)\n\n    def test_keeps_row_order(self):\n        text = self.write([row(account_id=\"ACCT-9\"), row(account_id=\"ACCT-1\")])\n        self.assertEqual([l.split(\",\")[0] for l in text.splitlines()[1:]], [\"ACCT-9\", \"ACCT-1\"])\n\n    def test_no_rows_writes_only_header(self):\n        self.assertEqual(self.write([]), \"account_id,month,invoices,subtotal,tax,total\\n\")\n\n    def test_real_report(self):\n        rows = monthly_report(load_invoices(DATA))\n        lines = self.write(rows).splitlines()\n        self.assertEqual(len(lines), len(rows) + 1)\n        self.assertEqual(lines[1], \"ACCT-1001,2026-09,2,575.50,47.48,622.98\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 1219,
+    "cache_read": 1513,
+    "output": 1780
+   },
+   "cost_micro": 21155,
+   "ms": 9699,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 7,
+   "t_ms": 12022,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_01BxttUUtycnFhCvXZsU3zeB",
+   "name": "write_file",
+   "tool": "write",
+   "args": {
+    "path": "billing/export.py",
+    "content": "\"\"\"CSV export of the monthly report, for finance to open in a spreadsheet.\"\"\"\nimport csv\n\nCOLUMNS = [\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\"]\n\n\ndef _dollars(cents):\n    \"\"\"Whole cents as dollars with two decimals, e.g. 123450 -> '1234.50' (integer math, no float rounding).\"\"\"\n    sign = \"-\" if cents < 0 else \"\"\n    whole, part = divmod(abs(cents), 100)\n    return f\"{sign}{whole}.{part:02d}\"\n\n\ndef export_csv(rows, path):\n    \"\"\"Write the rows from monthly_report() to path as CSV, header first, rows in the given order.\"\"\"\n    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as f:\n        writer = csv.writer(f, lineterminator=\"\\n\")\n        writer.writerow(COLUMNS)\n        for r in rows:\n            writer.writerow([\n                r[\"account_id\"],\n                r[\"month\"],\n                r[\"invoices\"],\n                _dollars(r[\"subtotal_cents\"]),\n                _dollars(r[\"tax_cents\"]),\n                _dollars(r[\"total_cents\"]),\n            ])\n"
+   },
+   "facts": {
+    "tool": "write",
+    "paths": [
+     "/workspace/billing/export.py"
+    ],
+    "outside": false,
+    "bytes": 987
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Wrote 987 bytes to /workspace/billing/export.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 2,
+   "target": "billing/export.py",
+   "seq": 8,
+   "t_ms": 12025,
+   "kind": "call",
+   "audit": [
+    18
+   ]
+  },
+  {
+   "call_id": "toolu_01JCjHrHDSzRMuFYwwVrQq4n",
+   "name": "write_file",
+   "tool": "write",
+   "args": {
+    "path": "tests/test_export.py",
+    "content": "import os\nimport tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nDATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n\n\ndef row(account_id=\"ACCT-1\", month=\"2026-09\", invoices=1, subtotal=0, tax=0, total=0):\n    return {\"account_id\": account_id, \"month\": month, \"invoices\": invoices,\n            \"subtotal_cents\": subtotal, \"tax_cents\": tax, \"total_cents\": total}\n\n\nclass ExportCsv(unittest.TestCase):\n    def setUp(self):\n        tmp = tempfile.TemporaryDirectory()\n        self.addCleanup(tmp.cleanup)\n        self.path = os.path.join(tmp.name, \"out.csv\")\n\n    def write(self, rows):\n        export_csv(rows, self.path)\n        with open(self.path, newline=\"\", encoding=\"utf-8\") as f:\n            return f.read()\n\n    def test_header_and_columns_in_order(self):\n        text = self.write([row(invoices=2, subtotal=57550, tax=4748, total=62298)])\n        self.assertEqual(text, \"account_id,month,invoices,subtotal,tax,total\\n\"\n                               \"ACCT-1,2026-09,2,575.50,47.48,622.98\\n\")\n\n    def test_money_has_two_decimals_and_no_separators(self):\n        text = self.write([row(subtotal=123450, tax=5, total=100000000)])\n        self.assertEqual(text.splitlines()[1], \"ACCT-1,2026-09,1,1234.50,0.05,1000000.00\")\n\n    def test_zero_money(self):\n        self.assertEqual(self.write([row()]).splitlines()[1], \"ACCT-1,2026-09,1,0.00,0.00,0.00\")\n\n    def test_negative_money(self):\n        self.assertEqual(self.write([row(subtotal=-5, total=-12345)]).splitlines()[1],\n                         \"ACCT-1,2026-09,1,-0.05,0.00,-123.45\")\n\n    def test_plain_newlines_only(self):\n        with open(self.path, \"wb\"):\n            pass\n        export_csv([row(), row(account_id=\"ACCT-2\")], self.path)\n        with open(self.path, \"rb\") as f:\n            data = f.read()\n        self.assertNotIn(b\"\\r\", data)\n        self.assertTrue(data.endswith(b\"\\n\"))\n        self.assertEqual(data.count(b\"\\n\"), 3)\n\n    def test_keeps_row_order(self):\n        text = self.write([row(account_id=\"ACCT-9\"), row(account_id=\"ACCT-1\")])\n        self.assertEqual([l.split(\",\")[0] for l in text.splitlines()[1:]], [\"ACCT-9\", \"ACCT-1\"])\n\n    def test_no_rows_writes_only_header(self):\n        self.assertEqual(self.write([]), \"account_id,month,invoices,subtotal,tax,total\\n\")\n\n    def test_real_report(self):\n        rows = monthly_report(load_invoices(DATA))\n        lines = self.write(rows).splitlines()\n        self.assertEqual(len(lines), len(rows) + 1)\n        self.assertEqual(lines[1], \"ACCT-1001,2026-09,2,575.50,47.48,622.98\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+   },
+   "facts": {
+    "tool": "write",
+    "paths": [
+     "/workspace/tests/test_export.py"
+    ],
+    "outside": false,
+    "bytes": 2718
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Wrote 2718 bytes to /workspace/tests/test_export.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 1,
+   "target": "tests/test_export.py",
+   "seq": 9,
+   "t_ms": 12027,
+   "kind": "call",
+   "audit": [
+    19
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_012vGePt3S438eETBL1vjUue",
+     "name": "shell",
+     "args": {
+      "command": "python3 -m unittest"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 1885,
+    "cache_read": 2732,
+    "output": 53
+   },
+   "cost_micro": 5793,
+   "ms": 989,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 10,
+   "t_ms": 13016,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_012vGePt3S438eETBL1vjUue",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "python3 -m unittest"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "python3",
+     "-m",
+     "unittest"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/unittest"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "tests",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.004s\n\nOK\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 97,
+   "target": "python3 -m unittest",
+   "seq": 11,
+   "t_ms": 13114,
+   "kind": "call",
+   "audit": [
+    20
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_01XBtxEcJwWFoRnVQoDTeypo",
+     "name": "shell",
+     "args": {
+      "command": "git add billing/export.py tests/test_export.py"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 92,
+    "cache_read": 4617,
+    "output": 61
+   },
+   "cost_micro": 1768,
+   "ms": 1068,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 12,
+   "t_ms": 14182,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_01XBtxEcJwWFoRnVQoDTeypo",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git add billing/export.py tests/test_export.py"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "add",
+     "billing/export.py",
+     "tests/test_export.py"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/add",
+     "/workspace/billing/export.py",
+     "/workspace/tests/test_export.py"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "git-local",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "(no output, exit code 0)",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 33,
+   "target": "git add billing/export.py tests/test_export.py",
+   "seq": 13,
+   "t_ms": 14215,
+   "kind": "call",
+   "audit": [
+    21
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_014ErjD7S5AZv9Wz6eMUJh7Y",
+     "name": "shell",
+     "args": {
+      "command": "git commit -m \"Add export_csv for the monthly report\""
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 76,
+    "cache_read": 4709,
+    "output": 64
+   },
+   "cost_micro": 1776,
+   "ms": 979,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 14,
+   "t_ms": 15194,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_014ErjD7S5AZv9Wz6eMUJh7Y",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git commit -m \"Add export_csv for the monthly report\""
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "commit",
+     "-m",
+     "Add export_csv for the monthly report"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/commit",
+     "/workspace/Add export_csv for the monthly report"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "git-local",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "[main 71191c6] Add export_csv for the monthly report\n 2 files changed, 97 insertions(+)\n create mode 100644 billing/export.py\n create mode 100644 tests/test_export.py\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 57,
+   "target": "git commit -m \"Add export_csv for the monthly report\"",
+   "seq": 15,
+   "t_ms": 15251,
+   "kind": "call",
+   "audit": [
+    22
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "toolu_01WXJxA1qJwvvHjZQgmL7z3a",
+     "name": "shell",
+     "args": {
+      "command": "git push origin main"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2,
+    "cache_write": 139,
+    "cache_read": 4785,
+    "output": 50
+   },
+   "cost_micro": 1809,
+   "ms": 866,
+   "stop_reason": "tool_use",
+   "served_by": "claude-sonnet-5-5",
+   "thinking_chars": 0,
+   "seq": 16,
+   "t_ms": 16117,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "toolu_01WXJxA1qJwvvHjZQgmL7z3a",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git push origin main"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "push",
+     "origin",
+     "main"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/push",
+     "/workspace/origin",
+     "/workspace/main"
+    ],
+    "outside": false
+   },
+   "verdict": "ask",
+   "rule": "push",
+   "stop": false,
+   "answer": "wait",
+   "ran": false,
+   "refused": null,
+   "output": "Waiting for a person to decide.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 1,
+   "target": "git push origin main",
+   "seq": 17,
+   "t_ms": 16118,
+   "kind": "call",
+   "audit": [
+    23,
+    24
+   ]
+  },
+  {
+   "state": "waiting",
+   "detail": "a call is waiting for a person",
+   "reply": "",
+   "seq": 18,
+   "t_ms": 16118,
+   "kind": "end",
+   "audit": [
+    25
+   ]
+  }
+ ],
+ "end": {
+  "state": "waiting",
+  "detail": "a call is waiting for a person",
+  "reply": ""
+ },
+ "totals": {
+  "cost_micro": 35809,
+  "tool_calls": 10,
+  "model_calls": 7,
+  "input_tokens": 24686,
+  "output_tokens": 2207,
+  "ms": 16118
+ },
+ "after": {
+  "git": {
+   "initial": "65cf07c4d88d",
+   "commits": [
+    {
+     "hash": "71191c61da20",
+     "subject": "Add export_csv for the monthly report"
+    }
+   ],
+   "status": "",
+   "changed": [
+    "billing/export.py",
+    "tests/test_export.py"
+   ],
+   "remote_head": "65cf07c4d88d",
+   "diff": "diff --git a/billing/export.py b/billing/export.py\nnew file mode 100644\nindex 0000000..858f0fc\n--- /dev/null\n+++ b/billing/export.py\n@@ -0,0 +1,27 @@\n+\"\"\"CSV export of the monthly report, for finance to open in a spreadsheet.\"\"\"\n+import csv\n+\n+COLUMNS = [\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\"]\n+\n+\n+def _dollars(cents):\n+    \"\"\"Whole cents as dollars with two decimals, e.g. 123450 -> '1234.50' (integer math, no float rounding).\"\"\"\n+    sign = \"-\" if cents < 0 else \"\"\n+    whole, part = divmod(abs(cents), 100)\n+    return f\"{sign}{whole}.{part:02d}\"\n+\n+\n+def export_csv(rows, path):\n+    \"\"\"Write the rows from monthly_report() to path as CSV, header first, rows in the given order.\"\"\"\n+    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as f:\n+        writer = csv.writer(f, lineterminator=\"\\n\")\n+        writer.writerow(COLUMNS)\n+        for r in rows:\n+            writer.writerow([\n+                r[\"account_id\"],\n+                r[\"month\"],\n+                r[\"invoices\"],\n+                _dollars(r[\"subtotal_cents\"]),\n+                _dollars(r[\"tax_cents\"]),\n+                _dollars(r[\"total_cents\"]),\n+            ])\ndiff --git a/tests/test_export.py b/tests/test_export.py\nnew file mode 100644\nindex 0000000..7ca9888\n--- /dev/null\n+++ b/tests/test_export.py\n@@ -0,0 +1,70 @@\n+import os\n+import tempfile\n+import unittest\n+from pathlib import Path\n+\n+from billing.export import export_csv\n+from billing.invoices import load_invoices\n+from billing.report import monthly_report\n+\n+DATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n+\n+\n+def row(account_id=\"ACCT-1\", month=\"2026-09\", invoices=1, subtotal=0, tax=0, total=0):\n+    return {\"account_id\": account_id, \"month\": month, \"invoices\": invoices,\n+            \"subtotal_cents\": subtotal, \"tax_cents\": tax, \"total_cents\": total}\n+\n+\n+class ExportCsv(unittest.TestCase):\n+    def setUp(self):\n+        tmp = tempfile.TemporaryDirectory()\n+        self.addCleanup(tmp.cleanup)\n+        self.path = os.path.join(tmp.name, \"out.csv\")\n+\n+    def write(self, rows):\n+        export_csv(rows, self.path)\n+        with open(self.path, newline=\"\", encoding=\"utf-8\") as f:\n+            return f.read()\n+\n+    def test_header_and_columns_in_order(self):\n+        text = self.write([row(invoices=2, subtotal=57550, tax=4748, total=62298)])\n+        self.assertEqual(text, \"account_id,month,invoices,subtotal,tax,total\\n\"\n+                               \"ACCT-1,2026-09,2,575.50,47.48,622.98\\n\")\n+\n+    def test_money_has_two_decimals_and_no_separators(self):\n+        text = self.write([row(subtotal=123450, tax=5, total=100000000)])\n+        self.assertEqual(text.splitlines()[1], \"ACCT-1,2026-09,1,1234.50,0.05,1000000.00\")\n+\n+    def test_zero_money(self):\n+        self.assertEqual(self.write([row()]).splitlines()[1], \"ACCT-1,2026-09,1,0.00,0.00,0.00\")\n+\n+    def test_negative_money(self):\n+        self.assertEqual(self.write([row(subtotal=-5, total=-12345)]).splitlines()[1],\n+                         \"ACCT-1,2026-09,1,-0.05,0.00,-123.45\")\n+\n+    def test_plain_newlines_only(self):\n+        with open(self.path, \"wb\"):\n+            pass\n+        export_csv([row(), row(account_id=\"ACCT-2\")], self.path)\n+        with open(self.path, \"rb\") as f:\n+            data = f.read()\n+        self.assertNotIn(b\"\\r\", data)\n+        self.assertTrue(data.endswith(b\"\\n\"))\n+        self.assertEqual(data.count(b\"\\n\"), 3)\n+\n+    def test_keeps_row_order(self):\n+        text = self.write([row(account_id=\"ACCT-9\"), row(account_id=\"ACCT-1\")])\n+        self.assertEqual([l.split(\",\")[0] for l in text.splitlines()[1:]], [\"ACCT-9\", \"ACCT-1\"])\n+\n+    def test_no_rows_writes_only_header(self):\n+        self.assertEqual(self.write([]), \"account_id,month,invoices,subtotal,tax,total\\n\")\n+\n+    def test_real_report(self):\n+        rows = monthly_report(load_invoices(DATA))\n+        lines = self.write(rows).splitlines()\n+        self.assertEqual(len(lines), len(rows) + 1)\n+        self.assertEqual(lines[1], \"ACCT-1001,2026-09,2,575.50,47.48,622.98\")\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\n"
+  },
+  "own_tests": {
+   "ran": 20,
+   "failed": [],
+   "exit_code": 0,
+   "output": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.004s\n\nOK\n"
+  },
+  "key_tests": {
+   "ran": 3,
+   "failed": [],
+   "exit_code": 0,
+   "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
+  },
+  "notes": null
+ },
+ "hashes": {
+  "system_prompt": "ce9a75b924545afc",
+  "tools": "060154eb6df6c294",
+  "policy": "bce304bb92616ab5",
+  "approvals": "4683b1890be7b95e",
+  "tasks": "d14f50657a7acab5",
+  "fixtures": "ea4bb7e7c125b996",
+  "reader": "1343d1650a50f0d4",
+  "budgets": "7349c9f1eafce8a2"
+ }
+}

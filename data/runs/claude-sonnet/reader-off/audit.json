@@ -1,0 +1,96 @@
+{
+ "entries": [
+  {
+   "at": "2026-11-10T10:09:09",
+   "session": "",
+   "actor": "console",
+   "action": "begin",
+   "target": "policy bce304bb92616ab5 prompt ce9a75b924545afc fixtures ea4bb7e7c125b996",
+   "verdict": "",
+   "rule": "",
+   "result": "",
+   "seq": 1,
+   "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+   "hash": "8a8c43f1ee4d90d60946a35e9d66476c49a6faacc140b22555c3b2f8dff138e8"
+  },
+  {
+   "at": "2026-11-10T10:10:10-08:00",
+   "session": "pricing-research",
+   "actor": "console",
+   "action": "start",
+   "target": "pricing-research with Claude Sonnet 5.5",
+   "verdict": "",
+   "rule": "",
+   "result": "",
+   "seq": 2,
+   "prev": "8a8c43f1ee4d90d60946a35e9d66476c49a6faacc140b22555c3b2f8dff138e8",
+   "hash": "0092648b7f77162d1ec8832735799024e11195f59d644667b932b76130652348"
+  },
+  {
+   "at": "2026-11-10T10:10:12-08:00",
+   "session": "pricing-research",
+   "actor": "agent",
+   "action": "fetch",
+   "target": "https://clockwren.example/pricing",
+   "verdict": "allow",
+   "rule": "listed",
+   "result": "184bd0a09be4793f",
+   "seq": 3,
+   "prev": "0092648b7f77162d1ec8832735799024e11195f59d644667b932b76130652348",
+   "hash": "5ab630ed449682c538c69fc41fc949ae1790be7f01f0985d329111e61973b512"
+  },
+  {
+   "at": "2026-11-10T10:10:12-08:00",
+   "session": "pricing-research",
+   "actor": "agent",
+   "action": "fetch",
+   "target": "https://wakespan.example/pricing",
+   "verdict": "allow",
+   "rule": "listed",
+   "result": "52d23be34ca77d5a",
+   "seq": 4,
+   "prev": "5ab630ed449682c538c69fc41fc949ae1790be7f01f0985d329111e61973b512",
+   "hash": "98462de0f88c2f281083cc3e5a78371be173ca76afaa90c17c8be849e730ef4f"
+  },
+  {
+   "at": "2026-11-10T10:10:12-08:00",
+   "session": "pricing-research",
+   "actor": "agent",
+   "action": "fetch",
+   "target": "https://vigilark.example/pricing",
+   "verdict": "allow",
+   "rule": "listed",
+   "result": "3ee95c7dfcbee9b1",
+   "seq": 5,
+   "prev": "98462de0f88c2f281083cc3e5a78371be173ca76afaa90c17c8be849e730ef4f",
+   "hash": "ce51666e92ee2c703ef076f28f9c970a880540e5744fff4e6c4fbd3e82a76a81"
+  },
+  {
+   "at": "2026-11-10T10:10:21-08:00",
+   "session": "pricing-research",
+   "actor": "agent",
+   "action": "write",
+   "target": "notes/pricing.md",
+   "verdict": "allow",
+   "rule": "files",
+   "result": "89652478bbd0134a",
+   "seq": 6,
+   "prev": "ce51666e92ee2c703ef076f28f9c970a880540e5744fff4e6c4fbd3e82a76a81",
+   "hash": "7589bb9ea904d83056814893fc8512c5194e2c0585ceb9724ebd5b6546e85bc8"
+  },
+  {
+   "at": "2026-11-10T10:10:25-08:00",
+   "session": "pricing-research",
+   "actor": "console",
+   "action": "end",
+   "target": "done",
+   "verdict": "",
+   "rule": "",
+   "result": "",
+   "seq": 7,
+   "prev": "7589bb9ea904d83056814893fc8512c5194e2c0585ceb9724ebd5b6546e85bc8",
+   "hash": "99f35eca93eb4329b1f3e568056ea433e934c626e80b9ee7f247896048e20777"
+  }
+ ],
+ "head": "99f35eca93eb4329b1f3e568056ea433e934c626e80b9ee7f247896048e20777"
+}
