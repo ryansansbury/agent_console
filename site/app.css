@@ -603,3 +603,55 @@ table.map td:nth-child(2) { width: 22%; }
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
   .threads path { stroke-dashoffset: 0; }
 }
+
+/* ------------------------------------------------------------------ dark mode (11/20)
+   Light stays the default. The switch in the top bar puts the class "dark" on the body. The night console already sits
+   on dark, so the day surfaces move toward it, and every text color keeps 4.5 to 1 on the surface it sits on
+   (tests/test_palette.py reads these values). */
+body.dark {
+  --bg: #0b0f15; --ink: #e8edf3; --ink2: #c3ccd6; --muted: #98a3b1; --line: #1f2834; --line2: #19212c; --soft: #111722;
+  --card: #111722; --raise: #1b2430;
+  --cyan: #38bdf8; --cyan2: #22d3ee; --cyan-bg: #0d2830; --cyan-ink: #7dd3fc;
+  --allow: #8592a3; --done: #34d399; --done-bg: #0f2825;
+  --ask: #fbbf24; --ask2: #f59e0b; --ask-bg: #2b2316; --deny: #f87171; --deny2: #ef4444; --deny-bg: #2b1c21;
+  --budget-ink: #a5b4fc; --budget-bg: #1e2432;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 0 0 1px rgba(255, 255, 255, .02);
+  color-scheme: dark;
+}
+body.dark .top { background: rgba(11, 15, 21, .88); }
+body.dark .card, body.dark .stepb, body.dark .page, body.dark .slist button, body.dark .tri, body.dark .chips button,
+body.dark .ledger th, body.dark table.grid, body.dark .cfeat, body.dark .codebox, body.dark #tour-box, body.dark .foot,
+body.dark #v-how .how, body.dark .btn.ghost, body.dark .picker select, body.dark .pause .answers .btn,
+body.dark .rulepos i { background: var(--card); }
+body.dark .p-allow, body.dark .c-allow, body.dark .tri button[aria-pressed="true"].a, body.dark .meter { background: var(--raise); }
+body.dark .p-allow, body.dark .c-allow { color: var(--ink2); }
+body.dark .inj { color: #fca5a5; }
+body.dark .cut { background: var(--cyan-bg); }
+body.dark .why li:not(:last-child)::before { background: #1f3a44; }
+body.dark .why .n.ok { border-color: #1f5c45; }
+body.dark .why .n.bad { border-color: #6b2b2b; }
+body.dark .rule:hover, body.dark .ledger tbody tr:hover td { background: #151c27; }
+body.dark .rule.changed, body.dark .calls tr.chg td { background: var(--cyan-bg); }
+body.dark .ledger tr.changed td { background: #2b2316; }
+body.dark .rulepos i.past, body.dark .strip i { background: #2a3646; border-color: #2a3646; }
+body.dark .slist button:hover { border-color: #2a3646; }
+body.dark .screens { background: rgba(11, 15, 21, .94); }
+body.dark .btn:not(.ghost) { background: #e8edf3; color: #0b0f15; }
+body.dark .btn:not(.ghost):hover { background: #cfd8e3; }
+body.dark .chips button.on { background: #e8edf3; color: #0b0f15; }
+
+/* The switch beside Take the tour. */
+.theme { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: none;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--card, #fff); color: var(--ink2); }
+.theme:hover { border-color: var(--muted); color: var(--ink); }
+body.dark .theme .sun { display: inline; } body.dark .theme .moon, .theme .sun { display: none; }
+
+/* How it would deploy: the three places, then the standards. */
+.how .places { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 12px 0 6px; max-width: 860px; }
+.how .place { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--soft); }
+.how .place h3 { font-size: 14.5px; font-weight: 650; }
+.how .place p { font-size: 13.5px; margin: 6px 0 8px; }
+.how .place ul { margin: 0 0 0 16px; font-size: 13px; }
+.how .std { margin-top: 6px; }
+.how .std b { color: var(--ink); font-weight: 650; }
+.how h3.sub { font-size: 14.5px; font-weight: 650; margin: 18px 0 4px; }

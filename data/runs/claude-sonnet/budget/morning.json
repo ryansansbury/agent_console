@@ -5,19 +5,19 @@
   "parser-lib"
  ],
  "reader": "on",
- "started": "2026-11-10T10:12:50",
+ "started": "2026-11-20T11:30:28",
  "seconds": 9,
- "policy_hash": "bce304bb92616ab5",
+ "policy_hash": "938ec944f6fd7fd3",
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  },
- "head": "dfc491d57c2cdd5e0d46722c96dfeca7c630c8f4c54b52ae60397dead1afde3e",
- "cost_micro": 20947
+ "head": "4c7b6cbfb9b6dea0e870c6812294c9b2c20c527ec09ca7e51c6f1e319864a132",
+ "cost_micro": 20663
 }

@@ -40,6 +40,10 @@ Model
 
 Replay the morning
 
+## page.dark
+
+Dark mode
+
 ## page.tour
 
 Take the tour
@@ -199,6 +203,44 @@ The recorded sessions
 - state = Ended
 - calls = Tool calls
 - cost = Cost
+
+## how.deploy_head
+
+How it would deploy
+
+## how.deploy_lead
+
+The demo runs the policy in its own loop on one machine. A company puts the same checks where its agents already run. The three places below each catch a different mistake and a careful setup uses more than one of them.
+
+## how.deploy_places
+
+- In front of the tools = A gateway sits between the agents and the tools they call. Every call passes one policy whichever agent made it. | Amazon Bedrock AgentCore Gateway checks Cedar policies on every tool call | Cloudflare's MCP server portals allow listed tools per portal | Docker's MCP Gateway runs each server in its own container
+- Inside the agent = A hook in the agent framework sees each call before it runs and answers allow, ask, or deny. | The Claude Agent SDK's PreToolUse hook | Guardrails with approvals in the OpenAI Agents SDK | The before_tool_callback in Google's Agent Development Kit
+- Around the agent = The sandbox the agent works in keeps files and the network closed unless the policy opens them. | Claude Code's sandbox with its network allow list | Codex's sandbox modes with an approval policy | A throwaway workspace for each job as this demo uses
+
+## how.deploy_cols
+
+- what = What
+- demo = In the demo
+- real = In a real deployment
+
+## how.deploy_rows
+
+- The policy = One file of rules the console checks | A gateway rule set or a framework hook with the same rules for every agent
+- Asking a person = Approve or deny in the page | Slack or Teams with the same two buttons and each answer logged
+- The reader = Cuts sentences addressed to a model | A filter on fetched pages before the model reads them
+- Budgets = A dollar cap per session | Spend limits for each agent and each team at the gateway
+- The audit log = A hash chain in the page | OpenTelemetry spans for each tool call or security events in the SIEM
+
+## how.deploy_std_head
+
+What it answers to
+
+## how.deploy_std
+
+- OWASP Top 10 for LLM Applications = Prompt injection and excessive agency
+- OWASP Top 10 for Agentic Applications = Agent goal hijack (ASI01) with tool misuse (ASI02)
+- The Model Context Protocol (2026-07-28) = A person who can deny any tool call
 
 ## how.client_head
 

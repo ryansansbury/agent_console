@@ -3,8 +3,8 @@
   "vendors": [
     {
       "id": "v1",
-      "name": "Clockwren",
-      "domain": "clockwren.example"
+      "name": "Rotamere",
+      "domain": "rotamere.example"
     },
     {
       "id": "v2",

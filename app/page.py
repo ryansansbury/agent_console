@@ -15,6 +15,10 @@ MARK = ('<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><def
         'stroke-linecap="round"/></svg>')
 PLAY = ("<svg class='i solid' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M8 5.2v13.6a1 1 0 0 0 1.5.9l10.6-6.8a1 1 0 0 0 "
         "0-1.7L9.5 4.3A1 1 0 0 0 8 5.2z'/></svg>")
+THEME = ("<svg class='i moon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 "
+         "8.5 0 1 0 10.5 10.5z'/></svg><svg class='i sun' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><circle "
+         "cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4"
+         "M17.7 6.3l1.4-1.4'/></svg>")
 TOUR = ("<svg class='i' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><circle cx='12' cy='12' r='9'/>"
         "<path d='M15.5 8.5l-2 5-5 2 2-5z'/></svg>")
 VIEWS = ("trace", "session", "policies", "audit", "how")
@@ -22,7 +26,7 @@ REPO = "https://github.com/ryansansbury/agent_console"
 HOME = "https://www.ryansansbury.com/"
 LIVE = HOME + "agent-console/"
 # The share card is the top 838 rows of the 1600 by 1000 card shot, the ratio link previews use, and ?v=1 changes with it.
-SHARE = HOME + "images/share/agent-console.png?v=1"
+SHARE = HOME + "images/share/agent-console.png?v=2"
 
 
 
@@ -129,6 +133,25 @@ def how_code(w):
             f"<div class='code-main'><p id='code-path' class='mono'></p><pre id='code-body' tabindex='0'></pre></div></div>")
 
 
+def how_deploy(w):
+    """Where the same checks sit in a real deployment: three places, what each part of the demo becomes, and the
+    standards it answers to."""
+    places = ""
+    for title, rest in w.table("how.deploy_places").items():
+        about, *examples = rest.split(" | ")
+        items = "".join(f"<li>{esc(x.strip())}</li>" for x in examples if x.strip())
+        places += f"<div class='place'><h3>{esc(title)}</h3><p>{esc(about)}</p><ul>{items}</ul></div>"
+    cols = w.table("how.deploy_cols")
+    rows = []
+    for part, rest in w.table("how.deploy_rows").items():
+        demo, _, real = rest.partition(" | ")
+        rows.append([esc(part), esc(demo), esc(real)])
+    std = "".join(f"<li><b>{esc(name)}.</b> {esc(what)}.</li>" for name, what in w.table("how.deploy_std").items())
+    return (f"{paragraphs(w, 'how.deploy_lead')}<div class='places'>{places}</div>"
+            f"{table([cols['what'], cols['demo'], cols['real']], rows)}"
+            f"<h3 class='sub'>{esc(w['how.deploy_std_head'])}</h3><ul class='std'>{std}</ul>")
+
+
 def how(w, data):
     return (f"<article class='how'><h1>{esc(w['how.title'])}</h1>{paragraphs(w, 'how.lead')}"
             f"<h2>{esc(w['how.map_head'])}</h2>{how_map(w)}"
@@ -138,6 +161,7 @@ def how(w, data):
             f"<h2>{esc(w['how.compare_head'])}</h2>{paragraphs(w, 'how.compare_lead')}{how_compare(w, data)}"
             f"<h2>{esc(w['how.budget_head'])}</h2>{how_budget(w, data)}"
             f"<h2>{esc(w['how.runs_head'])}</h2>{how_runs(w, data)}"
+            f"<h2>{esc(w['how.deploy_head'])}</h2>{how_deploy(w)}"
             f"<h2>{esc(w['how.client_head'])}</h2>{bullets(w, 'how.client', 'ol')}"
             f"<h2>{esc(w['how.limits_head'])}</h2>{bullets(w, 'how.limits')}"
             f"{how_code(w)}</article>")
@@ -166,7 +190,9 @@ def render(w, data):
         f"<div class='grow'></div><label class='picker'><span>{esc(w['page.model'])}</span>"
         "<select id='model'></select></label>"
         f"<button type='button' id='replay' class='btn'>{PLAY}{esc(w['page.replay'])}</button>"
-        f"<button type='button' id='tour-start' class='btn ghost'>{TOUR}{esc(w['page.tour'])}</button></header>{preview}"
+        f"<button type='button' id='tour-start' class='btn ghost'>{TOUR}{esc(w['page.tour'])}</button>"
+        f"<button type='button' id='theme' class='theme' aria-pressed='false' aria-label='{esc(w['page.dark'])}' "
+        f"title='{esc(w['page.dark'])}'>{THEME}</button></header>{preview}"
         f"<main id='main'>{sections}</main>"
         f"<nav class='screens' aria-label='screens'>{phone_tabs}</nav>"
         f"<footer class='foot'><p>{esc(w['page.footer'])}</p>"

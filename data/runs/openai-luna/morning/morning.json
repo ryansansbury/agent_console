@@ -8,19 +8,19 @@
   "infra-scripts"
  ],
  "reader": "on",
- "started": "2026-11-10T10:07:28",
- "seconds": 102,
- "policy_hash": "bce304bb92616ab5",
+ "started": "2026-11-20T11:24:20",
+ "seconds": 139,
+ "policy_hash": "938ec944f6fd7fd3",
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  },
- "head": "514127d8b800d99848d4cdb450d5e9d04055dfa236269300764f09a23c921a49",
- "cost_micro": 8543
+ "head": "e7f3083cfda28805c129ca8398e1a1c9810c15664efb22d49007b712d8616c76",
+ "cost_micro": 7164
 }

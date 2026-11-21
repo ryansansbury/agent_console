@@ -7,7 +7,17 @@ import unittest
 from pathlib import Path
 
 CSS = Path(__file__).resolve().parent.parent.joinpath("site", "app.css").read_text(encoding="utf-8")
-VARS = dict(re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]{6})", CSS))
+
+def block(selector):
+    """The custom properties a rule sets, as {name: hex}."""
+    start = CSS.index(selector + " {")
+    body = CSS[start:CSS.index("}", start)]
+    return dict(re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]{6})", body))
+
+
+VARS = block(":root")
+# Dark mode (11/20): the dark rule's values over the light ones, for the day surfaces that turn dark.
+DARK = dict(VARS, **block("body.dark"))
 WHITE = "#ffffff"
 
 
@@ -66,3 +76,37 @@ class Palette(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DarkPalette(unittest.TestCase):
+    """In dark mode every day text color reads at 4.5 to 1 on the dark surface that replaces its light one, and every
+    mark stands out at 3 to 1. The night console doesn't change, so its pairs above hold in both."""
+    PAIRS = [("--ink", "--card"), ("--ink2", "--card"), ("--muted", "--card"), ("--muted", "--soft"), ("--muted", "--bg"),
+             ("--ink", "--bg"), ("--cyan", "--card"), ("--done", "--done-bg"), ("--ask", "--ask-bg"), ("--deny", "--deny-bg"),
+             ("--cyan-ink", "--cyan-bg"), ("--budget-ink", "--budget-bg"), ("--ask", "--card"), ("--deny", "--card"),
+             ("--cyan-ink", "--card"), ("--ink2", "--raise"), ("#fca5a5", "--deny-bg"), ("#0b0f15", "#e8edf3")]
+
+    def ratio(self, a, b):
+        def lum(c):
+            c = DARK[c[2:]] if c.startswith("--") else c
+            rgb = [int(c[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+            lin = [v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4 for v in rgb]
+            return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
+        hi, lo = sorted((lum(a), lum(b)), reverse=True)
+        return (hi + 0.05) / (lo + 0.05)
+
+    def test_every_dark_text_pair_reads(self):
+        low = [(a, b, round(self.ratio(a, b), 2)) for a, b in self.PAIRS if self.ratio(a, b) < 4.5]
+        self.assertEqual(low, [])
+
+    def test_every_dark_mark_stands_out(self):
+        low = [(m, round(self.ratio(m, "--card"), 2)) for m in ("--allow", "--ask2", "--deny2", "--cyan2", "--done", "--ink2")
+               if self.ratio(m, "--card") < 3]
+        self.assertEqual(low, [])
+
+    def test_the_switch_is_in_the_page_and_light_is_the_default(self):
+        page = Path(__file__).resolve().parent.parent.joinpath("site", "index.html").read_text(encoding="utf-8")
+        self.assertIn("id='theme'", page)
+        self.assertIn("aria-pressed='false'", page.split("id='theme'", 1)[1][:200])
+        self.assertNotIn("class='dark", page)
+

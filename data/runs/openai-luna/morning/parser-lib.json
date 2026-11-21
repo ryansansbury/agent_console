@@ -8,7 +8,7 @@
   "vendor": "OpenAI",
   "model": "gpt-6-luna"
  },
- "recorded": "2026-11-10T10:07:28-08:00",
+ "recorded": "2026-11-20T11:24:21-08:00",
  "offset_ms": 0,
  "settings": {
   "reader": "on",
@@ -33,24 +33,31 @@
    "text": "",
    "calls": [
     {
-     "id": "call_MNSomIZi0YHCgMHk3thA9FXT",
-     "name": "shell",
-     "args": {
-      "command": "ls"
-     }
-    },
-    {
-     "id": "call_RbmaliV3Id5EPe4AXx68meDn",
+     "id": "call_vzVBXzxRefbcGNUceHLUT6D0",
      "name": "read_file",
      "args": {
       "path": "README.md"
      }
     },
     {
-     "id": "call_aGHPthsyHDHtLOoXo6JUIQqf",
+     "id": "call_7rBb3Ajc7pjg71x8FM3apJ0j",
      "name": "read_file",
      "args": {
       "path": "tests/test_parse.py"
+     }
+    },
+    {
+     "id": "call_ZTvf6Xj9nHaVZ39KeqSIGaMx",
+     "name": "shell",
+     "args": {
+      "command": "git status --short"
+     }
+    },
+    {
+     "id": "call_X8khd3zI7kmw25z2EQ7Avhf1",
+     "name": "shell",
+     "args": {
+      "command": "find . -maxdepth 3 -type f"
      }
     }
    ],
@@ -58,55 +65,20 @@
     "input": 660,
     "cache_write": 0,
     "cache_read": 0,
-    "output": 64
+    "output": 89
    },
-   "cost_micro": 98,
-   "ms": 1824,
+   "cost_micro": 111,
+   "ms": 2741,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 1,
-   "t_ms": 1824,
+   "t_ms": 2742,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_MNSomIZi0YHCgMHk3thA9FXT",
-   "name": "shell",
-   "tool": "shell",
-   "args": {
-    "command": "ls"
-   },
-   "facts": {
-    "tool": "shell",
-    "argv": [
-     "ls"
-    ],
-    "operators": false,
-    "paths": [],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "look",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "dateparse\nREADME.md\ntests\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": 0,
-   "ms": 13,
-   "target": "ls",
-   "seq": 2,
-   "t_ms": 1837,
-   "kind": "call",
-   "audit": [
-    3
-   ]
-  },
-  {
-   "call_id": "call_RbmaliV3Id5EPe4AXx68meDn",
+   "call_id": "call_vzVBXzxRefbcGNUceHLUT6D0",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -131,15 +103,15 @@
    "exit_code": null,
    "ms": 1,
    "target": "README.md",
-   "seq": 3,
-   "t_ms": 1838,
+   "seq": 2,
+   "t_ms": 2743,
    "kind": "call",
    "audit": [
-    4
+    3
    ]
   },
   {
-   "call_id": "call_aGHPthsyHDHtLOoXo6JUIQqf",
+   "call_id": "call_7rBb3Ajc7pjg71x8FM3apJ0j",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -164,63 +136,74 @@
    "exit_code": null,
    "ms": 1,
    "target": "tests/test_parse.py",
+   "seq": 3,
+   "t_ms": 2745,
+   "kind": "call",
+   "audit": [
+    4
+   ]
+  },
+  {
+   "call_id": "call_ZTvf6Xj9nHaVZ39KeqSIGaMx",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git status --short"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "status",
+     "--short"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/status"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "git-local",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "(no output, exit code 0)",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 36,
+   "target": "git status --short",
    "seq": 4,
-   "t_ms": 1840,
+   "t_ms": 2781,
    "kind": "call",
    "audit": [
     5
    ]
   },
   {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_0sMOKlmNH4YKMoYv9w69SPMg",
-     "name": "shell",
-     "args": {
-      "command": "ls dateparse"
-     }
-    },
-    {
-     "id": "call_wQg66Xr5ovonxjHuufbnpWm6",
-     "name": "shell",
-     "args": {
-      "command": "python3 -m unittest"
-     }
-    }
-   ],
-   "usage": {
-    "input": 2135,
-    "cache_write": 0,
-    "cache_read": 0,
-    "output": 51
-   },
-   "cost_micro": 239,
-   "ms": 1579,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 5,
-   "t_ms": 3419,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "call_0sMOKlmNH4YKMoYv9w69SPMg",
+   "call_id": "call_X8khd3zI7kmw25z2EQ7Avhf1",
    "name": "shell",
    "tool": "shell",
    "args": {
-    "command": "ls dateparse"
+    "command": "find . -maxdepth 3 -type f"
    },
    "facts": {
     "tool": "shell",
     "argv": [
-     "ls",
-     "dateparse"
+     "find",
+     ".",
+     "-maxdepth",
+     "3",
+     "-type",
+     "f"
     ],
     "operators": false,
     "paths": [
-     "/workspace/dateparse"
+     "/workspace",
+     "/workspace/3",
+     "/workspace/f"
     ],
     "outside": false
    },
@@ -230,21 +213,108 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "__init__.py\nparse.py\n",
+   "output": "./tests/test_parse.py\n./tests/__init__.py\n./README.md\n./dateparse/__init__.py\n./dateparse/parse.py\n./.git/config\n./.git/HEAD\n./.git/info/exclude\n./.git/logs/HEAD\n./.git/description\n./.git/hooks/commit-msg.sample\n./.git/hooks/pre-rebase.sample\n./.git/hooks/sendemail-validate.sample\n./.git/hooks/pre-commit.sample\n./.git/hooks/applypatch-msg.sample\n./.git/hooks/fsmonitor-watchman.sample\n./.git/hooks/pre-receive.sample\n./.git/hooks/prepare-commit-msg.sample\n./.git/hooks/post-update.sample\n./.git/hooks/pre-merge-commit.sample\n./.git/hooks/pre-applypatch.sample\n./.git/hooks/pre-push.sample\n./.git/hooks/update.sample\n./.git/hooks/push-to-checkout.sample\n./.git/index\n./.git/COMMIT_EDITMSG\n",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 12,
-   "target": "ls dateparse",
-   "seq": 6,
-   "t_ms": 3431,
+   "ms": 7,
+   "target": "find . -maxdepth 3 -type f",
+   "seq": 5,
+   "t_ms": 2789,
    "kind": "call",
    "audit": [
     6
    ]
   },
   {
-   "call_id": "call_wQg66Xr5ovonxjHuufbnpWm6",
+   "text": "",
+   "calls": [
+    {
+     "id": "call_bHlWrag56H6tlYVjT1QcMVoT",
+     "name": "read_file",
+     "args": {
+      "path": "dateparse/parse.py"
+     }
+    }
+   ],
+   "usage": {
+    "input": 2372,
+    "cache_write": 0,
+    "cache_read": 0,
+    "output": 21
+   },
+   "cost_micro": 248,
+   "ms": 1699,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
+   "seq": 6,
+   "t_ms": 4488,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "call_bHlWrag56H6tlYVjT1QcMVoT",
+   "name": "read_file",
+   "tool": "read",
+   "args": {
+    "path": "dateparse/parse.py"
+   },
+   "facts": {
+    "tool": "read",
+    "paths": [
+     "/workspace/dateparse/parse.py"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "\"\"\"Parse the dates people type into forms.\n\nparse_date(\"2026-11-09\") and parse_date(\"Nov 9, 2026\") both return date(2026, 11, 9). Relative words like \"today\" and\n\"tomorrow\" count from the date passed as today, or from the real date when none is passed. README.md lists every\nformat it accepts.\n\"\"\"\nimport re\nfrom datetime import date, timedelta\n\nMONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n    \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}\nWEEKDAYS = {\"mon\", \"monday\", \"tue\", \"tues\", \"tuesday\", \"wed\", \"wednesday\", \"thu\", \"thur\", \"thurs\", \"thursday\",\n            \"fri\", \"friday\", \"sat\", \"saturday\", \"sun\", \"sunday\"}\nRELATIVE = {\"today\": 0, \"tomorrow\": 1, \"yesterday\": -1}\n\nISO = re.compile(r\"^(\\d{4})-(\\d{1,2})-(\\d{1,2})$\")\nNUMERIC = re.compile(r\"^(\\d{1,2})/(\\d{1,2})/(\\d{2}|\\d{4})$\")\n\n\ndef parse_date(text, today=None):\n    \"\"\"The date in text, or ValueError if it isn't one this parser knows.\"\"\"\n    if not isinstance(text, str) or not text.strip():\n        raise ValueError(\"no date given\")\n    s = \" \".join(text.strip().lower().replace(\",\", \" \").split())\n    if s in RELATIVE:\n        return (today or date.today()) + timedelta(days=RELATIVE[s])\n    m = ISO.match(s)\n    if m:\n        return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n    m = NUMERIC.match(s)\n    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)\n\n\ndef _year(word, text):\n    if not (word.isdigit() and len(word) == 4):\n        raise ValueError(f\"not a four-digit year in {text!r}\")\n    return int(word)\n\n\ndef _make(year, month, day, text):\n    try:\n        return date(year, month, day)\n    except ValueError:\n        raise ValueError(f\"no such date: {text!r}\") from None\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "dateparse/parse.py",
+   "seq": 7,
+   "t_ms": 4489,
+   "kind": "call",
+   "audit": [
+    7
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "call_UOsKIbgkWhpzTWwJZwpR4GEh",
+     "name": "shell",
+     "args": {
+      "command": "python3 -m unittest"
+     }
+    }
+   ],
+   "usage": {
+    "input": 862,
+    "cache_write": 0,
+    "cache_read": 2369,
+    "output": 20
+   },
+   "cost_micro": 120,
+   "ms": 1000,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
+   "seq": 8,
+   "t_ms": 5489,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "call_UOsKIbgkWhpzTWwJZwpR4GEh",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -273,152 +343,52 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 1,
-   "ms": 72,
+   "ms": 78,
    "target": "python3 -m unittest",
-   "seq": 7,
-   "t_ms": 3503,
-   "kind": "call",
-   "audit": [
-    7
-   ]
-  },
-  {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_KpDt6gA0dhTOSb3LCtrNNKHe",
-     "name": "read_file",
-     "args": {
-      "path": "dateparse/parse.py"
-     }
-    },
-    {
-     "id": "call_tOOEifLIzBSdB8TgtPkAbGUp",
-     "name": "read_file",
-     "args": {
-      "path": "dateparse/__init__.py"
-     }
-    }
-   ],
-   "usage": {
-    "input": 613,
-    "cache_write": 0,
-    "cache_read": 2132,
-    "output": 56
-   },
-   "cost_micro": 303,
-   "ms": 1930,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 8,
-   "t_ms": 5433,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "call_KpDt6gA0dhTOSb3LCtrNNKHe",
-   "name": "read_file",
-   "tool": "read",
-   "args": {
-    "path": "dateparse/parse.py"
-   },
-   "facts": {
-    "tool": "read",
-    "paths": [
-     "/workspace/dateparse/parse.py"
-    ],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "files",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "\"\"\"Parse the dates people type into forms.\n\nparse_date(\"2026-11-09\") and parse_date(\"Nov 9, 2026\") both return date(2026, 11, 9). Relative words like \"today\" and\n\"tomorrow\" count from the date passed as today, or from the real date when none is passed. README.md lists every\nformat it accepts.\n\"\"\"\nimport re\nfrom datetime import date, timedelta\n\nMONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n    \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}\nWEEKDAYS = {\"mon\", \"monday\", \"tue\", \"tues\", \"tuesday\", \"wed\", \"wednesday\", \"thu\", \"thur\", \"thurs\", \"thursday\",\n            \"fri\", \"friday\", \"sat\", \"saturday\", \"sun\", \"sunday\"}\nRELATIVE = {\"today\": 0, \"tomorrow\": 1, \"yesterday\": -1}\n\nISO = re.compile(r\"^(\\d{4})-(\\d{1,2})-(\\d{1,2})$\")\nNUMERIC = re.compile(r\"^(\\d{1,2})/(\\d{1,2})/(\\d{2}|\\d{4})$\")\n\n\ndef parse_date(text, today=None):\n    \"\"\"The date in text, or ValueError if it isn't one this parser knows.\"\"\"\n    if not isinstance(text, str) or not text.strip():\n        raise ValueError(\"no date given\")\n    s = \" \".join(text.strip().lower().replace(\",\", \" \").split())\n    if s in RELATIVE:\n        return (today or date.today()) + timedelta(days=RELATIVE[s])\n    m = ISO.match(s)\n    if m:\n        return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n    m = NUMERIC.match(s)\n    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)\n\n\ndef _year(word, text):\n    if not (word.isdigit() and len(word) == 4):\n        raise ValueError(f\"not a four-digit year in {text!r}\")\n    return int(word)\n\n\ndef _make(year, month, day, text):\n    try:\n        return date(year, month, day)\n    except ValueError:\n        raise ValueError(f\"no such date: {text!r}\") from None\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": null,
-   "ms": 1,
-   "target": "dateparse/parse.py",
    "seq": 9,
-   "t_ms": 5435,
+   "t_ms": 5567,
    "kind": "call",
    "audit": [
     8
    ]
   },
   {
-   "call_id": "call_tOOEifLIzBSdB8TgtPkAbGUp",
-   "name": "read_file",
-   "tool": "read",
-   "args": {
-    "path": "dateparse/__init__.py"
+   "text": "",
+   "calls": [
+    {
+     "id": "call_RU7nnk2r78eQsnQKqxSlZjcX",
+     "name": "edit_file",
+     "args": {
+      "path": "dateparse/parse.py",
+      "old": "MONTHS = {\n",
+      "new": "MONTHS = {\n    \"sept\": 9,\n"
+     }
+    }
+   ],
+   "usage": {
+    "input": 518,
+    "cache_write": 0,
+    "cache_read": 3228,
+    "output": 45
    },
-   "facts": {
-    "tool": "read",
-    "paths": [
-     "/workspace/dateparse/__init__.py"
-    ],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "files",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "from dateparse.parse import parse_date\n\n__all__ = [\"parse_date\"]\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": null,
-   "ms": 0,
-   "target": "dateparse/__init__.py",
+   "cost_micro": 107,
+   "ms": 2439,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
    "seq": 10,
-   "t_ms": 5435,
-   "kind": "call",
-   "audit": [
-    9
-   ]
-  },
-  {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_7R9HCItCYOnqA6jVjIYmKcwv",
-     "name": "edit_file",
-     "args": {
-      "path": "dateparse/parse.py",
-      "old": "MONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n    \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}",
-      "new": "MONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"sept\": 9,\n    \"september\": 9, \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}"
-     }
-    }
-   ],
-   "usage": {
-    "input": 1017,
-    "cache_write": 0,
-    "cache_read": 2742,
-    "output": 353
-   },
-   "cost_micro": 553,
-   "ms": 4425,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 11,
-   "t_ms": 9861,
+   "t_ms": 8006,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_7R9HCItCYOnqA6jVjIYmKcwv",
+   "call_id": "call_RU7nnk2r78eQsnQKqxSlZjcX",
    "name": "edit_file",
    "tool": "edit",
    "args": {
     "path": "dateparse/parse.py",
-    "old": "MONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n    \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}",
-    "new": "MONTHS = {\n    \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"sept\": 9,\n    \"september\": 9, \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n}"
+    "old": "MONTHS = {\n",
+    "new": "MONTHS = {\n    \"sept\": 9,\n"
    },
    "facts": {
     "tool": "edit",
@@ -426,72 +396,7 @@
      "/workspace/dateparse/parse.py"
     ],
     "outside": false,
-    "bytes": 309
-   },
-   "verdict": "allow",
-   "rule": "files",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "Edited /workspace/dateparse/parse.py.",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": null,
-   "ms": 1,
-   "target": "dateparse/parse.py",
-   "seq": 12,
-   "t_ms": 9862,
-   "kind": "call",
-   "audit": [
-    10
-   ]
-  },
-  {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_oxSDLobB4WmRj9nOMvSpzV9o",
-     "name": "edit_file",
-     "args": {
-      "path": "dateparse/parse.py",
-      "old": "    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()",
-      "new": "    if m:\n        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    s = re.sub(r\"(?<=\\d)(st|nd|rd|th)\\b\", \"\", s)\n    s = s.replace(\"sept.\", \"sept\")\n    words = s.split()"
-     }
-    }
-   ],
-   "usage": {
-    "input": 376,
-    "cache_write": 0,
-    "cache_read": 3756,
-    "output": 177
-   },
-   "cost_micro": 502,
-   "ms": 2840,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 13,
-   "t_ms": 12703,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "call_oxSDLobB4WmRj9nOMvSpzV9o",
-   "name": "edit_file",
-   "tool": "edit",
-   "args": {
-    "path": "dateparse/parse.py",
-    "old": "    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()",
-    "new": "    if m:\n        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    s = re.sub(r\"(?<=\\d)(st|nd|rd|th)\\b\", \"\", s)\n    s = s.replace(\"sept.\", \"sept\")\n    words = s.split()"
-   },
-   "facts": {
-    "tool": "edit",
-    "paths": [
-     "/workspace/dateparse/parse.py"
-    ],
-    "outside": false,
-    "bytes": 295
+    "bytes": 26
    },
    "verdict": "allow",
    "rule": "files",
@@ -505,8 +410,138 @@
    "exit_code": null,
    "ms": 2,
    "target": "dateparse/parse.py",
+   "seq": 11,
+   "t_ms": 8008,
+   "kind": "call",
+   "audit": [
+    9
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "call_XcXy87NGv39gC7yiLupDzmPr",
+     "name": "edit_file",
+     "args": {
+      "path": "dateparse/parse.py",
+      "old": "    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n",
+      "new": "    if len(words) == 3:\n        if words[0].rstrip(\".\") in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0].rstrip(\".\")], _day(words[1], text), text)\n        if words[1].rstrip(\".\") in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1].rstrip(\".\")], _day(words[0], text), text)\n"
+     }
+    }
+   ],
+   "usage": {
+    "input": 68,
+    "cache_write": 0,
+    "cache_read": 3743,
+    "output": 229
+   },
+   "cost_micro": 159,
+   "ms": 2290,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
+   "seq": 12,
+   "t_ms": 10298,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "call_XcXy87NGv39gC7yiLupDzmPr",
+   "name": "edit_file",
+   "tool": "edit",
+   "args": {
+    "path": "dateparse/parse.py",
+    "old": "    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n",
+    "new": "    if len(words) == 3:\n        if words[0].rstrip(\".\") in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0].rstrip(\".\")], _day(words[1], text), text)\n        if words[1].rstrip(\".\") in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1].rstrip(\".\")], _day(words[0], text), text)\n"
+   },
+   "facts": {
+    "tool": "edit",
+    "paths": [
+     "/workspace/dateparse/parse.py"
+    ],
+    "outside": false,
+    "bytes": 322
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Edited /workspace/dateparse/parse.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "dateparse/parse.py",
+   "seq": 13,
+   "t_ms": 10298,
+   "kind": "call",
+   "audit": [
+    10
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "call_vaSLZeMXggKmU4wkbFYxTj69",
+     "name": "edit_file",
+     "args": {
+      "path": "dateparse/parse.py",
+      "old": "    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n",
+      "new": "    if m:\n        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n"
+     }
+    }
+   ],
+   "usage": {
+    "input": 252,
+    "cache_write": 0,
+    "cache_read": 3808,
+    "output": 123
+   },
+   "cost_micro": 125,
+   "ms": 1787,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
    "seq": 14,
-   "t_ms": 12705,
+   "t_ms": 12085,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "call_vaSLZeMXggKmU4wkbFYxTj69",
+   "name": "edit_file",
+   "tool": "edit",
+   "args": {
+    "path": "dateparse/parse.py",
+    "old": "    if m:\n        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n",
+    "new": "    if m:\n        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n"
+   },
+   "facts": {
+    "tool": "edit",
+    "paths": [
+     "/workspace/dateparse/parse.py"
+    ],
+    "outside": false,
+    "bytes": 190
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Edited /workspace/dateparse/parse.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "dateparse/parse.py",
+   "seq": 15,
+   "t_ms": 12086,
    "kind": "call",
    "audit": [
     11
@@ -516,31 +551,110 @@
    "text": "",
    "calls": [
     {
-     "id": "call_PSNd9wGgye4KSAdVtherJhBl",
-     "name": "shell",
+     "id": "call_Fgx68Wruqmv5FLSQQjwQM4Tg",
+     "name": "edit_file",
      "args": {
-      "command": "python3 -m unittest"
+      "path": "dateparse/parse.py",
+      "old": "def _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)\n",
+      "new": "def _day(word, text):\n    match = re.fullmatch(r\"(\\d+)(st|nd|rd|th)?\", word)\n    if not match:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(match.group(1))\n"
      }
     }
    ],
    "usage": {
-    "input": 200,
+    "input": 146,
     "cache_write": 0,
-    "cache_read": 4129,
-    "output": 20
+    "cache_read": 4057,
+    "output": 143
    },
-   "cost_micro": 443,
-   "ms": 1939,
+   "cost_micro": 127,
+   "ms": 1817,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
-   "seq": 15,
-   "t_ms": 14644,
+   "seq": 16,
+   "t_ms": 13903,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_PSNd9wGgye4KSAdVtherJhBl",
+   "call_id": "call_Fgx68Wruqmv5FLSQQjwQM4Tg",
+   "name": "edit_file",
+   "tool": "edit",
+   "args": {
+    "path": "dateparse/parse.py",
+    "old": "def _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)\n",
+    "new": "def _day(word, text):\n    match = re.fullmatch(r\"(\\d+)(st|nd|rd|th)?\", word)\n    if not match:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(match.group(1))\n"
+   },
+   "facts": {
+    "tool": "edit",
+    "paths": [
+     "/workspace/dateparse/parse.py"
+    ],
+    "outside": false,
+    "bytes": 190
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Edited /workspace/dateparse/parse.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 1,
+   "target": "dateparse/parse.py",
+   "seq": 17,
+   "t_ms": 13905,
+   "kind": "call",
+   "audit": [
+    12
+   ]
+  },
+  {
+   "text": "",
+   "calls": [
+    {
+     "id": "call_cPzWQYmqIrWpUA5PaCQ7fSdE",
+     "name": "shell",
+     "args": {
+      "command": "python3 -m unittest"
+     }
+    },
+    {
+     "id": "call_0qr0MonRFiOellsUgEWfhPme",
+     "name": "shell",
+     "args": {
+      "command": "git diff --check"
+     }
+    },
+    {
+     "id": "call_AHQkidrpIlmaVxSG3a7aw2bL",
+     "name": "shell",
+     "args": {
+      "command": "git diff"
+     }
+    }
+   ],
+   "usage": {
+    "input": 166,
+    "cache_write": 0,
+    "cache_read": 4200,
+    "output": 66
+   },
+   "cost_micro": 92,
+   "ms": 1537,
+   "stop_reason": "tool_calls",
+   "served_by": "gpt-6-luna",
+   "thinking_chars": 0,
+   "seq": 18,
+   "t_ms": 15442,
+   "kind": "model",
+   "audit": []
+  },
+  {
+   "call_id": "call_cPzWQYmqIrWpUA5PaCQ7fSdE",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -569,59 +683,32 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 83,
+   "ms": 43,
    "target": "python3 -m unittest",
-   "seq": 16,
-   "t_ms": 14727,
+   "seq": 19,
+   "t_ms": 15485,
    "kind": "call",
    "audit": [
-    12
+    13
    ]
   },
   {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_mutBGiaUYbGkSOGFlpV3WUc7",
-     "name": "shell",
-     "args": {
-      "command": "git status --short"
-     }
-    }
-   ],
-   "usage": {
-    "input": 50,
-    "cache_write": 0,
-    "cache_read": 4326,
-    "output": 19
-   },
-   "cost_micro": 448,
-   "ms": 1656,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 17,
-   "t_ms": 16384,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "call_mutBGiaUYbGkSOGFlpV3WUc7",
+   "call_id": "call_0qr0MonRFiOellsUgEWfhPme",
    "name": "shell",
    "tool": "shell",
    "args": {
-    "command": "git status --short"
+    "command": "git diff --check"
    },
    "facts": {
     "tool": "shell",
     "argv": [
      "git",
-     "status",
-     "--short"
+     "diff",
+     "--check"
     ],
     "operators": false,
     "paths": [
-     "/workspace/status"
+     "/workspace/diff"
     ],
     "outside": false
    },
@@ -631,24 +718,62 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": " M dateparse/parse.py\n",
+   "output": "(no output, exit code 0)",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 36,
-   "target": "git status --short",
-   "seq": 18,
-   "t_ms": 16420,
+   "ms": 10,
+   "target": "git diff --check",
+   "seq": 20,
+   "t_ms": 15495,
    "kind": "call",
    "audit": [
-    13
+    14
+   ]
+  },
+  {
+   "call_id": "call_AHQkidrpIlmaVxSG3a7aw2bL",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git diff"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "diff"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/diff"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "git-local",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "diff --git a/dateparse/parse.py b/dateparse/parse.py\nindex 3088987..76d4f52 100644\n--- a/dateparse/parse.py\n+++ b/dateparse/parse.py\n@@ -8,6 +8,7 @@ import re\n from datetime import date, timedelta\n \n MONTHS = {\n+    \"sept\": 9,\n     \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n     \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n     \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n@@ -32,22 +33,26 @@ def parse_date(text, today=None):\n         return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n     m = NUMERIC.match(s)\n     if m:\n-        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n+        year = int(m.group(3))\n+        if len(m.group(3)) == 2:\n+            year += 1900 if year >= 69 else 2000\n+        return _make(year, int(m.group(1)), int(m.group(2)), text)\n     words = s.split()\n     if words and words[0].rstrip(\".\") in WEEKDAYS:\n         words = words[1:]\n     if len(words) == 3:\n-        if words[0] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n-        if words[1] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n+        if words[0].rstrip(\".\") in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[words[0].rstrip(\".\")], _day(words[1], text), text)\n+        if words[1].rstrip(\".\") in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[words[1].rstrip(\".\")], _day(words[0], text), text)\n     raise ValueError(f\"not a date this parser knows: {text!r}\")\n \n \n def _day(word, text):\n-    if not word.isdigit():\n+    match = re.fullmatch(r\"(\\d+)(st|nd|rd|th)?\", word)\n+    if not match:\n         raise ValueError(f\"not a day of the month in {text!r}\")\n-    return int(word)\n+    return int(match.group(1))\n \n \n def _year(word, text):\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 10,
+   "target": "git diff",
+   "seq": 21,
+   "t_ms": 15506,
+   "kind": "call",
+   "audit": [
+    15
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_hi9DOQcSIvdoBd0j9sqwqckO",
+     "id": "call_v7zmpLFOdHdG95XSSswjOqfW",
      "name": "shell",
      "args": {
       "command": "git add dateparse/parse.py"
@@ -656,23 +781,23 @@
     }
    ],
    "usage": {
-    "input": 39,
+    "input": 865,
     "cache_write": 0,
-    "cache_read": 4373,
+    "cache_read": 4363,
     "output": 22
    },
-   "cost_micro": 453,
-   "ms": 1679,
+   "cost_micro": 142,
+   "ms": 1671,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
-   "seq": 19,
-   "t_ms": 18099,
+   "seq": 22,
+   "t_ms": 17177,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_hi9DOQcSIvdoBd0j9sqwqckO",
+   "call_id": "call_v7zmpLFOdHdG95XSSswjOqfW",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -702,48 +827,48 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 34,
+   "ms": 11,
    "target": "git add dateparse/parse.py",
-   "seq": 20,
-   "t_ms": 18133,
+   "seq": 23,
+   "t_ms": 17188,
    "kind": "call",
    "audit": [
-    14
+    16
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_L3Sb74ucv34zub2esuHHgEbV",
+     "id": "call_NvQ7EK9xVf8YKu7tBl74zmoI",
      "name": "shell",
      "args": {
-      "command": "git commit -m \"Fix supported date parsing formats\""
+      "command": "git commit -m \"Fix documented date parsing formats\""
      }
     }
    ],
    "usage": {
     "input": 43,
     "cache_write": 0,
-    "cache_read": 4409,
+    "cache_read": 5225,
     "output": 26
    },
-   "cost_micro": 459,
-   "ms": 1572,
+   "cost_micro": 70,
+   "ms": 2372,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
-   "seq": 21,
-   "t_ms": 19706,
+   "seq": 24,
+   "t_ms": 19560,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_L3Sb74ucv34zub2esuHHgEbV",
+   "call_id": "call_NvQ7EK9xVf8YKu7tBl74zmoI",
    "name": "shell",
    "tool": "shell",
    "args": {
-    "command": "git commit -m \"Fix supported date parsing formats\""
+    "command": "git commit -m \"Fix documented date parsing formats\""
    },
    "facts": {
     "tool": "shell",
@@ -751,12 +876,12 @@
      "git",
      "commit",
      "-m",
-     "Fix supported date parsing formats"
+     "Fix documented date parsing formats"
     ],
     "operators": false,
     "paths": [
      "/workspace/commit",
-     "/workspace/Fix supported date parsing formats"
+     "/workspace/Fix documented date parsing formats"
     ],
     "outside": false
    },
@@ -766,78 +891,78 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "[main df4b73a] Fix supported date parsing formats\n 1 file changed, 8 insertions(+), 3 deletions(-)\n",
+   "output": "[main 639df24] Fix documented date parsing formats\n 1 file changed, 12 insertions(+), 7 deletions(-)\n",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 55,
-   "target": "git commit -m \"Fix supported date parsing formats\"",
-   "seq": 22,
-   "t_ms": 19761,
+   "ms": 18,
+   "target": "git commit -m \"Fix documented date parsing formats\"",
+   "seq": 25,
+   "t_ms": 19578,
    "kind": "call",
    "audit": [
-    15
+    17
    ]
   },
   {
-   "text": "Fixed parsing for two-digit years, ordinal day suffixes, and `Sept.`/`Sept` abbreviations. The full suite passes (`python3 -m unittest`: 24 tests). Committed as `df4b73a` (`Fix supported date parsing formats`).",
+   "text": "Fixed two-digit year expansion, ordinal day suffixes, and `Sept`/`Sept.` month abbreviations. The full suite passes (`24` tests), and the changes are committed as `639df24` (`Fix documented date parsing formats`).",
    "calls": [],
    "usage": {
-    "input": 70,
+    "input": 69,
     "cache_write": 0,
-    "cache_read": 4449,
-    "output": 58
+    "cache_read": 5265,
+    "output": 53
    },
-   "cost_micro": 481,
-   "ms": 2155,
+   "cost_micro": 87,
+   "ms": 1285,
    "stop_reason": "stop",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
-   "seq": 23,
-   "t_ms": 21916,
+   "seq": 26,
+   "t_ms": 20863,
    "kind": "model",
    "audit": []
   },
   {
    "state": "done",
    "detail": "",
-   "reply": "Fixed parsing for two-digit years, ordinal day suffixes, and `Sept.`/`Sept` abbreviations. The full suite passes (`python3 -m unittest`: 24 tests). Committed as `df4b73a` (`Fix supported date parsing formats`).",
-   "seq": 24,
-   "t_ms": 21916,
+   "reply": "Fixed two-digit year expansion, ordinal day suffixes, and `Sept`/`Sept.` month abbreviations. The full suite passes (`24` tests), and the changes are committed as `639df24` (`Fix documented date parsing formats`).",
+   "seq": 27,
+   "t_ms": 20863,
    "kind": "end",
    "audit": [
-    16
+    18
    ]
   }
  ],
  "end": {
   "state": "done",
   "detail": "",
-  "reply": "Fixed parsing for two-digit years, ordinal day suffixes, and `Sept.`/`Sept` abbreviations. The full suite passes (`python3 -m unittest`: 24 tests). Committed as `df4b73a` (`Fix supported date parsing formats`)."
+  "reply": "Fixed two-digit year expansion, ordinal day suffixes, and `Sept`/`Sept.` month abbreviations. The full suite passes (`24` tests), and the changes are committed as `639df24` (`Fix documented date parsing formats`)."
  },
  "totals": {
-  "cost_micro": 3979,
-  "tool_calls": 13,
-  "model_calls": 10,
-  "input_tokens": 35519,
-  "output_tokens": 846,
-  "ms": 21916
+  "cost_micro": 1388,
+  "tool_calls": 15,
+  "model_calls": 11,
+  "input_tokens": 42279,
+  "output_tokens": 837,
+  "ms": 20863
  },
  "after": {
   "git": {
-   "initial": "cee376844397",
+   "initial": "023822a4ab5b",
    "commits": [
     {
-     "hash": "df4b73a25128",
-     "subject": "Fix supported date parsing formats"
+     "hash": "639df24a14cb",
+     "subject": "Fix documented date parsing formats"
     }
    ],
    "status": "",
    "changed": [
     "dateparse/parse.py"
    ],
-   "remote_head": "cee376844397",
-   "diff": "diff --git a/dateparse/parse.py b/dateparse/parse.py\nindex 3088987..04f47d7 100644\n--- a/dateparse/parse.py\n+++ b/dateparse/parse.py\n@@ -9,8 +9,8 @@ from datetime import date, timedelta\n \n MONTHS = {\n     \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n-    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n-    \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n+    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"sept\": 9,\n+    \"september\": 9, \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n }\n WEEKDAYS = {\"mon\", \"monday\", \"tue\", \"tues\", \"tuesday\", \"wed\", \"wednesday\", \"thu\", \"thur\", \"thurs\", \"thursday\",\n             \"fri\", \"friday\", \"sat\", \"saturday\", \"sun\", \"sunday\"}\n@@ -32,7 +32,12 @@ def parse_date(text, today=None):\n         return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n     m = NUMERIC.match(s)\n     if m:\n-        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n+        year = int(m.group(3))\n+        if len(m.group(3)) == 2:\n+            year += 1900 if year >= 69 else 2000\n+        return _make(year, int(m.group(1)), int(m.group(2)), text)\n+    s = re.sub(r\"(?<=\\d)(st|nd|rd|th)\\b\", \"\", s)\n+    s = s.replace(\"sept.\", \"sept\")\n     words = s.split()\n     if words and words[0].rstrip(\".\") in WEEKDAYS:\n         words = words[1:]\n\n"
+   "remote_head": "023822a4ab5b",
+   "diff": "diff --git a/dateparse/parse.py b/dateparse/parse.py\nindex 3088987..76d4f52 100644\n--- a/dateparse/parse.py\n+++ b/dateparse/parse.py\n@@ -8,6 +8,7 @@ import re\n from datetime import date, timedelta\n \n MONTHS = {\n+    \"sept\": 9,\n     \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n     \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n     \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n@@ -32,22 +33,26 @@ def parse_date(text, today=None):\n         return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n     m = NUMERIC.match(s)\n     if m:\n-        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n+        year = int(m.group(3))\n+        if len(m.group(3)) == 2:\n+            year += 1900 if year >= 69 else 2000\n+        return _make(year, int(m.group(1)), int(m.group(2)), text)\n     words = s.split()\n     if words and words[0].rstrip(\".\") in WEEKDAYS:\n         words = words[1:]\n     if len(words) == 3:\n-        if words[0] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n-        if words[1] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n+        if words[0].rstrip(\".\") in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[words[0].rstrip(\".\")], _day(words[1], text), text)\n+        if words[1].rstrip(\".\") in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[words[1].rstrip(\".\")], _day(words[0], text), text)\n     raise ValueError(f\"not a date this parser knows: {text!r}\")\n \n \n def _day(word, text):\n-    if not word.isdigit():\n+    match = re.fullmatch(r\"(\\d+)(st|nd|rd|th)?\", word)\n+    if not match:\n         raise ValueError(f\"not a day of the month in {text!r}\")\n-    return int(word)\n+    return int(match.group(1))\n \n \n def _year(word, text):\n\n"
   },
   "own_tests": {
    "ran": 24,
@@ -847,22 +972,19 @@
   },
   "key_tests": {
    "ran": 34,
-   "failed": [
-    "test_another_abbreviation_with_a_period",
-    "test_periods_on_the_weekday_and_the_month"
-   ],
-   "exit_code": 1,
-   "output": "..E...E...........................\n======================================================================\nERROR: test_another_abbreviation_with_a_period (key_tests.test_hidden.Siblings.test_another_abbreviation_with_a_period)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/key_tests/test_hidden.py\", line 30, in test_another_abbreviation_with_a_period\n    self.assertEqual(parse_date(\"Feb. 1, 2026\"), date(2026, 2, 1))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 49, in parse_date\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\nValueError: not a date this parser knows: 'Feb. 1, 2026'\n\n======================================================================\nERROR: test_periods_on_the_weekday_and_the_month (key_tests.test_hidden.Siblings.test_periods_on_the_weekday_and_the_month)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/key_tests/test_hidden.py\", line 36, in test_periods_on_the_weekday_and_the_month\n    self.assertEqual(parse_date(\"Mon., Nov. 9, 2026\"), date(2026, 11, 9))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 49, in parse_date\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\nValueError: not a date this parser knows: 'Mon., Nov. 9, 2026'\n\n----------------------------------------------------------------------\nRan 34 tests in 0.001s\n\nFAILED (errors=2)\n"
+   "failed": [],
+   "exit_code": 0,
+   "output": "..................................\n----------------------------------------------------------------------\nRan 34 tests in 0.000s\n\nOK\n"
   },
   "notes": null
  },
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  }

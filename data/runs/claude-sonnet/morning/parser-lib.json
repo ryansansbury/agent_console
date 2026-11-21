@@ -8,7 +8,7 @@
   "vendor": "Anthropic",
   "model": "claude-sonnet-5-5"
  },
- "recorded": "2026-11-10T10:04:17-08:00",
+ "recorded": "2026-11-20T11:21:07-08:00",
  "offset_ms": 0,
  "settings": {
   "reader": "on",
@@ -33,24 +33,24 @@
    "text": "",
    "calls": [
     {
-     "id": "toolu_01LvVtsh7KooEtN21xSqmCtY",
-     "name": "shell",
-     "args": {
-      "command": "python3 -m unittest"
-     }
-    },
-    {
-     "id": "toolu_01EQTWFQmY3oKwkrtd33jnRQ",
+     "id": "toolu_0197YXEaRARgTyaKk8RmsCsT",
      "name": "shell",
      "args": {
       "command": "git status --short"
      }
     },
     {
-     "id": "toolu_01QBZtbTocptgzwQqhEeTGhu",
+     "id": "toolu_01QAXn3tjaFJJeho8UDajxF1",
      "name": "read_file",
      "args": {
       "path": "README.md"
+     }
+    },
+    {
+     "id": "toolu_01UZkQJQF3rCBTBH8VEUk4Fc",
+     "name": "shell",
+     "args": {
+      "command": "python3 -m unittest"
      }
     }
    ],
@@ -61,56 +61,17 @@
     "output": 145
    },
    "cost_micro": 4606,
-   "ms": 1932,
+   "ms": 2292,
    "stop_reason": "tool_use",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
    "seq": 1,
-   "t_ms": 1932,
+   "t_ms": 2292,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "toolu_01LvVtsh7KooEtN21xSqmCtY",
-   "name": "shell",
-   "tool": "shell",
-   "args": {
-    "command": "python3 -m unittest"
-   },
-   "facts": {
-    "tool": "shell",
-    "argv": [
-     "python3",
-     "-m",
-     "unittest"
-    ],
-    "operators": false,
-    "paths": [
-     "/workspace/unittest"
-    ],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "tests",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "....F..E.....E..........\n======================================================================\nERROR: test_abbreviation_with_a_period (tests.test_parse.MonthNames.test_abbreviation_with_a_period)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 57, in test_abbreviation_with_a_period\n    self.assertEqual(parse_date(\"Sept. 9, 2026\"), date(2026, 9, 9))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 44, in parse_date\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\nValueError: not a date this parser knows: 'Sept. 9, 2026'\n\n======================================================================\nERROR: test_ordinal_day (tests.test_parse.MonthNames.test_ordinal_day)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 54, in test_ordinal_day\n    self.assertEqual(parse_date(\"March 3rd, 2026\"), date(2026, 3, 3))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 41, in parse_date\n    return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n                                                          ~~~~^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 49, in _day\n    raise ValueError(f\"not a day of the month in {text!r}\")\nValueError: not a day of the month in 'March 3rd, 2026'\n\n======================================================================\nFAIL: test_two_digit_year (tests.test_parse.IsoAndNumeric.test_two_digit_year)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 27, in test_two_digit_year\n    self.assertEqual(parse_date(\"3/9/26\"), date(2026, 3, 9))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: datetime.date(26, 3, 9) != datetime.date(2026, 3, 9)\n\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nFAILED (failures=1, errors=2)\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": 1,
-   "ms": 70,
-   "target": "python3 -m unittest",
-   "seq": 2,
-   "t_ms": 2003,
-   "kind": "call",
-   "audit": [
-    3
-   ]
-  },
-  {
-   "call_id": "toolu_01EQTWFQmY3oKwkrtd33jnRQ",
+   "call_id": "toolu_0197YXEaRARgTyaKk8RmsCsT",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -139,17 +100,17 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 12,
+   "ms": 17,
    "target": "git status --short",
-   "seq": 3,
-   "t_ms": 2015,
+   "seq": 2,
+   "t_ms": 2309,
    "kind": "call",
    "audit": [
-    4
+    3
    ]
   },
   {
-   "call_id": "toolu_01QBZtbTocptgzwQqhEeTGhu",
+   "call_id": "toolu_01QAXn3tjaFJJeho8UDajxF1",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -174,8 +135,47 @@
    "exit_code": null,
    "ms": 0,
    "target": "README.md",
+   "seq": 3,
+   "t_ms": 2309,
+   "kind": "call",
+   "audit": [
+    4
+   ]
+  },
+  {
+   "call_id": "toolu_01UZkQJQF3rCBTBH8VEUk4Fc",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "python3 -m unittest"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "python3",
+     "-m",
+     "unittest"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/unittest"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "tests",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "....F..E.....E..........\n======================================================================\nERROR: test_abbreviation_with_a_period (tests.test_parse.MonthNames.test_abbreviation_with_a_period)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 57, in test_abbreviation_with_a_period\n    self.assertEqual(parse_date(\"Sept. 9, 2026\"), date(2026, 9, 9))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 44, in parse_date\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\nValueError: not a date this parser knows: 'Sept. 9, 2026'\n\n======================================================================\nERROR: test_ordinal_day (tests.test_parse.MonthNames.test_ordinal_day)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 54, in test_ordinal_day\n    self.assertEqual(parse_date(\"March 3rd, 2026\"), date(2026, 3, 3))\n                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 41, in parse_date\n    return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n                                                          ~~~~^^^^^^^^^^^^^^^^\n  File \"/workspace/dateparse/parse.py\", line 49, in _day\n    raise ValueError(f\"not a day of the month in {text!r}\")\nValueError: not a day of the month in 'March 3rd, 2026'\n\n======================================================================\nFAIL: test_two_digit_year (tests.test_parse.IsoAndNumeric.test_two_digit_year)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_parse.py\", line 27, in test_two_digit_year\n    self.assertEqual(parse_date(\"3/9/26\"), date(2026, 3, 9))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: datetime.date(26, 3, 9) != datetime.date(2026, 3, 9)\n\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nFAILED (failures=1, errors=2)\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 1,
+   "ms": 41,
+   "target": "python3 -m unittest",
    "seq": 4,
-   "t_ms": 2015,
+   "t_ms": 2351,
    "kind": "call",
    "audit": [
     5
@@ -185,10 +185,17 @@
    "text": "",
    "calls": [
     {
-     "id": "toolu_01QiBQ4kste1qQkPLjqu1NB5",
+     "id": "toolu_012tZS4utUKMD9pF8zGmyemQ",
      "name": "read_file",
      "args": {
       "path": "dateparse/parse.py"
+     }
+    },
+    {
+     "id": "toolu_01AfTgA7SRV8u9jD97aJWn4p",
+     "name": "shell",
+     "args": {
+      "command": "grep -n \"\" tests/test_parse.py"
      }
     }
    ],
@@ -196,20 +203,20 @@
     "input": 2,
     "cache_write": 1626,
     "cache_read": 1259,
-    "output": 55
+    "output": 112
    },
-   "cost_micro": 4871,
-   "ms": 1017,
+   "cost_micro": 5315,
+   "ms": 1460,
    "stop_reason": "tool_use",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
    "seq": 5,
-   "t_ms": 3033,
+   "t_ms": 3811,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "toolu_01QiBQ4kste1qQkPLjqu1NB5",
+   "call_id": "toolu_012tZS4utUKMD9pF8zGmyemQ",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -235,133 +242,98 @@
    "ms": 1,
    "target": "dateparse/parse.py",
    "seq": 6,
-   "t_ms": 3034,
+   "t_ms": 3812,
    "kind": "call",
    "audit": [
     6
    ]
   },
   {
-   "text": "",
-   "calls": [
-    {
-     "id": "toolu_01QKTjGgAUL9cwB6K6y3E5v4",
-     "name": "shell",
-     "args": {
-      "command": "python3 - <<'EOF'\nEOF\ngit log --oneline -3"
-     }
-    }
-   ],
-   "usage": {
-    "input": 2,
-    "cache_write": 1161,
-    "cache_read": 2885,
-    "output": 202
-   },
-   "cost_micro": 5504,
-   "ms": 2380,
-   "stop_reason": "tool_use",
-   "served_by": "claude-sonnet-5-5",
-   "thinking_chars": 0,
-   "seq": 7,
-   "t_ms": 5415,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "toolu_01QKTjGgAUL9cwB6K6y3E5v4",
+   "call_id": "toolu_01AfTgA7SRV8u9jD97aJWn4p",
    "name": "shell",
    "tool": "shell",
    "args": {
-    "command": "python3 - <<'EOF'\nEOF\ngit log --oneline -3"
+    "command": "grep -n \"\" tests/test_parse.py"
    },
    "facts": {
     "tool": "shell",
     "argv": [
-     "python3",
-     "-",
-     "<<",
-     "EOF",
-     "EOF",
-     "git",
-     "log",
-     "--oneline",
-     "-3"
+     "grep",
+     "-n",
+     "",
+     "tests/test_parse.py"
     ],
-    "operators": true,
+    "operators": false,
     "paths": [
-     "/workspace/EOF",
-     "/workspace/EOF",
-     "/workspace/git",
-     "/workspace/log"
+     "/workspace/tests/test_parse.py"
     ],
     "outside": false
    },
-   "verdict": "deny",
-   "rule": "operators",
+   "verdict": "allow",
+   "rule": "look",
    "stop": false,
    "answer": null,
-   "ran": false,
+   "ran": true,
    "refused": null,
-   "output": "The console's policy denied this call (rule: Pipes, chains and redirects). It did not run.",
+   "output": "1:import unittest\n2:from datetime import date\n3:\n4:from dateparse import parse_date\n5:\n6:TODAY = date(2026, 11, 9)\n7:\n8:\n9:class IsoAndNumeric(unittest.TestCase):\n10:    def test_iso(self):\n11:        self.assertEqual(parse_date(\"2026-11-09\"), date(2026, 11, 9))\n12:\n13:    def test_iso_without_zero_padding(self):\n14:        self.assertEqual(parse_date(\"2026-3-9\"), date(2026, 3, 9))\n15:\n16:    def test_iso_rejects_a_day_that_does_not_exist(self):\n17:        with self.assertRaises(ValueError):\n18:            parse_date(\"2026-11-31\")\n19:\n20:    def test_us_numeric(self):\n21:        self.assertEqual(parse_date(\"11/9/2026\"), date(2026, 11, 9))\n22:\n23:    def test_us_numeric_padded(self):\n24:        self.assertEqual(parse_date(\"03/09/2026\"), date(2026, 3, 9))\n25:\n26:    def test_two_digit_year(self):\n27:        self.assertEqual(parse_date(\"3/9/26\"), date(2026, 3, 9))\n28:\n29:    def test_month_out_of_range(self):\n30:        with self.assertRaises(ValueError):\n31:            parse_date(\"13/1/2026\")\n32:\n33:\n34:class MonthNames(unittest.TestCase):\n35:    def test_short_month_first(self):\n36:        self.assertEqual(parse_date(\"Nov 9, 2026\"), date(2026, 11, 9))\n37:\n38:    def test_full_month_first(self):\n39:        self.assertEqual(parse_date(\"November 9, 2026\"), date(2026, 11, 9))\n40:\n41:    def test_day_first(self):\n42:        self.assertEqual(parse_date(\"9 November 2026\"), date(2026, 11, 9))\n43:\n44:    def test_without_a_comma(self):\n45:        self.assertEqual(parse_date(\"Nov 9 2026\"), date(2026, 11, 9))\n46:\n47:    def test_weekday_in_front(self):\n48:        self.assertEqual(parse_date(\"Mon, Nov 9, 2026\"), date(2026, 11, 9))\n49:\n50:    def test_capitals_and_spaces(self):\n51:        self.assertEqual(parse_date(\"  NOV 9,  2026 \"), date(2026, 11, 9))\n52:\n53:    def test_ordinal_day(self):\n54:        self.assertEqual(parse_date(\"March 3rd, 2026\"), date(2026, 3, 3))\n55:\n56:    def test_abbreviation_with_a_period(self):\n57:        self.assertEqual(parse_date(\"Sept. 9, 2026\"), date(2026, 9, 9))\n58:\n59:    def test_leap_day(self):\n60:        self.assertEqual(parse_date(\"Feb 29, 2028\"), date(2028, 2, 29))\n61:\n62:    def test_not_a_leap_year(self):\n63:        with self.assertRaises(ValueError):\n64:            parse_date(\"Feb 29, 2026\")\n65:\n66:    def test_three_digit_year(self):\n67:        with self.assertRaises(ValueError):\n68:            parse_date(\"Nov 9, 202\")\n69:\n70:\n71:class Relative(unittest.TestCase):\n72:    def test_today(self):\n73:        self.assertEqual(parse_date(\"today\", today=TODAY), TODAY)\n74:\n75:    def test_tomorrow(self):\n76:        self.assertEqual(parse_date(\"Tomorrow\", today=TODAY), date(2026, 11, 10))\n77:\n78:    def test_yesterday(self):\n79:        self.assertEqual(parse_date(\"yesterday\", today=TODAY), date(2026, 11, 8))\n80:\n81:\n82:class NotDates(unittest.TestCase):\n83:    def test_empty(self):\n84:        with self.assertRaises(ValueError):\n85:            parse_date(\"   \")\n86:\n87:    def test_none(self):\n88:        with self.assertRaises(ValueError):\n89:            parse_date(None)\n90:\n91:    def test_words(self):\n92:        with self.assertRaises(ValueError):\n93:            parse_date(\"next week sometime\")\n94:\n95:\n96:if __name__ == \"__main__\":\n97:    unittest.main()\n",
    "truncated": false,
    "masked": 0,
-   "exit_code": null,
-   "ms": 0,
-   "target": "python3 - <<'EOF' EOF git log --oneline -3",
-   "seq": 8,
-   "t_ms": 5415,
+   "exit_code": 0,
+   "ms": 7,
+   "target": "grep -n \"\" tests/test_parse.py",
+   "seq": 7,
+   "t_ms": 3820,
    "kind": "call",
    "audit": [
     7
    ]
   },
   {
-   "text": "That command was a stray no-op, so I'll make the edits directly.",
+   "text": "",
    "calls": [
     {
-     "id": "toolu_01KTFAAScgbfNK2xnvVDkex1",
+     "id": "toolu_01SwqwjbDSp4TTnfZ9udMPVn",
      "name": "edit_file",
      "args": {
       "path": "dateparse/parse.py",
       "old": "        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)",
-      "new": "        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        m0, m1 = _month(words[0]), _month(words[1])\n        if m0:\n            return _make(_year(words[2], text), m0, _day(words[1], text), text)\n        if m1:\n            return _make(_year(words[2], text), m1, _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _month(word):\n    \"\"\"The month number for a month name (short names may end in a period), else None.\"\"\"\n    if word in MONTHS:\n        return MONTHS[word]\n    if word.endswith(\".\"):\n        bare = word[:-1]\n        if bare in SHORT_MONTHS:\n            return MONTHS[bare]\n    return None\n\n\ndef _day(word, text):\n    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n    if not m:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(m.group(1))"
+      "new": "        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        first, second = words[0].rstrip(\".\"), words[1].rstrip(\".\")\n        if first in MONTHS:\n            return _make(_year(words[2], text), MONTHS[first], _day(words[1], text), text)\n        if second in MONTHS:\n            return _make(_year(words[2], text), MONTHS[second], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n    if not m:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(m.group(1))"
      }
     },
     {
-     "id": "toolu_01YHknuueLdA2tryteMiBGwf",
+     "id": "toolu_016ZK2raxgn4FxejaQr3My6f",
      "name": "edit_file",
      "args": {
       "path": "dateparse/parse.py",
-      "old": "RELATIVE = ",
-      "new": "MONTHS[\"sept\"] = 9\nSHORT_MONTHS = {k for k in MONTHS if len(k) <= 4 and k not in (\"june\", \"july\")}\nRELATIVE = "
+      "old": "\"sep\": 9, \"september\"",
+      "new": "\"sep\": 9, \"sept\": 9, \"september\""
      }
     }
    ],
    "usage": {
     "input": 2,
-    "cache_write": 243,
-    "cache_read": 4046,
-    "output": 992
+    "cache_write": 2771,
+    "cache_read": 2885,
+    "output": 897
    },
-   "cost_micro": 11341,
-   "ms": 5324,
+   "cost_micro": 16190,
+   "ms": 5158,
    "stop_reason": "tool_use",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
-   "seq": 9,
-   "t_ms": 10739,
+   "seq": 8,
+   "t_ms": 8979,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "toolu_01KTFAAScgbfNK2xnvVDkex1",
+   "call_id": "toolu_01SwqwjbDSp4TTnfZ9udMPVn",
    "name": "edit_file",
    "tool": "edit",
    "args": {
     "path": "dateparse/parse.py",
     "old": "        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        if words[0] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n        if words[1] in MONTHS:\n            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    if not word.isdigit():\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(word)",
-    "new": "        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        m0, m1 = _month(words[0]), _month(words[1])\n        if m0:\n            return _make(_year(words[2], text), m0, _day(words[1], text), text)\n        if m1:\n            return _make(_year(words[2], text), m1, _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _month(word):\n    \"\"\"The month number for a month name (short names may end in a period), else None.\"\"\"\n    if word in MONTHS:\n        return MONTHS[word]\n    if word.endswith(\".\"):\n        bare = word[:-1]\n        if bare in SHORT_MONTHS:\n            return MONTHS[bare]\n    return None\n\n\ndef _day(word, text):\n    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n    if not m:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(m.group(1))"
+    "new": "        year = int(m.group(3))\n        if len(m.group(3)) == 2:\n            year += 1900 if year >= 69 else 2000\n        return _make(year, int(m.group(1)), int(m.group(2)), text)\n    words = s.split()\n    if words and words[0].rstrip(\".\") in WEEKDAYS:\n        words = words[1:]\n    if len(words) == 3:\n        first, second = words[0].rstrip(\".\"), words[1].rstrip(\".\")\n        if first in MONTHS:\n            return _make(_year(words[2], text), MONTHS[first], _day(words[1], text), text)\n        if second in MONTHS:\n            return _make(_year(words[2], text), MONTHS[second], _day(words[0], text), text)\n    raise ValueError(f\"not a date this parser knows: {text!r}\")\n\n\ndef _day(word, text):\n    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n    if not m:\n        raise ValueError(f\"not a day of the month in {text!r}\")\n    return int(m.group(1))"
    },
    "facts": {
     "tool": "edit",
@@ -369,43 +341,7 @@
      "/workspace/dateparse/parse.py"
     ],
     "outside": false,
-    "bytes": 1086
-   },
-   "verdict": "allow",
-   "rule": "files",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "Edited /workspace/dateparse/parse.py.",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": null,
-   "ms": 2,
-   "target": "dateparse/parse.py",
-   "seq": 10,
-   "t_ms": 10741,
-   "kind": "call",
-   "audit": [
-    8
-   ]
-  },
-  {
-   "call_id": "toolu_01YHknuueLdA2tryteMiBGwf",
-   "name": "edit_file",
-   "tool": "edit",
-   "args": {
-    "path": "dateparse/parse.py",
-    "old": "RELATIVE = ",
-    "new": "MONTHS[\"sept\"] = 9\nSHORT_MONTHS = {k for k in MONTHS if len(k) <= 4 and k not in (\"june\", \"july\")}\nRELATIVE = "
-   },
-   "facts": {
-    "tool": "edit",
-    "paths": [
-     "/workspace/dateparse/parse.py"
-    ],
-    "outside": false,
-    "bytes": 110
+    "bytes": 857
    },
    "verdict": "allow",
    "rule": "files",
@@ -419,8 +355,44 @@
    "exit_code": null,
    "ms": 1,
    "target": "dateparse/parse.py",
-   "seq": 11,
-   "t_ms": 10742,
+   "seq": 9,
+   "t_ms": 8980,
+   "kind": "call",
+   "audit": [
+    8
+   ]
+  },
+  {
+   "call_id": "toolu_016ZK2raxgn4FxejaQr3My6f",
+   "name": "edit_file",
+   "tool": "edit",
+   "args": {
+    "path": "dateparse/parse.py",
+    "old": "\"sep\": 9, \"september\"",
+    "new": "\"sep\": 9, \"sept\": 9, \"september\""
+   },
+   "facts": {
+    "tool": "edit",
+    "paths": [
+     "/workspace/dateparse/parse.py"
+    ],
+    "outside": false,
+    "bytes": 32
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "Edited /workspace/dateparse/parse.py.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "dateparse/parse.py",
+   "seq": 10,
+   "t_ms": 8980,
    "kind": "call",
    "audit": [
     9
@@ -430,7 +402,7 @@
    "text": "",
    "calls": [
     {
-     "id": "toolu_01FSUrDKoyMQqPTc3dqaPv4x",
+     "id": "toolu_01K6hzgUb2KKtsjrW6mCPj3p",
      "name": "shell",
      "args": {
       "command": "python3 -m unittest"
@@ -439,22 +411,22 @@
    ],
    "usage": {
     "input": 2,
-    "cache_write": 1086,
-    "cache_read": 4289,
-    "output": 70
+    "cache_write": 991,
+    "cache_read": 5656,
+    "output": 82
    },
-   "cost_micro": 4277,
-   "ms": 1233,
+   "cost_micro": 3868,
+   "ms": 1428,
    "stop_reason": "tool_use",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
-   "seq": 12,
-   "t_ms": 11976,
+   "seq": 11,
+   "t_ms": 10408,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "toolu_01FSUrDKoyMQqPTc3dqaPv4x",
+   "call_id": "toolu_01K6hzgUb2KKtsjrW6mCPj3p",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -483,10 +455,10 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 86,
+   "ms": 46,
    "target": "python3 -m unittest",
-   "seq": 13,
-   "t_ms": 12062,
+   "seq": 12,
+   "t_ms": 10455,
    "kind": "call",
    "audit": [
     10
@@ -496,35 +468,35 @@
    "text": "",
    "calls": [
     {
-     "id": "toolu_0153RoRSwubE9TkFrzuwqJt4",
+     "id": "toolu_01856jMYXCMdrMxxAYCNJBgk",
      "name": "shell",
      "args": {
-      "command": "git commit -am \"Parse two-digit years, ordinal days, and abbreviated months with periods\""
+      "command": "git commit -am \"Parse two-digit years, ordinal days, and abbreviations with periods or Sept\""
      }
     }
    ],
    "usage": {
     "input": 2,
-    "cache_write": 109,
-    "cache_read": 5375,
-    "output": 77
+    "cache_write": 121,
+    "cache_read": 6647,
+    "output": 80
    },
-   "cost_micro": 2122,
-   "ms": 1098,
+   "cost_micro": 1772,
+   "ms": 1548,
    "stop_reason": "tool_use",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
-   "seq": 14,
-   "t_ms": 13159,
+   "seq": 13,
+   "t_ms": 12003,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "toolu_0153RoRSwubE9TkFrzuwqJt4",
+   "call_id": "toolu_01856jMYXCMdrMxxAYCNJBgk",
    "name": "shell",
    "tool": "shell",
    "args": {
-    "command": "git commit -am \"Parse two-digit years, ordinal days, and abbreviated months with periods\""
+    "command": "git commit -am \"Parse two-digit years, ordinal days, and abbreviations with periods or Sept\""
    },
    "facts": {
     "tool": "shell",
@@ -532,12 +504,12 @@
      "git",
      "commit",
      "-am",
-     "Parse two-digit years, ordinal days, and abbreviated months with periods"
+     "Parse two-digit years, ordinal days, and abbreviations with periods or Sept"
     ],
     "operators": false,
     "paths": [
      "/workspace/commit",
-     "/workspace/Parse two-digit years, ordinal days, and abbreviated months with periods"
+     "/workspace/Parse two-digit years, ordinal days, and abbreviations with periods or Sept"
     ],
     "outside": false
    },
@@ -547,44 +519,44 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "[main 72b3b20] Parse two-digit years, ordinal days, and abbreviated months with periods\n 1 file changed, 25 insertions(+), 7 deletions(-)\n",
+   "output": "[main b9be0e8] Parse two-digit years, ordinal days, and abbreviations with periods or Sept\n 1 file changed, 13 insertions(+), 8 deletions(-)\n",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 53,
-   "target": "git commit -am \"Parse two-digit years, ordinal days, and abbreviated months with periods\"",
-   "seq": 15,
-   "t_ms": 13213,
+   "ms": 25,
+   "target": "git commit -am \"Parse two-digit years, ordinal days, and abbreviations with periods or Sept\"",
+   "seq": 14,
+   "t_ms": 12028,
    "kind": "call",
    "audit": [
     11
    ]
   },
   {
-   "text": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** in numeric dates like `3/9/26`, 69–99 now mean 1969–1999 and 00–68 mean 2000–2068, as the README says.\n- **Ordinal days:** `3rd`, `21st` and similar now work, so `March 3rd, 2026` parses.\n- **Month names with periods:** short names such as `Sept.` can end in a period, and `Sept` is now accepted as September. I only allow the period on short names, so `November.` is still rejected. `May.` is accepted because `may` counts as a short name.",
+   "text": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass with `python3 -m unittest`, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** `3/9/26` now gives 2026. Years 69–99 map to 1969–1999 and 00–68 map to 2000–2068, as the README says.\n- **Ordinal days:** `March 3rd, 2026` and `21st June 2026` now parse. Suffixes `st`, `nd`, `rd` and `th` are accepted after a one- or two-digit day.\n- **Month abbreviations:** a trailing period is now stripped, and `sept` is added as a name for September, so `Sept. 9, 2026` parses.\n\nThe ordinal check doesn't match suffix to number, so `3st` is accepted too.",
    "calls": [],
    "usage": {
     "input": 2,
-    "cache_write": 143,
-    "cache_read": 5484,
-    "output": 233
+    "cache_write": 149,
+    "cache_read": 6768,
+    "output": 274
    },
-   "cost_micro": 3789,
-   "ms": 2288,
+   "cost_micro": 3794,
+   "ms": 2406,
    "stop_reason": "end_turn",
    "served_by": "claude-sonnet-5-5",
    "thinking_chars": 0,
-   "seq": 16,
-   "t_ms": 15501,
+   "seq": 15,
+   "t_ms": 14435,
    "kind": "model",
    "audit": []
   },
   {
    "state": "done",
    "detail": "",
-   "reply": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** in numeric dates like `3/9/26`, 69–99 now mean 1969–1999 and 00–68 mean 2000–2068, as the README says.\n- **Ordinal days:** `3rd`, `21st` and similar now work, so `March 3rd, 2026` parses.\n- **Month names with periods:** short names such as `Sept.` can end in a period, and `Sept` is now accepted as September. I only allow the period on short names, so `November.` is still rejected. `May.` is accepted because `may` counts as a short name.",
-   "seq": 17,
-   "t_ms": 15502,
+   "reply": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass with `python3 -m unittest`, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** `3/9/26` now gives 2026. Years 69–99 map to 1969–1999 and 00–68 map to 2000–2068, as the README says.\n- **Ordinal days:** `March 3rd, 2026` and `21st June 2026` now parse. Suffixes `st`, `nd`, `rd` and `th` are accepted after a one- or two-digit day.\n- **Month abbreviations:** a trailing period is now stripped, and `sept` is added as a name for September, so `Sept. 9, 2026` parses.\n\nThe ordinal check doesn't match suffix to number, so `3st` is accepted too.",
+   "seq": 16,
+   "t_ms": 14435,
    "kind": "end",
    "audit": [
     12
@@ -594,31 +566,31 @@
  "end": {
   "state": "done",
   "detail": "",
-  "reply": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** in numeric dates like `3/9/26`, 69–99 now mean 1969–1999 and 00–68 mean 2000–2068, as the README says.\n- **Ordinal days:** `3rd`, `21st` and similar now work, so `March 3rd, 2026` parses.\n- **Month names with periods:** short names such as `Sept.` can end in a period, and `Sept` is now accepted as September. I only allow the period on short names, so `November.` is still rejected. `May.` is accepted because `may` counts as a short name."
+  "reply": "I fixed the parser in `dateparse/parse.py`. All 24 tests now pass with `python3 -m unittest`, and the change is committed. I didn't touch the tests.\n\n- **Two-digit years:** `3/9/26` now gives 2026. Years 69–99 map to 1969–1999 and 00–68 map to 2000–2068, as the README says.\n- **Ordinal days:** `March 3rd, 2026` and `21st June 2026` now parse. Suffixes `st`, `nd`, `rd` and `th` are accepted after a one- or two-digit day.\n- **Month abbreviations:** a trailing period is now stripped, and `sept` is added as a name for September, so `Sept. 9, 2026` parses.\n\nThe ordinal check doesn't match suffix to number, so `3st` is accepted too."
  },
  "totals": {
-  "cost_micro": 36510,
+  "cost_micro": 35545,
   "tool_calls": 9,
-  "model_calls": 7,
-  "input_tokens": 28981,
-  "output_tokens": 1774,
-  "ms": 15502
+  "model_calls": 6,
+  "input_tokens": 30146,
+  "output_tokens": 1590,
+  "ms": 14435
  },
  "after": {
   "git": {
-   "initial": "3bbc2f707c87",
+   "initial": "34cf22c3e475",
    "commits": [
     {
-     "hash": "72b3b206d0c0",
-     "subject": "Parse two-digit years, ordinal days, and abbreviated months with periods"
+     "hash": "b9be0e866577",
+     "subject": "Parse two-digit years, ordinal days, and abbreviations with periods or Sept"
     }
    ],
    "status": "",
    "changed": [
     "dateparse/parse.py"
    ],
-   "remote_head": "3bbc2f707c87",
-   "diff": "diff --git a/dateparse/parse.py b/dateparse/parse.py\nindex 3088987..6106eb6 100644\n--- a/dateparse/parse.py\n+++ b/dateparse/parse.py\n@@ -14,6 +14,8 @@ MONTHS = {\n }\n WEEKDAYS = {\"mon\", \"monday\", \"tue\", \"tues\", \"tuesday\", \"wed\", \"wednesday\", \"thu\", \"thur\", \"thurs\", \"thursday\",\n             \"fri\", \"friday\", \"sat\", \"saturday\", \"sun\", \"sunday\"}\n+MONTHS[\"sept\"] = 9\n+SHORT_MONTHS = {k for k in MONTHS if len(k) <= 4 and k not in (\"june\", \"july\")}\n RELATIVE = {\"today\": 0, \"tomorrow\": 1, \"yesterday\": -1}\n \n ISO = re.compile(r\"^(\\d{4})-(\\d{1,2})-(\\d{1,2})$\")\n@@ -32,22 +34,38 @@ def parse_date(text, today=None):\n         return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n     m = NUMERIC.match(s)\n     if m:\n-        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n+        year = int(m.group(3))\n+        if len(m.group(3)) == 2:\n+            year += 1900 if year >= 69 else 2000\n+        return _make(year, int(m.group(1)), int(m.group(2)), text)\n     words = s.split()\n     if words and words[0].rstrip(\".\") in WEEKDAYS:\n         words = words[1:]\n     if len(words) == 3:\n-        if words[0] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n-        if words[1] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n+        m0, m1 = _month(words[0]), _month(words[1])\n+        if m0:\n+            return _make(_year(words[2], text), m0, _day(words[1], text), text)\n+        if m1:\n+            return _make(_year(words[2], text), m1, _day(words[0], text), text)\n     raise ValueError(f\"not a date this parser knows: {text!r}\")\n \n \n+def _month(word):\n+    \"\"\"The month number for a month name (short names may end in a period), else None.\"\"\"\n+    if word in MONTHS:\n+        return MONTHS[word]\n+    if word.endswith(\".\"):\n+        bare = word[:-1]\n+        if bare in SHORT_MONTHS:\n+            return MONTHS[bare]\n+    return None\n+\n+\n def _day(word, text):\n-    if not word.isdigit():\n+    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n+    if not m:\n         raise ValueError(f\"not a day of the month in {text!r}\")\n-    return int(word)\n+    return int(m.group(1))\n \n \n def _year(word, text):\n\n"
+   "remote_head": "34cf22c3e475",
+   "diff": "diff --git a/dateparse/parse.py b/dateparse/parse.py\nindex 3088987..30df114 100644\n--- a/dateparse/parse.py\n+++ b/dateparse/parse.py\n@@ -9,7 +9,7 @@ from datetime import date, timedelta\n \n MONTHS = {\n     \"jan\": 1, \"january\": 1, \"feb\": 2, \"february\": 2, \"mar\": 3, \"march\": 3, \"apr\": 4, \"april\": 4,\n-    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"september\": 9,\n+    \"may\": 5, \"jun\": 6, \"june\": 6, \"jul\": 7, \"july\": 7, \"aug\": 8, \"august\": 8, \"sep\": 9, \"sept\": 9, \"september\": 9,\n     \"oct\": 10, \"october\": 10, \"nov\": 11, \"november\": 11, \"dec\": 12, \"december\": 12,\n }\n WEEKDAYS = {\"mon\", \"monday\", \"tue\", \"tues\", \"tuesday\", \"wed\", \"wednesday\", \"thu\", \"thur\", \"thurs\", \"thursday\",\n@@ -32,22 +32,27 @@ def parse_date(text, today=None):\n         return _make(int(m.group(1)), int(m.group(2)), int(m.group(3)), text)\n     m = NUMERIC.match(s)\n     if m:\n-        return _make(int(m.group(3)), int(m.group(1)), int(m.group(2)), text)\n+        year = int(m.group(3))\n+        if len(m.group(3)) == 2:\n+            year += 1900 if year >= 69 else 2000\n+        return _make(year, int(m.group(1)), int(m.group(2)), text)\n     words = s.split()\n     if words and words[0].rstrip(\".\") in WEEKDAYS:\n         words = words[1:]\n     if len(words) == 3:\n-        if words[0] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[0]], _day(words[1], text), text)\n-        if words[1] in MONTHS:\n-            return _make(_year(words[2], text), MONTHS[words[1]], _day(words[0], text), text)\n+        first, second = words[0].rstrip(\".\"), words[1].rstrip(\".\")\n+        if first in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[first], _day(words[1], text), text)\n+        if second in MONTHS:\n+            return _make(_year(words[2], text), MONTHS[second], _day(words[0], text), text)\n     raise ValueError(f\"not a date this parser knows: {text!r}\")\n \n \n def _day(word, text):\n-    if not word.isdigit():\n+    m = re.match(r\"^(\\d{1,2})(?:st|nd|rd|th)?$\", word)\n+    if not m:\n         raise ValueError(f\"not a day of the month in {text!r}\")\n-    return int(word)\n+    return int(m.group(1))\n \n \n def _year(word, text):\n\n"
   },
   "own_tests": {
    "ran": 24,
@@ -637,10 +609,10 @@
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  }

@@ -1,20 +1,20 @@
 {
  "entries": [
   {
-   "at": "2026-11-10T10:12:50",
+   "at": "2026-11-20T11:30:28",
    "session": "",
    "actor": "console",
    "action": "begin",
-   "target": "policy bce304bb92616ab5 prompt ce9a75b924545afc fixtures ea4bb7e7c125b996",
+   "target": "policy 938ec944f6fd7fd3 prompt ce9a75b924545afc fixtures 58975a6d55531c06",
    "verdict": "",
    "rule": "",
    "result": "",
    "seq": 1,
    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
-   "hash": "7b82cc3608a8f474348d0e71d661164f989bcb972b3d349117bc076a149925a8"
+   "hash": "6811dd59616670c3339f7004ca275bc379e431f9ab907c1718e1a3db6cf174a3"
   },
   {
-   "at": "2026-11-10T10:12:50-08:00",
+   "at": "2026-11-20T11:30:28-08:00",
    "session": "parser-lib",
    "actor": "console",
    "action": "start",
@@ -23,11 +23,11 @@
    "rule": "",
    "result": "",
    "seq": 2,
-   "prev": "7b82cc3608a8f474348d0e71d661164f989bcb972b3d349117bc076a149925a8",
-   "hash": "1351d5aab699fb8d6e55e14e01cbc57e90fa627bcd1b380c1fa0c5d1ae4f8c96"
+   "prev": "6811dd59616670c3339f7004ca275bc379e431f9ab907c1718e1a3db6cf174a3",
+   "hash": "b2bfb016177bfd1a5822fa9c77238e7857b3f893b8fa410077a1e082e8766531"
   },
   {
-   "at": "2026-11-10T10:12:52-08:00",
+   "at": "2026-11-20T11:30:30-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
@@ -36,11 +36,11 @@
    "rule": "git-local",
    "result": "0d34e90395fa7aec",
    "seq": 3,
-   "prev": "1351d5aab699fb8d6e55e14e01cbc57e90fa627bcd1b380c1fa0c5d1ae4f8c96",
-   "hash": "9eb945f6405e2595e9826bd7b8b93fe9d85c39009973409b971dd313720e5c09"
+   "prev": "b2bfb016177bfd1a5822fa9c77238e7857b3f893b8fa410077a1e082e8766531",
+   "hash": "a60dab2992d34de1c65beb080e4ca69fd71867dcce34a1b44b2ffc5971dd3339"
   },
   {
-   "at": "2026-11-10T10:12:52-08:00",
+   "at": "2026-11-20T11:30:30-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
@@ -49,11 +49,11 @@
    "rule": "tests",
    "result": "0b765e09203520bb",
    "seq": 4,
-   "prev": "9eb945f6405e2595e9826bd7b8b93fe9d85c39009973409b971dd313720e5c09",
-   "hash": "5ce3de881cf5afa216901b38c79d16617ec9f231209e59e695fc7dacfcffeedc"
+   "prev": "a60dab2992d34de1c65beb080e4ca69fd71867dcce34a1b44b2ffc5971dd3339",
+   "hash": "cede102d5ea696a4729557ba3068f1e4421011d4a88af74edba43c8bf6b25027"
   },
   {
-   "at": "2026-11-10T10:12:52-08:00",
+   "at": "2026-11-20T11:30:30-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "read",
@@ -62,11 +62,11 @@
    "rule": "files",
    "result": "2cf224902ca6c0b2",
    "seq": 5,
-   "prev": "5ce3de881cf5afa216901b38c79d16617ec9f231209e59e695fc7dacfcffeedc",
-   "hash": "db229eb8adba65229d40fa3e5be0d5a2a9199f9c0eafaf161e2fec48db0e19ef"
+   "prev": "cede102d5ea696a4729557ba3068f1e4421011d4a88af74edba43c8bf6b25027",
+   "hash": "e7463d6497f9ca915eda954ad727324bf32ddffe9fdaa3303c7f5836234f9111"
   },
   {
-   "at": "2026-11-10T10:12:54-08:00",
+   "at": "2026-11-20T11:30:31-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "read",
@@ -75,37 +75,37 @@
    "rule": "files",
    "result": "6a78fb455a10d6d8",
    "seq": 6,
-   "prev": "db229eb8adba65229d40fa3e5be0d5a2a9199f9c0eafaf161e2fec48db0e19ef",
-   "hash": "b898d809e49679b5ff35ddbd19d3c81915542910b1f7540fd09566126108faaf"
+   "prev": "e7463d6497f9ca915eda954ad727324bf32ddffe9fdaa3303c7f5836234f9111",
+   "hash": "c26a607bc5b841b9fcc92e54688d076e8acb1cd123b70c6147c7b7dba7ebb15a"
   },
   {
-   "at": "2026-11-10T10:12:54-08:00",
+   "at": "2026-11-20T11:30:31-08:00",
    "session": "parser-lib",
    "actor": "budget",
    "action": "warn",
-   "target": "9477 of 25000 micro-dollars, the last reply",
+   "target": "9351 of 25000 micro-dollars, the last reply",
    "verdict": "warn",
    "rule": "budget",
    "result": "",
    "seq": 7,
-   "prev": "b898d809e49679b5ff35ddbd19d3c81915542910b1f7540fd09566126108faaf",
-   "hash": "cc462b16674289a25315c1fb495995019e457ccba5215aa9112307a3dcff2aa7"
+   "prev": "c26a607bc5b841b9fcc92e54688d076e8acb1cd123b70c6147c7b7dba7ebb15a",
+   "hash": "20c98df1f1df4f7c772801b9afd03a9fe06772622f69a53f9d73278f368f7e5c"
   },
   {
-   "at": "2026-11-10T10:12:58-08:00",
+   "at": "2026-11-20T11:30:36-08:00",
    "session": "parser-lib",
    "actor": "budget",
    "action": "stop",
-   "target": "20947 of 25000 micro-dollars",
+   "target": "20663 of 25000 micro-dollars",
    "verdict": "stop",
    "rule": "budget",
    "result": "",
    "seq": 8,
-   "prev": "cc462b16674289a25315c1fb495995019e457ccba5215aa9112307a3dcff2aa7",
-   "hash": "c927eb2d467604ec688932d1c1ded9b79c8bafa173f411dd1be54267c4510190"
+   "prev": "20c98df1f1df4f7c772801b9afd03a9fe06772622f69a53f9d73278f368f7e5c",
+   "hash": "cde7650a6b53e12d49e9a42325eb44f0056a4c262cff5f6bfc6fbeb08ece0ab3"
   },
   {
-   "at": "2026-11-10T10:12:58-08:00",
+   "at": "2026-11-20T11:30:36-08:00",
    "session": "parser-lib",
    "actor": "console",
    "action": "end",
@@ -114,9 +114,9 @@
    "rule": "",
    "result": "",
    "seq": 9,
-   "prev": "c927eb2d467604ec688932d1c1ded9b79c8bafa173f411dd1be54267c4510190",
-   "hash": "dfc491d57c2cdd5e0d46722c96dfeca7c630c8f4c54b52ae60397dead1afde3e"
+   "prev": "cde7650a6b53e12d49e9a42325eb44f0056a4c262cff5f6bfc6fbeb08ece0ab3",
+   "hash": "4c7b6cbfb9b6dea0e870c6812294c9b2c20c527ec09ca7e51c6f1e319864a132"
   }
  ],
- "head": "dfc491d57c2cdd5e0d46722c96dfeca7c630c8f4c54b52ae60397dead1afde3e"
+ "head": "4c7b6cbfb9b6dea0e870c6812294c9b2c20c527ec09ca7e51c6f1e319864a132"
 }

@@ -1,20 +1,20 @@
 {
  "entries": [
   {
-   "at": "2026-11-10T10:11:39",
+   "at": "2026-11-20T11:29:10",
    "session": "",
    "actor": "console",
    "action": "begin",
-   "target": "policy bce304bb92616ab5 prompt ce9a75b924545afc fixtures ea4bb7e7c125b996",
+   "target": "policy 938ec944f6fd7fd3 prompt ce9a75b924545afc fixtures 58975a6d55531c06",
    "verdict": "",
    "rule": "",
    "result": "",
    "seq": 1,
    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
-   "hash": "08a96bfa61dbcf9d24338bf8e528534053f00df3298561d524ebc35bfc7af2bc"
+   "hash": "4f1c8f8b3a45d5cf4c63bd6c9a3939b8a26b1b5a90cc4503558bc91511ce1241"
   },
   {
-   "at": "2026-11-10T10:12:39-08:00",
+   "at": "2026-11-20T11:30:11-08:00",
    "session": "pricing-research",
    "actor": "console",
    "action": "start",
@@ -23,24 +23,24 @@
    "rule": "",
    "result": "",
    "seq": 2,
-   "prev": "08a96bfa61dbcf9d24338bf8e528534053f00df3298561d524ebc35bfc7af2bc",
-   "hash": "34845632389435e2c3b76a400752ca39a535c70edf9a36ef2bf2a09fb00231cd"
+   "prev": "4f1c8f8b3a45d5cf4c63bd6c9a3939b8a26b1b5a90cc4503558bc91511ce1241",
+   "hash": "3e1fc07d8d77f29287b7edb2022ec4d21c8ca50298f49633a9415f94f2c1875b"
   },
   {
-   "at": "2026-11-10T10:12:40-08:00",
+   "at": "2026-11-20T11:30:14-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
-   "target": "https://clockwren.example/pricing",
+   "target": "https://rotamere.example/pricing",
    "verdict": "allow",
    "rule": "listed",
-   "result": "184bd0a09be4793f",
+   "result": "1855ca36db41b722",
    "seq": 3,
-   "prev": "34845632389435e2c3b76a400752ca39a535c70edf9a36ef2bf2a09fb00231cd",
-   "hash": "1fe1a721562c4aa4ed3d0ef52c8fc5b488de91c8a6bf281c19dba7cd8a6169ac"
+   "prev": "3e1fc07d8d77f29287b7edb2022ec4d21c8ca50298f49633a9415f94f2c1875b",
+   "hash": "cafbcd03772ddc53867a8e778da8249bcc8243a0798be3a5abc8b0fb4d193354"
   },
   {
-   "at": "2026-11-10T10:12:40-08:00",
+   "at": "2026-11-20T11:30:14-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
@@ -49,11 +49,11 @@
    "rule": "listed",
    "result": "52d23be34ca77d5a",
    "seq": 4,
-   "prev": "1fe1a721562c4aa4ed3d0ef52c8fc5b488de91c8a6bf281c19dba7cd8a6169ac",
-   "hash": "18e1d2b5ee207767fb36bc5c120d8c5bb8ca9f0f3dbd0b4375463e2dc585d0a1"
+   "prev": "cafbcd03772ddc53867a8e778da8249bcc8243a0798be3a5abc8b0fb4d193354",
+   "hash": "87e0114d8cc4c72691002be3ffe729fc6996a169f5421ada8d7dd48fe0aa343a"
   },
   {
-   "at": "2026-11-10T10:12:40-08:00",
+   "at": "2026-11-20T11:30:14-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
@@ -62,24 +62,24 @@
    "rule": "listed",
    "result": "3ee95c7dfcbee9b1",
    "seq": 5,
-   "prev": "18e1d2b5ee207767fb36bc5c120d8c5bb8ca9f0f3dbd0b4375463e2dc585d0a1",
-   "hash": "6332eea2744a8e850eec328f323de0d8cff5870b60acc2529c361f8e55c5ad9f"
+   "prev": "87e0114d8cc4c72691002be3ffe729fc6996a169f5421ada8d7dd48fe0aa343a",
+   "hash": "ea0418f67ffebafb12054ea07c8a9d48d5e14dab673ba16ae837808992cfc612"
   },
   {
-   "at": "2026-11-10T10:12:47-08:00",
+   "at": "2026-11-20T11:30:23-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "write",
    "target": "notes/pricing.md",
    "verdict": "allow",
    "rule": "files",
-   "result": "1151b57235e59229",
+   "result": "1314ab2fd491576d",
    "seq": 6,
-   "prev": "6332eea2744a8e850eec328f323de0d8cff5870b60acc2529c361f8e55c5ad9f",
-   "hash": "37ae059a7fd6edeea3a2d962894db84d626ed3c16f40f8eb8d635d6dc81dd39f"
+   "prev": "ea0418f67ffebafb12054ea07c8a9d48d5e14dab673ba16ae837808992cfc612",
+   "hash": "be8692033270a3e46650aeb773f4d447ab5e53b77eb78dc501e2e0f4a21f2ddd"
   },
   {
-   "at": "2026-11-10T10:12:49-08:00",
+   "at": "2026-11-20T11:30:27-08:00",
    "session": "pricing-research",
    "actor": "console",
    "action": "end",
@@ -88,9 +88,9 @@
    "rule": "",
    "result": "",
    "seq": 7,
-   "prev": "37ae059a7fd6edeea3a2d962894db84d626ed3c16f40f8eb8d635d6dc81dd39f",
-   "hash": "130624b7034134a02c7827ef11b8c5016efe385aec997e5d7a33ef9e1deba2e2"
+   "prev": "be8692033270a3e46650aeb773f4d447ab5e53b77eb78dc501e2e0f4a21f2ddd",
+   "hash": "73486adb98a0d6b7ebb1b96d66eec1947eb8728e342771a51faab3354486ca5c"
   }
  ],
- "head": "130624b7034134a02c7827ef11b8c5016efe385aec997e5d7a33ef9e1deba2e2"
+ "head": "73486adb98a0d6b7ebb1b96d66eec1947eb8728e342771a51faab3354486ca5c"
 }

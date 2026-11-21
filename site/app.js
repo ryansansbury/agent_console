@@ -456,6 +456,16 @@
     pop.style.top = Math.round(r.top + (win.scrollY || 0)) + "px";
   }
   function hideTip() { var pop = $("#pop"); if (pop) { pop.hidden = true; } }
+  // Dark mode (11/20). Light is the default, and the switch carries its state for screen readers.
+  function setDark(on) {
+    doc.body.classList.toggle("dark", !!on);
+    var b = $("#theme");
+    if (b) { b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    if (typeof drawThread === "function") { drawThread(false); }
+  }
+  window.ACP = window.ACP || {};
+  window.ACP.dark = setDark;
+
   function tipTarget(t) { return t && t.closest ? t.closest("#v-trace [data-ev], #v-trace [data-turn]") : null; }
 
   /* ------------------------------------------------------------------ the visitor's answer to the waiting push */
@@ -1011,6 +1021,7 @@
       return;
     }
     if ((el = t.closest("#tour-start"))) { tour(1); return; }
+    if ((el = t.closest("#theme"))) { setDark(!doc.body.classList.contains("dark")); return; }
     /* The brand is the way home: the morning, with the event a fresh load opens on. */
     if ((el = t.closest("[data-home]"))) {
       if (ev.preventDefault) { ev.preventDefault(); }

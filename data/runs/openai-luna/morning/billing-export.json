@@ -8,8 +8,8 @@
   "vendor": "OpenAI",
   "model": "gpt-6-luna"
  },
- "recorded": "2026-11-10T10:07:58-08:00",
- "offset_ms": 30002,
+ "recorded": "2026-11-20T11:24:51-08:00",
+ "offset_ms": 30005,
  "settings": {
   "reader": "on",
   "budget_micro": 1000000,
@@ -33,10 +33,24 @@
    "text": "",
    "calls": [
     {
-     "id": "call_CTFJcrv1et9EDaUzuCMHkwe6",
+     "id": "call_yI1sK3m7hTnqnOxab8UKsIcb",
      "name": "shell",
      "args": {
       "command": "ls"
+     }
+    },
+    {
+     "id": "call_IOkodzbZ3rGfaL63BHrUUudc",
+     "name": "shell",
+     "args": {
+      "command": "git status --short --branch"
+     }
+    },
+    {
+     "id": "call_w2Qnupz9OZKlNS1OcRS1gcf2",
+     "name": "shell",
+     "args": {
+      "command": "find . -maxdepth 3 -type f"
      }
     }
    ],
@@ -44,20 +58,20 @@
     "input": 749,
     "cache_write": 0,
     "cache_read": 0,
-    "output": 16
+    "output": 72
    },
-   "cost_micro": 83,
-   "ms": 1079,
+   "cost_micro": 111,
+   "ms": 1449,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 1,
-   "t_ms": 1079,
+   "t_ms": 1449,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_CTFJcrv1et9EDaUzuCMHkwe6",
+   "call_id": "call_yI1sK3m7hTnqnOxab8UKsIcb",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -82,134 +96,17 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 13,
+   "ms": 3,
    "target": "ls",
    "seq": 2,
-   "t_ms": 1092,
-   "kind": "call",
-   "audit": [
-    18
-   ]
-  },
-  {
-   "text": "",
-   "calls": [
-    {
-     "id": "call_LxVjQG73gAaCrtURmNoUB0p9",
-     "name": "shell",
-     "args": {
-      "command": "ls billing"
-     }
-    },
-    {
-     "id": "call_xzshAHPx1nkAlkd8wUfK9zj1",
-     "name": "shell",
-     "args": {
-      "command": "ls tests"
-     }
-    },
-    {
-     "id": "call_cHcjrghxGQiE6NkLvMjIZzDT",
-     "name": "shell",
-     "args": {
-      "command": "git status --short --branch"
-     }
-    }
-   ],
-   "usage": {
-    "input": 784,
-    "cache_write": 0,
-    "cache_read": 0,
-    "output": 65
-   },
-   "cost_micro": 111,
-   "ms": 2212,
-   "stop_reason": "tool_calls",
-   "served_by": "gpt-6-luna",
-   "thinking_chars": 0,
-   "seq": 3,
-   "t_ms": 3305,
-   "kind": "model",
-   "audit": []
-  },
-  {
-   "call_id": "call_LxVjQG73gAaCrtURmNoUB0p9",
-   "name": "shell",
-   "tool": "shell",
-   "args": {
-    "command": "ls billing"
-   },
-   "facts": {
-    "tool": "shell",
-    "argv": [
-     "ls",
-     "billing"
-    ],
-    "operators": false,
-    "paths": [
-     "/workspace/billing"
-    ],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "look",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "__init__.py\ninvoices.py\nreport.py\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": 0,
-   "ms": 12,
-   "target": "ls billing",
-   "seq": 4,
-   "t_ms": 3318,
-   "kind": "call",
-   "audit": [
-    19
-   ]
-  },
-  {
-   "call_id": "call_xzshAHPx1nkAlkd8wUfK9zj1",
-   "name": "shell",
-   "tool": "shell",
-   "args": {
-    "command": "ls tests"
-   },
-   "facts": {
-    "tool": "shell",
-    "argv": [
-     "ls",
-     "tests"
-    ],
-    "operators": false,
-    "paths": [
-     "/workspace/tests"
-    ],
-    "outside": false
-   },
-   "verdict": "allow",
-   "rule": "look",
-   "stop": false,
-   "answer": null,
-   "ran": true,
-   "refused": null,
-   "output": "__init__.py\ntest_invoices.py\ntest_report.py\n",
-   "truncated": false,
-   "masked": 0,
-   "exit_code": 0,
-   "ms": 7,
-   "target": "ls tests",
-   "seq": 5,
-   "t_ms": 3326,
+   "t_ms": 1453,
    "kind": "call",
    "audit": [
     20
    ]
   },
   {
-   "call_id": "call_cHcjrghxGQiE6NkLvMjIZzDT",
+   "call_id": "call_IOkodzbZ3rGfaL63BHrUUudc",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -239,65 +136,123 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 18,
+   "ms": 11,
    "target": "git status --short --branch",
-   "seq": 6,
-   "t_ms": 3344,
+   "seq": 3,
+   "t_ms": 1463,
    "kind": "call",
    "audit": [
     21
    ]
   },
   {
+   "call_id": "call_w2Qnupz9OZKlNS1OcRS1gcf2",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "find . -maxdepth 3 -type f"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "find",
+     ".",
+     "-maxdepth",
+     "3",
+     "-type",
+     "f"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace",
+     "/workspace/3",
+     "/workspace/f"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "look",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "./tests/__init__.py\n./tests/test_report.py\n./tests/test_invoices.py\n./README.md\n./.git/config\n./.git/HEAD\n./.git/info/exclude\n./.git/logs/HEAD\n./.git/description\n./.git/hooks/commit-msg.sample\n./.git/hooks/pre-rebase.sample\n./.git/hooks/sendemail-validate.sample\n./.git/hooks/pre-commit.sample\n./.git/hooks/applypatch-msg.sample\n./.git/hooks/fsmonitor-watchman.sample\n./.git/hooks/pre-receive.sample\n./.git/hooks/prepare-commit-msg.sample\n./.git/hooks/post-update.sample\n./.git/hooks/pre-merge-commit.sample\n./.git/hooks/pre-applypatch.sample\n./.git/hooks/pre-push.sample\n./.git/hooks/update.sample\n./.git/hooks/push-to-checkout.sample\n./.git/index\n./.git/COMMIT_EDITMSG\n./data/invoices.json\n./billing/__init__.py\n./billing/invoices.py\n./billing/report.py\n",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": 0,
+   "ms": 3,
+   "target": "find . -maxdepth 3 -type f",
+   "seq": 4,
+   "t_ms": 1467,
+   "kind": "call",
+   "audit": [
+    22
+   ]
+  },
+  {
    "text": "",
    "calls": [
     {
-     "id": "call_zEDXX6l7TuOtubY6hVI1ZgOq",
+     "id": "call_uIvW7I8Ai0EYjhhKHvxWy5rR",
      "name": "read_file",
      "args": {
       "path": "billing/report.py"
      }
     },
     {
-     "id": "call_EyWryNW1Z3Nd0m5QQipiPfqu",
+     "id": "call_1ngyYQbPPwRYFkp39VigQhzu",
      "name": "read_file",
      "args": {
       "path": "billing/invoices.py"
      }
     },
     {
-     "id": "call_XEeOVQI9PD8TfXotehMO57iD",
+     "id": "call_kfiuVikttuk1m4hlOrbMA2yR",
      "name": "read_file",
      "args": {
       "path": "tests/test_report.py"
      }
     },
     {
-     "id": "call_uABe23gC3MtVRn8DVp7FlEOf",
+     "id": "call_5vqkmlDcK8vaHFKcHtem7fm4",
      "name": "read_file",
      "args": {
       "path": "tests/test_invoices.py"
      }
+    },
+    {
+     "id": "call_yojY8gvpfQsW0d5fbpnjNP3y",
+     "name": "read_file",
+     "args": {
+      "path": "billing/__init__.py"
+     }
+    },
+    {
+     "id": "call_MDLvf2v7SaUKkyB3vCVmUSTh",
+     "name": "shell",
+     "args": {
+      "command": "git remote -v"
+     }
     }
    ],
    "usage": {
-    "input": 898,
+    "input": 1080,
     "cache_write": 0,
     "cache_read": 0,
-    "output": 87
+    "output": 121
    },
-   "cost_micro": 134,
-   "ms": 1908,
+   "cost_micro": 169,
+   "ms": 1420,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
-   "seq": 7,
-   "t_ms": 5253,
+   "seq": 5,
+   "t_ms": 2887,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_zEDXX6l7TuOtubY6hVI1ZgOq",
+   "call_id": "call_uIvW7I8Ai0EYjhhKHvxWy5rR",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -320,17 +275,17 @@
    "truncated": false,
    "masked": 0,
    "exit_code": null,
-   "ms": 1,
+   "ms": 0,
    "target": "billing/report.py",
-   "seq": 8,
-   "t_ms": 5254,
+   "seq": 6,
+   "t_ms": 2887,
    "kind": "call",
    "audit": [
-    22
+    23
    ]
   },
   {
-   "call_id": "call_EyWryNW1Z3Nd0m5QQipiPfqu",
+   "call_id": "call_1ngyYQbPPwRYFkp39VigQhzu",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -353,17 +308,17 @@
    "truncated": false,
    "masked": 0,
    "exit_code": null,
-   "ms": 1,
+   "ms": 0,
    "target": "billing/invoices.py",
-   "seq": 9,
-   "t_ms": 5255,
+   "seq": 7,
+   "t_ms": 2888,
    "kind": "call",
    "audit": [
-    23
+    24
    ]
   },
   {
-   "call_id": "call_XEeOVQI9PD8TfXotehMO57iD",
+   "call_id": "call_kfiuVikttuk1m4hlOrbMA2yR",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -386,17 +341,17 @@
    "truncated": false,
    "masked": 0,
    "exit_code": null,
-   "ms": 1,
+   "ms": 0,
    "target": "tests/test_report.py",
-   "seq": 10,
-   "t_ms": 5256,
+   "seq": 8,
+   "t_ms": 2888,
    "kind": "call",
    "audit": [
-    24
+    25
    ]
   },
   {
-   "call_id": "call_uABe23gC3MtVRn8DVp7FlEOf",
+   "call_id": "call_5vqkmlDcK8vaHFKcHtem7fm4",
    "name": "read_file",
    "tool": "read",
    "args": {
@@ -421,48 +376,120 @@
    "exit_code": null,
    "ms": 0,
    "target": "tests/test_invoices.py",
-   "seq": 11,
-   "t_ms": 5257,
+   "seq": 9,
+   "t_ms": 2888,
    "kind": "call",
    "audit": [
-    25
+    26
+   ]
+  },
+  {
+   "call_id": "call_yojY8gvpfQsW0d5fbpnjNP3y",
+   "name": "read_file",
+   "tool": "read",
+   "args": {
+    "path": "billing/__init__.py"
+   },
+   "facts": {
+    "tool": "read",
+    "paths": [
+     "/workspace/billing/__init__.py"
+    ],
+    "outside": false
+   },
+   "verdict": "allow",
+   "rule": "files",
+   "stop": false,
+   "answer": null,
+   "ran": true,
+   "refused": null,
+   "output": "",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "billing/__init__.py",
+   "seq": 10,
+   "t_ms": 2888,
+   "kind": "call",
+   "audit": [
+    27
+   ]
+  },
+  {
+   "call_id": "call_MDLvf2v7SaUKkyB3vCVmUSTh",
+   "name": "shell",
+   "tool": "shell",
+   "args": {
+    "command": "git remote -v"
+   },
+   "facts": {
+    "tool": "shell",
+    "argv": [
+     "git",
+     "remote",
+     "-v"
+    ],
+    "operators": false,
+    "paths": [
+     "/workspace/remote"
+    ],
+    "outside": false
+   },
+   "verdict": "deny",
+   "rule": "git-settings",
+   "stop": false,
+   "answer": null,
+   "ran": false,
+   "refused": null,
+   "output": "The console's policy denied this call (rule: Git's settings, remotes and history). It did not run.",
+   "truncated": false,
+   "masked": 0,
+   "exit_code": null,
+   "ms": 0,
+   "target": "git remote -v",
+   "seq": 11,
+   "t_ms": 2888,
+   "kind": "call",
+   "audit": [
+    28
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_24dMji4QyJrdt2fSquRi2zzD",
+     "id": "call_6LwGeAo9MioLgQiynaII5pFV",
      "name": "write_file",
      "args": {
       "path": "billing/export.py",
-      "content": "\"\"\"CSV export for monthly billing report rows.\"\"\"\nimport csv\n\n\nCOLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n\n\ndef export_csv(rows, path):\n    \"\"\"Write monthly report rows to *path*, formatting amounts as dollars.\"\"\"\n    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as output:\n        writer = csv.writer(output, lineterminator=\"\\n\")\n        writer.writerow(COLUMNS)\n        for row in rows:\n            writer.writerow((\n                row[\"account_id\"],\n                row[\"month\"],\n                row[\"invoices\"],\n                f'{row[\"subtotal_cents\"] / 100:.2f}',\n                f'{row[\"tax_cents\"] / 100:.2f}',\n                f'{row[\"total_cents\"] / 100:.2f}',\n            ))\n"
+      "content": "\"\"\"CSV export for monthly billing reports.\"\"\"\nimport csv\n\n\n_COLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n\n\ndef _dollars(cents):\n    return f\"{cents // 100}.{cents % 100:02d}\"\n\n\ndef export_csv(rows, path):\n    \"\"\"Write monthly report rows to CSV, converting money from cents to dollars.\"\"\"\n    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as csv_file:\n        writer = csv.writer(csv_file, lineterminator=\"\\n\")\n        writer.writerow(_COLUMNS)\n        for row in rows:\n            writer.writerow((\n                row[\"account_id\"],\n                row[\"month\"],\n                row[\"invoices\"],\n                _dollars(row[\"subtotal_cents\"]),\n                _dollars(row[\"tax_cents\"]),\n                _dollars(row[\"total_cents\"]),\n            ))\n"
      }
     }
    ],
    "usage": {
-    "input": 2398,
+    "input": 1564,
     "cache_write": 0,
-    "cache_read": 0,
-    "output": 246
+    "cache_read": 1077,
+    "output": 266
    },
-   "cost_micro": 363,
-   "ms": 3350,
+   "cost_micro": 301,
+   "ms": 2444,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 12,
-   "t_ms": 8607,
+   "t_ms": 5332,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_24dMji4QyJrdt2fSquRi2zzD",
+   "call_id": "call_6LwGeAo9MioLgQiynaII5pFV",
    "name": "write_file",
    "tool": "write",
    "args": {
     "path": "billing/export.py",
-    "content": "\"\"\"CSV export for monthly billing report rows.\"\"\"\nimport csv\n\n\nCOLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n\n\ndef export_csv(rows, path):\n    \"\"\"Write monthly report rows to *path*, formatting amounts as dollars.\"\"\"\n    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as output:\n        writer = csv.writer(output, lineterminator=\"\\n\")\n        writer.writerow(COLUMNS)\n        for row in rows:\n            writer.writerow((\n                row[\"account_id\"],\n                row[\"month\"],\n                row[\"invoices\"],\n                f'{row[\"subtotal_cents\"] / 100:.2f}',\n                f'{row[\"tax_cents\"] / 100:.2f}',\n                f'{row[\"total_cents\"] / 100:.2f}',\n            ))\n"
+    "content": "\"\"\"CSV export for monthly billing reports.\"\"\"\nimport csv\n\n\n_COLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n\n\ndef _dollars(cents):\n    return f\"{cents // 100}.{cents % 100:02d}\"\n\n\ndef export_csv(rows, path):\n    \"\"\"Write monthly report rows to CSV, converting money from cents to dollars.\"\"\"\n    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as csv_file:\n        writer = csv.writer(csv_file, lineterminator=\"\\n\")\n        writer.writerow(_COLUMNS)\n        for row in rows:\n            writer.writerow((\n                row[\"account_id\"],\n                row[\"month\"],\n                row[\"invoices\"],\n                _dollars(row[\"subtotal_cents\"]),\n                _dollars(row[\"tax_cents\"]),\n                _dollars(row[\"total_cents\"]),\n            ))\n"
    },
    "facts": {
     "tool": "write",
@@ -470,7 +497,7 @@
      "/workspace/billing/export.py"
     ],
     "outside": false,
-    "bytes": 723
+    "bytes": 786
    },
    "verdict": "allow",
    "rule": "files",
@@ -478,54 +505,54 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "Wrote 723 bytes to /workspace/billing/export.py.",
+   "output": "Wrote 786 bytes to /workspace/billing/export.py.",
    "truncated": false,
    "masked": 0,
    "exit_code": null,
-   "ms": 1,
+   "ms": 0,
    "target": "billing/export.py",
    "seq": 13,
-   "t_ms": 8608,
+   "t_ms": 5332,
    "kind": "call",
    "audit": [
-    26
+    29
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_L4d2WPpRXpy7XAZQLXU9z49U",
+     "id": "call_g9bxqXCyAUeyLuBEvWNoQbsi",
      "name": "write_file",
      "args": {
       "path": "tests/test_export.py",
-      "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\n\nclass ExportCSV(unittest.TestCase):\n    def test_writes_header_formatted_money_and_preserves_row_order(self):\n        rows = [\n            {\"account_id\": \"ACCT-B\", \"month\": \"2026-10\", \"invoices\": 2,\n             \"subtotal_cents\": 123450, \"tax_cents\": 1234, \"total_cents\": 124684},\n            {\"account_id\": \"ACCT-A\", \"month\": \"2026-09\", \"invoices\": 1,\n             \"subtotal_cents\": 57550, \"tax_cents\": 4748, \"total_cents\": 62298},\n        ]\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv(rows, path)\n            contents = path.read_bytes()\n\n        self.assertEqual(contents, (\n            b\"account_id,month,invoices,subtotal,tax,total\\n\"\n            b\"ACCT-B,2026-10,2,1234.50,12.34,1246.84\\n\"\n            b\"ACCT-A,2026-09,1,575.50,47.48,622.98\\n\"\n        ))\n\n    def test_accepts_monthly_report_rows(self):\n        data = Path(__file__).resolve().parent.parent / \"data\" / \"invoices.json\"\n        rows = monthly_report(load_invoices(data))\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv(rows, path)\n            lines = path.read_text(encoding=\"utf-8\").splitlines()\n        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n        self.assertEqual(len(lines), len(rows) + 1)\n\n    def test_empty_rows_still_writes_header_with_plain_newline(self):\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv([], path)\n            self.assertEqual(path.read_bytes(), b\"account_id,month,invoices,subtotal,tax,total\\n\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nDATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n\n\nclass ExportCSV(unittest.TestCase):\n    def test_exports_report_rows_in_order_with_dollar_amounts(self):\n        rows = monthly_report(load_invoices(DATA))\n        with tempfile.TemporaryDirectory() as temp_dir:\n            output = Path(temp_dir) / \"monthly.csv\"\n            export_csv(rows, output)\n            contents = output.read_bytes().decode(\"utf-8\")\n\n        self.assertTrue(contents.endswith(\"\\n\"))\n        self.assertNotIn(\"\\r\", contents)\n        lines = contents.splitlines()\n        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n        self.assertEqual(\n            lines[1],\n            \"ACCT-1001,2026-09,2,575.50,47.48,622.98\",\n        )\n        self.assertEqual(len(lines), len(rows) + 1)\n        self.assertEqual(\n            [line.split(\",\")[:2] for line in lines[1:]],\n            [[row[\"account_id\"], row[\"month\"]] for row in rows],\n        )\n\n    def test_empty_rows_still_write_header_with_plain_newline(self):\n        with tempfile.TemporaryDirectory() as temp_dir:\n            output = Path(temp_dir) / \"empty.csv\"\n            export_csv([], output)\n            contents = output.read_bytes()\n        self.assertEqual(contents, b\"account_id,month,invoices,subtotal,tax,total\\n\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
      }
     }
    ],
    "usage": {
-    "input": 273,
+    "input": 293,
     "cache_write": 0,
-    "cache_read": 2395,
-    "output": 572
+    "cache_read": 2638,
+    "output": 439
    },
-   "cost_micro": 553,
-   "ms": 6641,
+   "cost_micro": 276,
+   "ms": 3295,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 14,
-   "t_ms": 15250,
+   "t_ms": 8627,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_L4d2WPpRXpy7XAZQLXU9z49U",
+   "call_id": "call_g9bxqXCyAUeyLuBEvWNoQbsi",
    "name": "write_file",
    "tool": "write",
    "args": {
     "path": "tests/test_export.py",
-    "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\n\nclass ExportCSV(unittest.TestCase):\n    def test_writes_header_formatted_money_and_preserves_row_order(self):\n        rows = [\n            {\"account_id\": \"ACCT-B\", \"month\": \"2026-10\", \"invoices\": 2,\n             \"subtotal_cents\": 123450, \"tax_cents\": 1234, \"total_cents\": 124684},\n            {\"account_id\": \"ACCT-A\", \"month\": \"2026-09\", \"invoices\": 1,\n             \"subtotal_cents\": 57550, \"tax_cents\": 4748, \"total_cents\": 62298},\n        ]\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv(rows, path)\n            contents = path.read_bytes()\n\n        self.assertEqual(contents, (\n            b\"account_id,month,invoices,subtotal,tax,total\\n\"\n            b\"ACCT-B,2026-10,2,1234.50,12.34,1246.84\\n\"\n            b\"ACCT-A,2026-09,1,575.50,47.48,622.98\\n\"\n        ))\n\n    def test_accepts_monthly_report_rows(self):\n        data = Path(__file__).resolve().parent.parent / \"data\" / \"invoices.json\"\n        rows = monthly_report(load_invoices(data))\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv(rows, path)\n            lines = path.read_text(encoding=\"utf-8\").splitlines()\n        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n        self.assertEqual(len(lines), len(rows) + 1)\n\n    def test_empty_rows_still_writes_header_with_plain_newline(self):\n        with tempfile.TemporaryDirectory() as directory:\n            path = Path(directory) / \"report.csv\"\n            export_csv([], path)\n            self.assertEqual(path.read_bytes(), b\"account_id,month,invoices,subtotal,tax,total\\n\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom billing.export import export_csv\nfrom billing.invoices import load_invoices\nfrom billing.report import monthly_report\n\nDATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n\n\nclass ExportCSV(unittest.TestCase):\n    def test_exports_report_rows_in_order_with_dollar_amounts(self):\n        rows = monthly_report(load_invoices(DATA))\n        with tempfile.TemporaryDirectory() as temp_dir:\n            output = Path(temp_dir) / \"monthly.csv\"\n            export_csv(rows, output)\n            contents = output.read_bytes().decode(\"utf-8\")\n\n        self.assertTrue(contents.endswith(\"\\n\"))\n        self.assertNotIn(\"\\r\", contents)\n        lines = contents.splitlines()\n        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n        self.assertEqual(\n            lines[1],\n            \"ACCT-1001,2026-09,2,575.50,47.48,622.98\",\n        )\n        self.assertEqual(len(lines), len(rows) + 1)\n        self.assertEqual(\n            [line.split(\",\")[:2] for line in lines[1:]],\n            [[row[\"account_id\"], row[\"month\"]] for row in rows],\n        )\n\n    def test_empty_rows_still_write_header_with_plain_newline(self):\n        with tempfile.TemporaryDirectory() as temp_dir:\n            output = Path(temp_dir) / \"empty.csv\"\n            export_csv([], output)\n            contents = output.read_bytes()\n        self.assertEqual(contents, b\"account_id,month,invoices,subtotal,tax,total\\n\")\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
    },
    "facts": {
     "tool": "write",
@@ -533,7 +560,7 @@
      "/workspace/tests/test_export.py"
     ],
     "outside": false,
-    "bytes": 1913
+    "bytes": 1548
    },
    "verdict": "allow",
    "rule": "files",
@@ -541,24 +568,24 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "Wrote 1913 bytes to /workspace/tests/test_export.py.",
+   "output": "Wrote 1548 bytes to /workspace/tests/test_export.py.",
    "truncated": false,
    "masked": 0,
    "exit_code": null,
-   "ms": 1,
+   "ms": 0,
    "target": "tests/test_export.py",
    "seq": 15,
-   "t_ms": 15252,
+   "t_ms": 8628,
    "kind": "call",
    "audit": [
-    27
+    30
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_Bj1IoxZlXSrUwY1hlvojKt66",
+     "id": "call_L1XQ6XxWXz17RIp7xUWHNj9Q",
      "name": "shell",
      "args": {
       "command": "python3 -m unittest"
@@ -566,23 +593,23 @@
     }
    ],
    "usage": {
-    "input": 600,
+    "input": 467,
     "cache_write": 0,
-    "cache_read": 2665,
+    "cache_read": 2928,
     "output": 20
    },
-   "cost_micro": 337,
-   "ms": 1430,
+   "cost_micro": 86,
+   "ms": 1107,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 16,
-   "t_ms": 16681,
+   "t_ms": 9735,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_Bj1IoxZlXSrUwY1hlvojKt66",
+   "call_id": "call_L1XQ6XxWXz17RIp7xUWHNj9Q",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -607,24 +634,24 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.003s\n\nOK\n",
+   "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.002s\n\nOK\n",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 88,
+   "ms": 53,
    "target": "python3 -m unittest",
    "seq": 17,
-   "t_ms": 16770,
+   "t_ms": 9789,
    "kind": "call",
    "audit": [
-    28
+    31
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_hAah2BDfDHqm4ITr9fsvKCZd",
+     "id": "call_c8D2CuBv0K4EOnyjqCtmpRFW",
      "name": "shell",
      "args": {
       "command": "git add billing/export.py tests/test_export.py"
@@ -634,21 +661,21 @@
    "usage": {
     "input": 50,
     "cache_write": 0,
-    "cache_read": 3262,
+    "cache_read": 3392,
     "output": 24
    },
-   "cost_micro": 344,
-   "ms": 1378,
+   "cost_micro": 51,
+   "ms": 1176,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 18,
-   "t_ms": 18148,
+   "t_ms": 10965,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_hAah2BDfDHqm4ITr9fsvKCZd",
+   "call_id": "call_c8D2CuBv0K4EOnyjqCtmpRFW",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -680,20 +707,20 @@
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 32,
+   "ms": 10,
    "target": "git add billing/export.py tests/test_export.py",
    "seq": 19,
-   "t_ms": 18180,
+   "t_ms": 10975,
    "kind": "call",
    "audit": [
-    29
+    32
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_LeqUX1iqu3L46NxKuxYxDOKw",
+     "id": "call_mrHLO0tZGZ7Ybg3T1JGMjJVR",
      "name": "shell",
      "args": {
       "command": "git commit -m \"Add monthly report CSV export\""
@@ -703,21 +730,21 @@
    "usage": {
     "input": 45,
     "cache_write": 0,
-    "cache_read": 3309,
+    "cache_read": 3439,
     "output": 26
    },
-   "cost_micro": 349,
-   "ms": 1343,
+   "cost_micro": 52,
+   "ms": 1218,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 20,
-   "t_ms": 19524,
+   "t_ms": 12193,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_LeqUX1iqu3L46NxKuxYxDOKw",
+   "call_id": "call_mrHLO0tZGZ7Ybg3T1JGMjJVR",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -744,24 +771,24 @@
    "answer": null,
    "ran": true,
    "refused": null,
-   "output": "[main a5a0ed7] Add monthly report CSV export\n 2 files changed, 68 insertions(+)\n create mode 100644 billing/export.py\n create mode 100644 tests/test_export.py\n",
+   "output": "[main d9ae2c8] Add monthly report CSV export\n 2 files changed, 68 insertions(+)\n create mode 100644 billing/export.py\n create mode 100644 tests/test_export.py\n",
    "truncated": false,
    "masked": 0,
    "exit_code": 0,
-   "ms": 61,
+   "ms": 17,
    "target": "git commit -m \"Add monthly report CSV export\"",
    "seq": 21,
-   "t_ms": 19585,
+   "t_ms": 12210,
    "kind": "call",
    "audit": [
-    30
+    33
    ]
   },
   {
    "text": "",
    "calls": [
     {
-     "id": "call_QDetNaf5yotDxdBYlLTIfHYT",
+     "id": "call_0V6vtbniJ7SlCb5MAMKZ1zDL",
      "name": "shell",
      "args": {
       "command": "git push origin main"
@@ -771,21 +798,21 @@
    "usage": {
     "input": 84,
     "cache_write": 0,
-    "cache_read": 3351,
+    "cache_read": 3481,
     "output": 19
    },
-   "cost_micro": 353,
-   "ms": 1281,
+   "cost_micro": 53,
+   "ms": 1212,
    "stop_reason": "tool_calls",
    "served_by": "gpt-6-luna",
    "thinking_chars": 0,
    "seq": 22,
-   "t_ms": 20866,
+   "t_ms": 13422,
    "kind": "model",
    "audit": []
   },
   {
-   "call_id": "call_QDetNaf5yotDxdBYlLTIfHYT",
+   "call_id": "call_0V6vtbniJ7SlCb5MAMKZ1zDL",
    "name": "shell",
    "tool": "shell",
    "args": {
@@ -820,11 +847,11 @@
    "ms": 1,
    "target": "git push origin main",
    "seq": 23,
-   "t_ms": 20867,
+   "t_ms": 13423,
    "kind": "call",
    "audit": [
-    31,
-    32
+    34,
+    35
    ]
   },
   {
@@ -832,10 +859,10 @@
    "detail": "a call is waiting for a person",
    "reply": "",
    "seq": 24,
-   "t_ms": 20867,
+   "t_ms": 13423,
    "kind": "end",
    "audit": [
-    33
+    36
    ]
   }
  ],
@@ -845,19 +872,19 @@
   "reply": ""
  },
  "totals": {
-  "cost_micro": 2627,
-  "tool_calls": 14,
-  "model_calls": 9,
-  "input_tokens": 20863,
-  "output_tokens": 1075,
-  "ms": 20867
+  "cost_micro": 1099,
+  "tool_calls": 15,
+  "model_calls": 8,
+  "input_tokens": 21287,
+  "output_tokens": 987,
+  "ms": 13423
  },
  "after": {
   "git": {
-   "initial": "45ad89bd73e0",
+   "initial": "aaaa57a4ab79",
    "commits": [
     {
-     "hash": "a5a0ed77be33",
+     "hash": "d9ae2c859928",
      "subject": "Add monthly report CSV export"
     }
    ],
@@ -866,14 +893,14 @@
     "billing/export.py",
     "tests/test_export.py"
    ],
-   "remote_head": "45ad89bd73e0",
-   "diff": "diff --git a/billing/export.py b/billing/export.py\nnew file mode 100644\nindex 0000000..e06e108\n--- /dev/null\n+++ b/billing/export.py\n@@ -0,0 +1,21 @@\n+\"\"\"CSV export for monthly billing report rows.\"\"\"\n+import csv\n+\n+\n+COLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n+\n+\n+def export_csv(rows, path):\n+    \"\"\"Write monthly report rows to *path*, formatting amounts as dollars.\"\"\"\n+    with open(path, \"w\", newline=\"\", encoding=\"utf-8\") as output:\n+        writer = csv.writer(output, lineterminator=\"\\n\")\n+        writer.writerow(COLUMNS)\n+        for row in rows:\n+            writer.writerow((\n+                row[\"account_id\"],\n+                row[\"month\"],\n+                row[\"invoices\"],\n+                f'{row[\"subtotal_cents\"] / 100:.2f}',\n+                f'{row[\"tax_cents\"] / 100:.2f}',\n+                f'{row[\"total_cents\"] / 100:.2f}',\n+            ))\ndiff --git a/tests/test_export.py b/tests/test_export.py\nnew file mode 100644\nindex 0000000..82dbfaa\n--- /dev/null\n+++ b/tests/test_export.py\n@@ -0,0 +1,47 @@\n+import tempfile\n+import unittest\n+from pathlib import Path\n+\n+from billing.export import export_csv\n+from billing.invoices import load_invoices\n+from billing.report import monthly_report\n+\n+\n+class ExportCSV(unittest.TestCase):\n+    def test_writes_header_formatted_money_and_preserves_row_order(self):\n+        rows = [\n+            {\"account_id\": \"ACCT-B\", \"month\": \"2026-10\", \"invoices\": 2,\n+             \"subtotal_cents\": 123450, \"tax_cents\": 1234, \"total_cents\": 124684},\n+            {\"account_id\": \"ACCT-A\", \"month\": \"2026-09\", \"invoices\": 1,\n+             \"subtotal_cents\": 57550, \"tax_cents\": 4748, \"total_cents\": 62298},\n+        ]\n+        with tempfile.TemporaryDirectory() as directory:\n+            path = Path(directory) / \"report.csv\"\n+            export_csv(rows, path)\n+            contents = path.read_bytes()\n+\n+        self.assertEqual(contents, (\n+            b\"account_id,month,invoices,subtotal,tax,total\\n\"\n+            b\"ACCT-B,2026-10,2,1234.50,12.34,1246.84\\n\"\n+            b\"ACCT-A,2026-09,1,575.50,47.48,622.98\\n\"\n+        ))\n+\n+    def test_accepts_monthly_report_rows(self):\n+        data = Path(__file__).resolve().parent.parent / \"data\" / \"invoices.json\"\n+        rows = monthly_report(load_invoices(data))\n+        with tempfile.TemporaryDirectory() as directory:\n+            path = Path(directory) / \"report.csv\"\n+            export_csv(rows, path)\n+            lines = path.read_text(encoding=\"utf-8\").splitlines()\n+        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n+        self.assertEqual(len(lines), len(rows) + 1)\n+\n+    def test_empty_rows_still_writes_header_with_plain_newline(self):\n+        with tempfile.TemporaryDirectory() as directory:\n+            path = Path(directory) / \"report.csv\"\n+            export_csv([], path)\n+            self.assertEqual(path.read_bytes(), b\"account_id,month,invoices,subtotal,tax,total\\n\")\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\n"
+   "remote_head": "aaaa57a4ab79",
+   "diff": "diff --git a/billing/export.py b/billing/export.py\nnew file mode 100644\nindex 0000000..aa22c2a\n--- /dev/null\n+++ b/billing/export.py\n@@ -0,0 +1,25 @@\n+\"\"\"CSV export for monthly billing reports.\"\"\"\n+import csv\n+\n+\n+_COLUMNS = (\"account_id\", \"month\", \"invoices\", \"subtotal\", \"tax\", \"total\")\n+\n+\n+def _dollars(cents):\n+    return f\"{cents // 100}.{cents % 100:02d}\"\n+\n+\n+def export_csv(rows, path):\n+    \"\"\"Write monthly report rows to CSV, converting money from cents to dollars.\"\"\"\n+    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as csv_file:\n+        writer = csv.writer(csv_file, lineterminator=\"\\n\")\n+        writer.writerow(_COLUMNS)\n+        for row in rows:\n+            writer.writerow((\n+                row[\"account_id\"],\n+                row[\"month\"],\n+                row[\"invoices\"],\n+                _dollars(row[\"subtotal_cents\"]),\n+                _dollars(row[\"tax_cents\"]),\n+                _dollars(row[\"total_cents\"]),\n+            ))\ndiff --git a/tests/test_export.py b/tests/test_export.py\nnew file mode 100644\nindex 0000000..c24274e\n--- /dev/null\n+++ b/tests/test_export.py\n@@ -0,0 +1,43 @@\n+import tempfile\n+import unittest\n+from pathlib import Path\n+\n+from billing.export import export_csv\n+from billing.invoices import load_invoices\n+from billing.report import monthly_report\n+\n+DATA = Path(__file__).resolve().parent.parent.joinpath(\"data\", \"invoices.json\")\n+\n+\n+class ExportCSV(unittest.TestCase):\n+    def test_exports_report_rows_in_order_with_dollar_amounts(self):\n+        rows = monthly_report(load_invoices(DATA))\n+        with tempfile.TemporaryDirectory() as temp_dir:\n+            output = Path(temp_dir) / \"monthly.csv\"\n+            export_csv(rows, output)\n+            contents = output.read_bytes().decode(\"utf-8\")\n+\n+        self.assertTrue(contents.endswith(\"\\n\"))\n+        self.assertNotIn(\"\\r\", contents)\n+        lines = contents.splitlines()\n+        self.assertEqual(lines[0], \"account_id,month,invoices,subtotal,tax,total\")\n+        self.assertEqual(\n+            lines[1],\n+            \"ACCT-1001,2026-09,2,575.50,47.48,622.98\",\n+        )\n+        self.assertEqual(len(lines), len(rows) + 1)\n+        self.assertEqual(\n+            [line.split(\",\")[:2] for line in lines[1:]],\n+            [[row[\"account_id\"], row[\"month\"]] for row in rows],\n+        )\n+\n+    def test_empty_rows_still_write_header_with_plain_newline(self):\n+        with tempfile.TemporaryDirectory() as temp_dir:\n+            output = Path(temp_dir) / \"empty.csv\"\n+            export_csv([], output)\n+            contents = output.read_bytes()\n+        self.assertEqual(contents, b\"account_id,month,invoices,subtotal,tax,total\\n\")\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n\n"
   },
   "own_tests": {
-   "ran": 15,
+   "ran": 14,
    "failed": [],
    "exit_code": 0,
-   "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.002s\n\nOK\n"
+   "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.002s\n\nOK\n"
   },
   "key_tests": {
    "ran": 3,
@@ -886,10 +913,10 @@
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  }

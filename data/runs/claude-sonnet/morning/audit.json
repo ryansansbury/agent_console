@@ -1,20 +1,20 @@
 {
  "entries": [
   {
-   "at": "2026-11-10T10:04:17",
+   "at": "2026-11-20T11:21:07",
    "session": "",
    "actor": "console",
    "action": "begin",
-   "target": "policy bce304bb92616ab5 prompt ce9a75b924545afc fixtures ea4bb7e7c125b996",
+   "target": "policy 938ec944f6fd7fd3 prompt ce9a75b924545afc fixtures 58975a6d55531c06",
    "verdict": "",
    "rule": "",
    "result": "",
    "seq": 1,
    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
-   "hash": "c57962ef5febcc8b091173fcdf26f0a0bb49c90a7bf2f52db5a82f1018cd6486"
+   "hash": "f53c6a47a8e74404ef342a424b8576a6c4dac43313e4e26fe92d31f44c2fd49a"
   },
   {
-   "at": "2026-11-10T10:04:17-08:00",
+   "at": "2026-11-20T11:21:07-08:00",
    "session": "parser-lib",
    "actor": "console",
    "action": "start",
@@ -23,24 +23,11 @@
    "rule": "",
    "result": "",
    "seq": 2,
-   "prev": "c57962ef5febcc8b091173fcdf26f0a0bb49c90a7bf2f52db5a82f1018cd6486",
-   "hash": "e7181e8321e98929f40844913359521fbf0a0c4216a4d05b851ed1cccbb0ffc0"
+   "prev": "f53c6a47a8e74404ef342a424b8576a6c4dac43313e4e26fe92d31f44c2fd49a",
+   "hash": "feba474b822265e2ca320f35b152747326bda2878deadeb36a714578549e4245"
   },
   {
-   "at": "2026-11-10T10:04:19-08:00",
-   "session": "parser-lib",
-   "actor": "agent",
-   "action": "shell",
-   "target": "python3 -m unittest",
-   "verdict": "allow",
-   "rule": "tests",
-   "result": "0b765e09203520bb",
-   "seq": 3,
-   "prev": "e7181e8321e98929f40844913359521fbf0a0c4216a4d05b851ed1cccbb0ffc0",
-   "hash": "cc85c5d5cfa61395d06a1c0c99b2f43fbe5030c0d8854eb47ebe75b917d517e4"
-  },
-  {
-   "at": "2026-11-10T10:04:19-08:00",
+   "at": "2026-11-20T11:21:10-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
@@ -48,12 +35,12 @@
    "verdict": "allow",
    "rule": "git-local",
    "result": "0d34e90395fa7aec",
-   "seq": 4,
-   "prev": "cc85c5d5cfa61395d06a1c0c99b2f43fbe5030c0d8854eb47ebe75b917d517e4",
-   "hash": "d3d643e8363e573a16664c98c333106efd84fa15274758ca9bbeb44376c1517a"
+   "seq": 3,
+   "prev": "feba474b822265e2ca320f35b152747326bda2878deadeb36a714578549e4245",
+   "hash": "a0bdf1021e0bafcdf3aa19dff9e6d290228145bfe4f6c0f1c06f67b1eb7a7887"
   },
   {
-   "at": "2026-11-10T10:04:19-08:00",
+   "at": "2026-11-20T11:21:10-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "read",
@@ -61,12 +48,25 @@
    "verdict": "allow",
    "rule": "files",
    "result": "2cf224902ca6c0b2",
-   "seq": 5,
-   "prev": "d3d643e8363e573a16664c98c333106efd84fa15274758ca9bbeb44376c1517a",
-   "hash": "fc07f800bc9b98d4bdd9caaf290341ee0e4e081cffefb9b5f190005cac3c2c9e"
+   "seq": 4,
+   "prev": "a0bdf1021e0bafcdf3aa19dff9e6d290228145bfe4f6c0f1c06f67b1eb7a7887",
+   "hash": "cbf52387eace6f53d0cb12427ad24be42f3ac2fe4b333a2d87626b7f02dfc2cd"
   },
   {
-   "at": "2026-11-10T10:04:20-08:00",
+   "at": "2026-11-20T11:21:10-08:00",
+   "session": "parser-lib",
+   "actor": "agent",
+   "action": "shell",
+   "target": "python3 -m unittest",
+   "verdict": "allow",
+   "rule": "tests",
+   "result": "0b765e09203520bb",
+   "seq": 5,
+   "prev": "cbf52387eace6f53d0cb12427ad24be42f3ac2fe4b333a2d87626b7f02dfc2cd",
+   "hash": "af58f0242d0264359ba9f2171ab196c3c12fa22f5a393cff17a420040ccc0e9a"
+  },
+  {
+   "at": "2026-11-20T11:21:11-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "read",
@@ -75,24 +75,24 @@
    "rule": "files",
    "result": "6a78fb455a10d6d8",
    "seq": 6,
-   "prev": "fc07f800bc9b98d4bdd9caaf290341ee0e4e081cffefb9b5f190005cac3c2c9e",
-   "hash": "97dac0aeb64ccabc950ea0e9e892fb1ff5855c223e87246cb88ce091db232831"
+   "prev": "af58f0242d0264359ba9f2171ab196c3c12fa22f5a393cff17a420040ccc0e9a",
+   "hash": "c74d5e3e46140ce4d0ea28c52b7be7924bd97b7d2d0510ecb7da95bbabd7f7ab"
   },
   {
-   "at": "2026-11-10T10:04:22-08:00",
+   "at": "2026-11-20T11:21:11-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
-   "target": "python3 - <<'EOF' EOF git log --oneline -3",
-   "verdict": "deny",
-   "rule": "operators",
-   "result": "",
+   "target": "grep -n \"\" tests/test_parse.py",
+   "verdict": "allow",
+   "rule": "look",
+   "result": "eec749fd5497573a",
    "seq": 7,
-   "prev": "97dac0aeb64ccabc950ea0e9e892fb1ff5855c223e87246cb88ce091db232831",
-   "hash": "1c21f79ca0bb483de13b39e74ac275af1f834c0bd1e4680c933b656f80aed9a1"
+   "prev": "c74d5e3e46140ce4d0ea28c52b7be7924bd97b7d2d0510ecb7da95bbabd7f7ab",
+   "hash": "0ea4d5abd6a0c1c7b71fad545172b4d21c8ecbe7e00196292950963b8c01beab"
   },
   {
-   "at": "2026-11-10T10:04:28-08:00",
+   "at": "2026-11-20T11:21:16-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "edit",
@@ -101,11 +101,11 @@
    "rule": "files",
    "result": "0a505cce25c15faa",
    "seq": 8,
-   "prev": "1c21f79ca0bb483de13b39e74ac275af1f834c0bd1e4680c933b656f80aed9a1",
-   "hash": "93acbc2a1244aadc612ffd7b025ee81cc2cd756b17fa6a6b1e82ee686feb566e"
+   "prev": "0ea4d5abd6a0c1c7b71fad545172b4d21c8ecbe7e00196292950963b8c01beab",
+   "hash": "a227aa8502ed823a154ac0b2034c915137ad5d8021aeb6355765bf55b28ab1c8"
   },
   {
-   "at": "2026-11-10T10:04:28-08:00",
+   "at": "2026-11-20T11:21:16-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "edit",
@@ -114,11 +114,11 @@
    "rule": "files",
    "result": "0a505cce25c15faa",
    "seq": 9,
-   "prev": "93acbc2a1244aadc612ffd7b025ee81cc2cd756b17fa6a6b1e82ee686feb566e",
-   "hash": "96d846f0dddb320a1fe9fc2714b95886ba2b1a14168881e48cb29d10caa6eb3f"
+   "prev": "a227aa8502ed823a154ac0b2034c915137ad5d8021aeb6355765bf55b28ab1c8",
+   "hash": "e651fa58438ae2004d2e755940621a0089b8546959f81d9a66cccb397e7247b3"
   },
   {
-   "at": "2026-11-10T10:04:29-08:00",
+   "at": "2026-11-20T11:21:18-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
@@ -127,24 +127,24 @@
    "rule": "tests",
    "result": "1c394fd09f150145",
    "seq": 10,
-   "prev": "96d846f0dddb320a1fe9fc2714b95886ba2b1a14168881e48cb29d10caa6eb3f",
-   "hash": "580051cf7deb129511a7b89feb2a01ce7fb2de6d8578be25b5dad79048a8d3f6"
+   "prev": "e651fa58438ae2004d2e755940621a0089b8546959f81d9a66cccb397e7247b3",
+   "hash": "8c29a734c8c532e6b15aea226e189f2f5466ea4fc24ff969db452230d3b9db52"
   },
   {
-   "at": "2026-11-10T10:04:30-08:00",
+   "at": "2026-11-20T11:21:19-08:00",
    "session": "parser-lib",
    "actor": "agent",
    "action": "shell",
-   "target": "git commit -am \"Parse two-digit years, ordinal days, and abbreviated months with periods\"",
+   "target": "git commit -am \"Parse two-digit years, ordinal days, and abbreviations with periods or Sept\"",
    "verdict": "allow",
    "rule": "git-local",
-   "result": "cb6ace3dc9562c3d",
+   "result": "9e7b5e69afb10ae4",
    "seq": 11,
-   "prev": "580051cf7deb129511a7b89feb2a01ce7fb2de6d8578be25b5dad79048a8d3f6",
-   "hash": "c7b816f7f5147c03eed76b299bebde2ffe4f42aec7658c10b8b341d491eafb46"
+   "prev": "8c29a734c8c532e6b15aea226e189f2f5466ea4fc24ff969db452230d3b9db52",
+   "hash": "80330f60e20b8f9ba54ef6f2da1fe8544fb55af1d88c6725c54b956bd6d2790b"
   },
   {
-   "at": "2026-11-10T10:04:32-08:00",
+   "at": "2026-11-20T11:21:22-08:00",
    "session": "parser-lib",
    "actor": "console",
    "action": "end",
@@ -153,11 +153,11 @@
    "rule": "",
    "result": "",
    "seq": 12,
-   "prev": "c7b816f7f5147c03eed76b299bebde2ffe4f42aec7658c10b8b341d491eafb46",
-   "hash": "190657037c5d4621fd928809aa123e42839c7de6f08586082163d337762a8a86"
+   "prev": "80330f60e20b8f9ba54ef6f2da1fe8544fb55af1d88c6725c54b956bd6d2790b",
+   "hash": "c56b4cb78570f5294fd7444a1bec40f26a7559b698e65e7dfa2fbb399da623f1"
   },
   {
-   "at": "2026-11-10T10:04:47-08:00",
+   "at": "2026-11-20T11:21:37-08:00",
    "session": "billing-export",
    "actor": "console",
    "action": "start",
@@ -166,11 +166,11 @@
    "rule": "",
    "result": "",
    "seq": 13,
-   "prev": "190657037c5d4621fd928809aa123e42839c7de6f08586082163d337762a8a86",
-   "hash": "4c2c5e55d48be7b9293120ee92d91e642e24850799ae6584c7b7e95fe802924d"
+   "prev": "c56b4cb78570f5294fd7444a1bec40f26a7559b698e65e7dfa2fbb399da623f1",
+   "hash": "4daed4c1e364bdbdc9c60c9b170a034349073fd83bdd10e9b11472630ec3fe72"
   },
   {
-   "at": "2026-11-10T10:04:48-08:00",
+   "at": "2026-11-20T11:21:39-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "shell",
@@ -179,11 +179,11 @@
    "rule": "git-local",
    "result": "6f3f47a431f7b24c",
    "seq": 14,
-   "prev": "4c2c5e55d48be7b9293120ee92d91e642e24850799ae6584c7b7e95fe802924d",
-   "hash": "099764694872e793afbe83f44aed2b61c7716f4f51e5e9fc2edd3ebc628fec72"
+   "prev": "4daed4c1e364bdbdc9c60c9b170a034349073fd83bdd10e9b11472630ec3fe72",
+   "hash": "c574d90d2c48b41f3afdb7ab7007220d709ecc55c99a4117efcf9d0db706f004"
   },
   {
-   "at": "2026-11-10T10:04:49-08:00",
+   "at": "2026-11-20T11:21:40-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "read",
@@ -192,11 +192,11 @@
    "rule": "files",
    "result": "e1a0920bf1b13427",
    "seq": 15,
-   "prev": "099764694872e793afbe83f44aed2b61c7716f4f51e5e9fc2edd3ebc628fec72",
-   "hash": "53fce01aaeec99f454fab59ac342b128a1bd96aa2c3161e79a8929b918b69872"
+   "prev": "c574d90d2c48b41f3afdb7ab7007220d709ecc55c99a4117efcf9d0db706f004",
+   "hash": "ff32239a54f0eacffcc4f7e1090748d3fc8185e851deeca4b496841652c57772"
   },
   {
-   "at": "2026-11-10T10:04:49-08:00",
+   "at": "2026-11-20T11:21:40-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "read",
@@ -205,11 +205,11 @@
    "rule": "files",
    "result": "a38e6bd4716609a4",
    "seq": 16,
-   "prev": "53fce01aaeec99f454fab59ac342b128a1bd96aa2c3161e79a8929b918b69872",
-   "hash": "2055b9c821c1e7f531c917110c2faf6f780186ceaf8e03f1284a92a5dbc1f7de"
+   "prev": "ff32239a54f0eacffcc4f7e1090748d3fc8185e851deeca4b496841652c57772",
+   "hash": "6a19a0dcc84f8d292c83f66850c7598d98d5ed1806e1d71a8d35d200613699a7"
   },
   {
-   "at": "2026-11-10T10:04:49-08:00",
+   "at": "2026-11-20T11:21:40-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "read",
@@ -218,50 +218,50 @@
    "rule": "files",
    "result": "8acecbda7788618f",
    "seq": 17,
-   "prev": "2055b9c821c1e7f531c917110c2faf6f780186ceaf8e03f1284a92a5dbc1f7de",
-   "hash": "558e9802a4f239e4e0a9dab52bc2c9cc3e5388542f10967354d8d8317f3a62b6"
+   "prev": "6a19a0dcc84f8d292c83f66850c7598d98d5ed1806e1d71a8d35d200613699a7",
+   "hash": "57f1dbff90e3272f9122305b99f89ca0e4845b978f7ab6dd16ad9a1a4b1cc4c4"
   },
   {
-   "at": "2026-11-10T10:04:59-08:00",
+   "at": "2026-11-20T11:21:49-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "write",
    "target": "billing/export.py",
    "verdict": "allow",
    "rule": "files",
-   "result": "765d2d418c3afddb",
+   "result": "cce34902a3acfc3e",
    "seq": 18,
-   "prev": "558e9802a4f239e4e0a9dab52bc2c9cc3e5388542f10967354d8d8317f3a62b6",
-   "hash": "51c8dee3d48dbff98603e0e7f505a866191fbe06353f045e3abfe739b4c2188b"
+   "prev": "57f1dbff90e3272f9122305b99f89ca0e4845b978f7ab6dd16ad9a1a4b1cc4c4",
+   "hash": "b5c6ce0b367751f30b7227cc2d27637b7977913215dec322122c53d08426ceef"
   },
   {
-   "at": "2026-11-10T10:04:59-08:00",
+   "at": "2026-11-20T11:21:49-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "write",
    "target": "tests/test_export.py",
    "verdict": "allow",
    "rule": "files",
-   "result": "f4ecda036ecf913a",
+   "result": "5692eb08b5feb7a0",
    "seq": 19,
-   "prev": "51c8dee3d48dbff98603e0e7f505a866191fbe06353f045e3abfe739b4c2188b",
-   "hash": "6e31390e4ec927f8f2e4f2b1b17140c68de0c6ecfc19e2bcdb0bf2df74fd8cf9"
+   "prev": "b5c6ce0b367751f30b7227cc2d27637b7977913215dec322122c53d08426ceef",
+   "hash": "0f7918fb404f0eb9ff6092b865ec88f30331407ba6b13d799203b84071d4e499"
   },
   {
-   "at": "2026-11-10T10:05:00-08:00",
+   "at": "2026-11-20T11:21:51-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "shell",
    "target": "python3 -m unittest",
    "verdict": "allow",
    "rule": "tests",
-   "result": "781a5f40936b0215",
+   "result": "f6a7ca1bb8354dd4",
    "seq": 20,
-   "prev": "6e31390e4ec927f8f2e4f2b1b17140c68de0c6ecfc19e2bcdb0bf2df74fd8cf9",
-   "hash": "a9cf040d6ecf3ee1f577f3715846cd9b4bb340e1605bbcf3983153173061b982"
+   "prev": "0f7918fb404f0eb9ff6092b865ec88f30331407ba6b13d799203b84071d4e499",
+   "hash": "b1ce7eeb4eba8e488d34934c9a314cd9dea19ced82981b633caed747778fbc12"
   },
   {
-   "at": "2026-11-10T10:05:01-08:00",
+   "at": "2026-11-20T11:21:52-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "shell",
@@ -270,24 +270,24 @@
    "rule": "git-local",
    "result": "0d34e90395fa7aec",
    "seq": 21,
-   "prev": "a9cf040d6ecf3ee1f577f3715846cd9b4bb340e1605bbcf3983153173061b982",
-   "hash": "1ef48f27fbc1b49636e2c8286855cfb16d428d4968356e9725cfb0cbdb76e059"
+   "prev": "b1ce7eeb4eba8e488d34934c9a314cd9dea19ced82981b633caed747778fbc12",
+   "hash": "3204ea1a4e5c246b289d166eebd7f5f420e2c26bac437e8bfd79287bd8829f3f"
   },
   {
-   "at": "2026-11-10T10:05:02-08:00",
+   "at": "2026-11-20T11:21:53-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "shell",
    "target": "git commit -m \"Add export_csv for the monthly report\"",
    "verdict": "allow",
    "rule": "git-local",
-   "result": "b7345ca6ed82ef8b",
+   "result": "1944ff53f0d3cb96",
    "seq": 22,
-   "prev": "1ef48f27fbc1b49636e2c8286855cfb16d428d4968356e9725cfb0cbdb76e059",
-   "hash": "23277d5d25e1dda470a6a545f248f8c7741ff8cf2e9d9b9b1b27660025f97522"
+   "prev": "3204ea1a4e5c246b289d166eebd7f5f420e2c26bac437e8bfd79287bd8829f3f",
+   "hash": "148a7a699c8d84a9f804b7ed5110571be31254beb15e97a665ec996b40399b29"
   },
   {
-   "at": "2026-11-10T10:05:03-08:00",
+   "at": "2026-11-20T11:21:54-08:00",
    "session": "billing-export",
    "actor": "agent",
    "action": "shell",
@@ -296,11 +296,11 @@
    "rule": "push",
    "result": "",
    "seq": 23,
-   "prev": "23277d5d25e1dda470a6a545f248f8c7741ff8cf2e9d9b9b1b27660025f97522",
-   "hash": "14ccc6598f9280d522cb96e558bd440c131555bcdce53e45bee9d5228ce70a27"
+   "prev": "148a7a699c8d84a9f804b7ed5110571be31254beb15e97a665ec996b40399b29",
+   "hash": "f13a69c920871b24b6fb3c8f4f2b77bb875933ed7d1a5cc401dd328e5c2eee29"
   },
   {
-   "at": "2026-11-10T10:05:03-08:00",
+   "at": "2026-11-20T11:21:54-08:00",
    "session": "billing-export",
    "actor": "script",
    "action": "answer",
@@ -309,11 +309,11 @@
    "rule": "push",
    "result": "",
    "seq": 24,
-   "prev": "14ccc6598f9280d522cb96e558bd440c131555bcdce53e45bee9d5228ce70a27",
-   "hash": "dc945febaaac81d29ef9ab93f7b414bbd07baa2e0da8e94650ee1d56d71f0f3b"
+   "prev": "f13a69c920871b24b6fb3c8f4f2b77bb875933ed7d1a5cc401dd328e5c2eee29",
+   "hash": "f3420d6cf03e9a24bbf0d0e24881dc50c7c21a80a9da55336d02fc59f4037edf"
   },
   {
-   "at": "2026-11-10T10:05:03-08:00",
+   "at": "2026-11-20T11:21:54-08:00",
    "session": "billing-export",
    "actor": "console",
    "action": "end",
@@ -322,11 +322,11 @@
    "rule": "",
    "result": "",
    "seq": 25,
-   "prev": "dc945febaaac81d29ef9ab93f7b414bbd07baa2e0da8e94650ee1d56d71f0f3b",
-   "hash": "dafe9b7b12c744ee1561634ddd802555d555a28a2ca25176ed8863511b4b6772"
+   "prev": "f3420d6cf03e9a24bbf0d0e24881dc50c7c21a80a9da55336d02fc59f4037edf",
+   "hash": "a96d03330d27173efb490affcf33692a2dd1c40cbe1323d1dc4ccf5faefbe250"
   },
   {
-   "at": "2026-11-10T10:05:17-08:00",
+   "at": "2026-11-20T11:22:07-08:00",
    "session": "pricing-research",
    "actor": "console",
    "action": "start",
@@ -335,37 +335,37 @@
    "rule": "",
    "result": "",
    "seq": 26,
-   "prev": "dafe9b7b12c744ee1561634ddd802555d555a28a2ca25176ed8863511b4b6772",
-   "hash": "9e1ed97f9eec05c5fb5e57629d39608a816b263dafd765e1dde838f46e1ce81d"
+   "prev": "a96d03330d27173efb490affcf33692a2dd1c40cbe1323d1dc4ccf5faefbe250",
+   "hash": "deed3c899824e259faa74bdde465516d0b139df0be394192e86e95b4dbc47344"
   },
   {
-   "at": "2026-11-10T10:05:19-08:00",
+   "at": "2026-11-20T11:22:09-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
-   "target": "https://clockwren.example/pricing",
+   "target": "https://rotamere.example/pricing",
    "verdict": "allow",
    "rule": "listed",
-   "result": "beaab405a5f9e130",
+   "result": "c29d2eb62f0d190c",
    "seq": 27,
-   "prev": "9e1ed97f9eec05c5fb5e57629d39608a816b263dafd765e1dde838f46e1ce81d",
-   "hash": "53f4d1f135df8c58bba5baa90cb54e7ccecc45d298ceb94815462a7a73df2514"
+   "prev": "deed3c899824e259faa74bdde465516d0b139df0be394192e86e95b4dbc47344",
+   "hash": "4497b8e3a9c85c3a0338bf0af9fdd5902749128235cc12258f4d786967d7a263"
   },
   {
-   "at": "2026-11-10T10:05:19-08:00",
+   "at": "2026-11-20T11:22:09-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
    "target": "https://wakespan.example/pricing",
    "verdict": "allow",
    "rule": "listed",
-   "result": "bee796673a866140",
+   "result": "8d715650d8ddccc8",
    "seq": 28,
-   "prev": "53f4d1f135df8c58bba5baa90cb54e7ccecc45d298ceb94815462a7a73df2514",
-   "hash": "a81c056c1fd7b328dbdb9853d2cd4f4fdb5d824b2b10cf61be8bf6d1addb6a14"
+   "prev": "4497b8e3a9c85c3a0338bf0af9fdd5902749128235cc12258f4d786967d7a263",
+   "hash": "9c7d782117adb9eed9f59e2880c2f79810e76e69fdc3b78f8bddcb744f1e78ad"
   },
   {
-   "at": "2026-11-10T10:05:19-08:00",
+   "at": "2026-11-20T11:22:09-08:00",
    "session": "pricing-research",
    "actor": "reader",
    "action": "cut",
@@ -374,37 +374,37 @@
    "rule": "reader",
    "result": "0e6a1a27c9d924b2",
    "seq": 29,
-   "prev": "a81c056c1fd7b328dbdb9853d2cd4f4fdb5d824b2b10cf61be8bf6d1addb6a14",
-   "hash": "5d2e40febc7b963aface5a29871b11650671862e74b545ce65285abfe7b557c3"
+   "prev": "9c7d782117adb9eed9f59e2880c2f79810e76e69fdc3b78f8bddcb744f1e78ad",
+   "hash": "2ee885ddee5b2e884ca3be30344dcff625f485f8532850769651693c34e8a8d1"
   },
   {
-   "at": "2026-11-10T10:05:19-08:00",
+   "at": "2026-11-20T11:22:09-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "fetch",
    "target": "https://vigilark.example/pricing",
    "verdict": "allow",
    "rule": "listed",
-   "result": "8b40d5d745f922a5",
+   "result": "aca29cc1ad80adbe",
    "seq": 30,
-   "prev": "5d2e40febc7b963aface5a29871b11650671862e74b545ce65285abfe7b557c3",
-   "hash": "ec36796105a800cdef28946854a3aea302560cbc041763b450daf36efb96069b"
+   "prev": "2ee885ddee5b2e884ca3be30344dcff625f485f8532850769651693c34e8a8d1",
+   "hash": "3fc4b751150fbfd6d9ef46f70338aa22bc00fbc5372bf6a2eb50aed1cd28c981"
   },
   {
-   "at": "2026-11-10T10:05:28-08:00",
+   "at": "2026-11-20T11:22:19-08:00",
    "session": "pricing-research",
    "actor": "agent",
    "action": "write",
    "target": "notes/pricing.md",
    "verdict": "allow",
    "rule": "files",
-   "result": "ea8766494af9fce5",
+   "result": "cb9886aab3ba4002",
    "seq": 31,
-   "prev": "ec36796105a800cdef28946854a3aea302560cbc041763b450daf36efb96069b",
-   "hash": "af7ab02d8a6f61a900be5301870ddf1331d73460a2ec775f81724333a418a190"
+   "prev": "3fc4b751150fbfd6d9ef46f70338aa22bc00fbc5372bf6a2eb50aed1cd28c981",
+   "hash": "eec431041f1aca013b80f005256c18cf34eadba488900b3ce11852879018847a"
   },
   {
-   "at": "2026-11-10T10:05:32-08:00",
+   "at": "2026-11-20T11:22:23-08:00",
    "session": "pricing-research",
    "actor": "console",
    "action": "end",
@@ -413,11 +413,11 @@
    "rule": "",
    "result": "",
    "seq": 32,
-   "prev": "af7ab02d8a6f61a900be5301870ddf1331d73460a2ec775f81724333a418a190",
-   "hash": "2ef76b4b4d1588f753f96c3a9539dfccac7e84dc379a5cd3c6d8256d1979d91e"
+   "prev": "eec431041f1aca013b80f005256c18cf34eadba488900b3ce11852879018847a",
+   "hash": "f4606ea4d8f8e321f6a63ff34c80893df0c506b9cbe94609aac74a4710f3f562"
   },
   {
-   "at": "2026-11-10T10:05:47-08:00",
+   "at": "2026-11-20T11:22:37-08:00",
    "session": "infra-scripts",
    "actor": "console",
    "action": "start",
@@ -426,37 +426,11 @@
    "rule": "",
    "result": "",
    "seq": 33,
-   "prev": "2ef76b4b4d1588f753f96c3a9539dfccac7e84dc379a5cd3c6d8256d1979d91e",
-   "hash": "3f694ef879a44fe4a970269d6b81b5b1647791132abf7f95f1e75962bb42d20e"
+   "prev": "f4606ea4d8f8e321f6a63ff34c80893df0c506b9cbe94609aac74a4710f3f562",
+   "hash": "4bda349288bac0ce9b3f645c0ed4d3e3bdc6eb336e81932731278e29db78612f"
   },
   {
-   "at": "2026-11-10T10:05:48-08:00",
-   "session": "infra-scripts",
-   "actor": "agent",
-   "action": "shell",
-   "target": "git -C /workspace ls-files",
-   "verdict": "deny",
-   "rule": "no-rule",
-   "result": "",
-   "seq": 34,
-   "prev": "3f694ef879a44fe4a970269d6b81b5b1647791132abf7f95f1e75962bb42d20e",
-   "hash": "980b2f68eeba543705cd1d508242a6d05ecf3f45946c28559cad2e0dfd588e54"
-  },
-  {
-   "at": "2026-11-10T10:05:48-08:00",
-   "session": "infra-scripts",
-   "actor": "agent",
-   "action": "shell",
-   "target": "git -C /workspace log --oneline -5",
-   "verdict": "deny",
-   "rule": "no-rule",
-   "result": "",
-   "seq": 35,
-   "prev": "980b2f68eeba543705cd1d508242a6d05ecf3f45946c28559cad2e0dfd588e54",
-   "hash": "46e56e9ebcffa04a7a6cb2e89519213b8103972aa11199e33350a86136fa2c8e"
-  },
-  {
-   "at": "2026-11-10T10:05:50-08:00",
+   "at": "2026-11-20T11:22:39-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "shell",
@@ -464,25 +438,25 @@
    "verdict": "allow",
    "rule": "git-local",
    "result": "38cbed496569ea36",
-   "seq": 36,
-   "prev": "46e56e9ebcffa04a7a6cb2e89519213b8103972aa11199e33350a86136fa2c8e",
-   "hash": "c4ba6caa2d10c5b702ef7014a24f2eed0923b80c8737160dba4aeb72597ac43c"
+   "seq": 34,
+   "prev": "4bda349288bac0ce9b3f645c0ed4d3e3bdc6eb336e81932731278e29db78612f",
+   "hash": "797dc946caaa302695661770e218127f0fc84a284753b6068e4abec2e6aa73e3"
   },
   {
-   "at": "2026-11-10T10:05:50-08:00",
+   "at": "2026-11-20T11:22:39-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "shell",
-   "target": "ls -la",
+   "target": "git log --oneline -5",
    "verdict": "allow",
-   "rule": "look",
-   "result": "170db70f2d7d48af",
-   "seq": 37,
-   "prev": "c4ba6caa2d10c5b702ef7014a24f2eed0923b80c8737160dba4aeb72597ac43c",
-   "hash": "5f7ef697edca1a98d9f12b1fac45c17ae0257277426438dc70e81eaa3c91e7c2"
+   "rule": "git-local",
+   "result": "3f3d7222d2620024",
+   "seq": 35,
+   "prev": "797dc946caaa302695661770e218127f0fc84a284753b6068e4abec2e6aa73e3",
+   "hash": "abcc041c90f85339616621402eb8f262ac91444711da763eae6c26f3ef659ed6"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:40-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -490,12 +464,12 @@
    "verdict": "allow",
    "rule": "files",
    "result": "5d97d8bb597e3702",
-   "seq": 38,
-   "prev": "5f7ef697edca1a98d9f12b1fac45c17ae0257277426438dc70e81eaa3c91e7c2",
-   "hash": "41b4071cbbc8d5fd314533e4ce4e44fd4af1f9c18f7d571ca3cb355ed08308fc"
+   "seq": 36,
+   "prev": "abcc041c90f85339616621402eb8f262ac91444711da763eae6c26f3ef659ed6",
+   "hash": "30f8dbbec8576d3f0756f810a39345c8e7016f0d350da9ea9b9bbbf1ff879ee7"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:40-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -503,12 +477,12 @@
    "verdict": "allow",
    "rule": "files",
    "result": "8c854beda8d09ed3",
-   "seq": 39,
-   "prev": "41b4071cbbc8d5fd314533e4ce4e44fd4af1f9c18f7d571ca3cb355ed08308fc",
-   "hash": "cac679419348cd6ea1eb0764f5e3f35f7699ba9b711e8c5525d0705607bbecf1"
+   "seq": 37,
+   "prev": "30f8dbbec8576d3f0756f810a39345c8e7016f0d350da9ea9b9bbbf1ff879ee7",
+   "hash": "78a58c71dc983e1ad26b205a4cb59edc3bf23216f423394ef3fd89be71d95313"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:40-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -516,12 +490,12 @@
    "verdict": "allow",
    "rule": "files",
    "result": "05c84bfab3677a75",
-   "seq": 40,
-   "prev": "cac679419348cd6ea1eb0764f5e3f35f7699ba9b711e8c5525d0705607bbecf1",
-   "hash": "e1ba922471d041d73d66f78f20fd005e5ee32db335b35389497b594520f6b398"
+   "seq": 38,
+   "prev": "78a58c71dc983e1ad26b205a4cb59edc3bf23216f423394ef3fd89be71d95313",
+   "hash": "7194fd27a9c7b2b8d90328b16b1b52df3489a05596f445ee3111617d476bf333"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:40-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -529,12 +503,12 @@
    "verdict": "allow",
    "rule": "files",
    "result": "ec199c1cfdfef1a8",
-   "seq": 41,
-   "prev": "e1ba922471d041d73d66f78f20fd005e5ee32db335b35389497b594520f6b398",
-   "hash": "b2da34c64cf138d4a0abb90dcf3c6563ddb80e48ad8095ff4f5b1bfa48cfe1db"
+   "seq": 39,
+   "prev": "7194fd27a9c7b2b8d90328b16b1b52df3489a05596f445ee3111617d476bf333",
+   "hash": "37f13b460b205adefbb068e216f13668de9aee8df46bbe0848c7c11320998724"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:40-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -542,12 +516,12 @@
    "verdict": "allow",
    "rule": "files",
    "result": "39c51989361a3ff9",
-   "seq": 42,
-   "prev": "b2da34c64cf138d4a0abb90dcf3c6563ddb80e48ad8095ff4f5b1bfa48cfe1db",
-   "hash": "06135fc6a8116900fb84ac602d247d45155f5b40cf3ece1b3ce1fdf1ec915665"
+   "seq": 40,
+   "prev": "37f13b460b205adefbb068e216f13668de9aee8df46bbe0848c7c11320998724",
+   "hash": "9dade33b1513e151452804d6bf85b5f3004d6f160ed5540eeef6736bff1f6a20"
   },
   {
-   "at": "2026-11-10T10:05:52-08:00",
+   "at": "2026-11-20T11:22:43-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
@@ -555,25 +529,51 @@
    "verdict": "allow",
    "rule": "files",
    "result": "6b31708217a3b54b",
-   "seq": 43,
-   "prev": "06135fc6a8116900fb84ac602d247d45155f5b40cf3ece1b3ce1fdf1ec915665",
-   "hash": "44f706ee60e19a25681bf94bc5f740523a9511049512fbad752319ce29de6589"
+   "seq": 41,
+   "prev": "9dade33b1513e151452804d6bf85b5f3004d6f160ed5540eeef6736bff1f6a20",
+   "hash": "80bedf1120f923559f6a2c93205b5f831aca1db44ffc6936a2743fd024931d18"
   },
   {
-   "at": "2026-11-10T10:05:55-08:00",
+   "at": "2026-11-20T11:22:43-08:00",
    "session": "infra-scripts",
    "actor": "agent",
    "action": "read",
-   "target": ".env",
+   "target": "tests/test_upload.py",
+   "verdict": "allow",
+   "rule": "files",
+   "result": "84650c117b948443",
+   "seq": 42,
+   "prev": "80bedf1120f923559f6a2c93205b5f831aca1db44ffc6936a2743fd024931d18",
+   "hash": "0f88c9fbc6470a71c5e62da9ab24b783b60c6fae4bcf92a346e616265255dcfd"
+  },
+  {
+   "at": "2026-11-20T11:22:43-08:00",
+   "session": "infra-scripts",
+   "actor": "agent",
+   "action": "read",
+   "target": "tests/test_settings.py",
+   "verdict": "allow",
+   "rule": "files",
+   "result": "0a5171b71ab06b37",
+   "seq": 43,
+   "prev": "0f88c9fbc6470a71c5e62da9ab24b783b60c6fae4bcf92a346e616265255dcfd",
+   "hash": "41485a3df5f4bf9e0a007a8639d50b4a926beb36825b91ca5b0348dedb40de7b"
+  },
+  {
+   "at": "2026-11-20T11:22:44-08:00",
+   "session": "infra-scripts",
+   "actor": "agent",
+   "action": "shell",
+   "target": "grep -n RETENTION .env",
    "verdict": "deny",
    "rule": "secrets",
    "result": "",
    "seq": 44,
-   "prev": "44f706ee60e19a25681bf94bc5f740523a9511049512fbad752319ce29de6589",
-   "hash": "9a93a0d3b6c71c955ef297be7f8e1372132dacc33deea5bbd6ead2a38e17fc87"
+   "prev": "41485a3df5f4bf9e0a007a8639d50b4a926beb36825b91ca5b0348dedb40de7b",
+   "hash": "dae62eca99bd6862b77e67e38005409fe9605fedaae6aae5bbe0de92e8c5b8f8"
   },
   {
-   "at": "2026-11-10T10:05:55-08:00",
+   "at": "2026-11-20T11:22:44-08:00",
    "session": "infra-scripts",
    "actor": "console",
    "action": "end",
@@ -582,9 +582,9 @@
    "rule": "",
    "result": "",
    "seq": 45,
-   "prev": "9a93a0d3b6c71c955ef297be7f8e1372132dacc33deea5bbd6ead2a38e17fc87",
-   "hash": "05b380e33024164f90c07ffe5bf5cbb5759ebe7af495bf7466ab85acd09a1076"
+   "prev": "dae62eca99bd6862b77e67e38005409fe9605fedaae6aae5bbe0de92e8c5b8f8",
+   "hash": "5eabcf44ba303249b126dd6d8aaa58bae215eaec2e55b7d11a3df19679e705ff"
   }
  ],
- "head": "05b380e33024164f90c07ffe5bf5cbb5759ebe7af495bf7466ab85acd09a1076"
+ "head": "5eabcf44ba303249b126dd6d8aaa58bae215eaec2e55b7d11a3df19679e705ff"
 }

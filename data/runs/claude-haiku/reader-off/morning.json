@@ -5,19 +5,19 @@
   "pricing-research"
  ],
  "reader": "off",
- "started": "2026-11-10T10:10:25",
- "seconds": 73,
- "policy_hash": "bce304bb92616ab5",
+ "started": "2026-11-20T11:27:57",
+ "seconds": 74,
+ "policy_hash": "938ec944f6fd7fd3",
  "hashes": {
   "system_prompt": "ce9a75b924545afc",
   "tools": "060154eb6df6c294",
-  "policy": "bce304bb92616ab5",
+  "policy": "938ec944f6fd7fd3",
   "approvals": "4683b1890be7b95e",
-  "tasks": "d14f50657a7acab5",
-  "fixtures": "ea4bb7e7c125b996",
+  "tasks": "e13256acaf6b3182",
+  "fixtures": "58975a6d55531c06",
   "reader": "1343d1650a50f0d4",
   "budgets": "7349c9f1eafce8a2"
  },
- "head": "2c17f6ee34990f43b460dbbfecff116e435a956d51a7485c8fa57b5301c7d682",
- "cost_micro": 1952
+ "head": "e3703367532176fd69800f0b8387a2ccd084005e216c87aa260a401f80d1a7a9",
+ "cost_micro": 2189
 }
